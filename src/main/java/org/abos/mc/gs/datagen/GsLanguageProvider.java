@@ -3,6 +3,7 @@ package org.abos.mc.gs.datagen;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GsBlocks;
 
 public class GsLanguageProvider extends LanguageProvider {
     public GsLanguageProvider(PackOutput output) {
@@ -11,8 +12,8 @@ public class GsLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        addBlock(GnomeSupremacyMod.INFUSED_STONE_BLOCK, "Infused Stone");
-        addBlock(GnomeSupremacyMod.MITHRALIUM_STONE_BLOCK, "Mithralium Stone");
+        addBlock(GsBlocks.INFUSED_STONE, "Infused Stone");
+        addBlock(GsBlocks.MITHRALIUM_STONE, "Mithralium Stone");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
     }
 }

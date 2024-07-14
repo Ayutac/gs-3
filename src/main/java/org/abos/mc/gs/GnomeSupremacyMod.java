@@ -7,11 +7,7 @@ import com.mojang.logging.LogUtils;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -24,9 +20,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
-import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -37,28 +31,20 @@ public class GnomeSupremacyMod
     public static final String MODID = "gnome_supremacy";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the MODID namespace
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
-    // Create a Deferred Register to hold Items which will all be registered under the MODID namespace
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the MODID namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final DeferredBlock<Block> INFUSED_STONE_BLOCK = BLOCKS.registerSimpleBlock("infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
-    public static final DeferredItem<BlockItem> INFUSED_STONE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("infused_stone", INFUSED_STONE_BLOCK);
-    public static final DeferredBlock<Block> MITHRALIUM_STONE_BLOCK = BLOCKS.registerSimpleBlock("mithralium_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
-    public static final DeferredItem<BlockItem> MITHRALIUM_STONE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("mithralium_stone", MITHRALIUM_STONE_BLOCK);
-//    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
+    //    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
 //    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
 //            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
     // Creates a creative tab
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register(MODID, () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CREATIVE_TAB = CREATIVE_MODE_TABS.register(MODID, () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + MODID)) //The language key for the title of the CreativeModeTab
             .icon(Items.RED_MUSHROOM_BLOCK::getDefaultInstance)
             .displayItems((parameters, output) -> { // for own tabs, this method is preferred over the event
-                output.accept(INFUSED_STONE_BLOCK_ITEM.get());
-                output.accept(MITHRALIUM_STONE_BLOCK_ITEM.get());
+                output.accept(GsItems.INFUSED_STONE.get());
+                output.accept(GsItems.MITHRALIUM_STONE.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
@@ -69,9 +55,9 @@ public class GnomeSupremacyMod
         modEventBus.addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
-        BLOCKS.register(modEventBus);
+        GsBlocks.BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
+        GsItems.ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 
