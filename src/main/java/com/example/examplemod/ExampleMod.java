@@ -44,23 +44,21 @@ public class ExampleMod
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the MODID namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    public static final DeferredBlock<Block> STONE1_BLOCK = BLOCKS.registerSimpleBlock("stone_1", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
-    public static final DeferredItem<BlockItem> STONE1_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("stone_1", STONE1_BLOCK);
-//    // Creates a new Block with the id "examplemod:example_block", combining the namespace and path
-//    public static final DeferredBlock<Block> EXAMPLE_BLOCK = BLOCKS.registerSimpleBlock("example_block", BlockBehaviour.Properties.of().mapColor(MapColor.STONE));
-//    // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
-//    public static final DeferredItem<BlockItem> EXAMPLE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("example_block", EXAMPLE_BLOCK);
-//
+    public static final DeferredBlock<Block> INFUSED_STONE_BLOCK = BLOCKS.registerSimpleBlock("infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+    public static final DeferredItem<BlockItem> INFUSED_STONE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("infused_stone", INFUSED_STONE_BLOCK);
+    public static final DeferredBlock<Block> MITHRALIUM_STONE_BLOCK = BLOCKS.registerSimpleBlock("mithralium_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE));
+    public static final DeferredItem<BlockItem> MITHRALIUM_STONE_BLOCK_ITEM = ITEMS.registerSimpleBlockItem("mithralium_stone", MITHRALIUM_STONE_BLOCK);
 //    // Creates a new food item with the id "examplemod:example_id", nutrition 1 and saturation 2
 //    public static final DeferredItem<Item> EXAMPLE_ITEM = ITEMS.registerSimpleItem("example_item", new Item.Properties().food(new FoodProperties.Builder()
 //            .alwaysEdible().nutrition(1).saturationModifier(2f).build()));
 
-    // Creates a creative tab that is placed after the combat tab
+    // Creates a creative tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register(MODID, () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup." + MODID)) //The language key for the title of your CreativeModeTab
+            .title(Component.translatable("itemGroup." + MODID)) //The language key for the title of the CreativeModeTab
             .icon(Items.RED_MUSHROOM_BLOCK::getDefaultInstance)
-            .displayItems((parameters, output) -> {
-                output.accept(STONE1_BLOCK_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+            .displayItems((parameters, output) -> { // for own tabs, this method is preferred over the event
+                output.accept(INFUSED_STONE_BLOCK_ITEM.get());
+                output.accept(MITHRALIUM_STONE_BLOCK_ITEM.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
