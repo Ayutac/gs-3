@@ -7,6 +7,7 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.abos.mc.gs.GnomeSupremacyMod;
@@ -26,7 +27,9 @@ public class GsDatagenHandler {
         generator.addProvider(event.includeClient(), new GsLanguageProvider(output));
         generator.addProvider(event.includeClient(), new GsBlockStateProvider(output, existingFileHelper));
         generator.addProvider(event.includeClient(), new GsItemModelProvider(output, existingFileHelper));
-        generator.addProvider(event.includeServer(), new GsBlockTagsProvider(output, lookupProvider, existingFileHelper));
+        final BlockTagsProvider gsBlockTagProvider = new GsBlockTagsProvider(output, lookupProvider, existingFileHelper);
+        generator.addProvider(event.includeServer(), gsBlockTagProvider);
+        generator.addProvider(event.includeServer(), new GsItemTagsProvider(output, lookupProvider, gsBlockTagProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(GsBlockLootSubProvider::new, LootContextParamSets.BLOCK)
         ), lookupProvider));

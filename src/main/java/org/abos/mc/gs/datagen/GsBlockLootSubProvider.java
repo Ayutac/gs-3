@@ -17,7 +17,9 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(GsBlocks.INFUSED_STONE.get());
+        dropSelf(GsBlocks.INFUSED_STONE_STAIRS.get());
         dropSelf(GsBlocks.MITHRALIUM_STONE.get());
+        dropSelf(GsBlocks.MITHRALIUM_STONE_STAIRS.get());
     }
 
     @Override

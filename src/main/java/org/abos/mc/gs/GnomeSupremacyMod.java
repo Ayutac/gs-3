@@ -44,7 +44,9 @@ public class GnomeSupremacyMod
             .icon(Items.RED_MUSHROOM_BLOCK::getDefaultInstance)
             .displayItems((parameters, output) -> { // for own tabs, this method is preferred over the event
                 output.accept(GsItems.INFUSED_STONE.get());
+                output.accept(GsItems.INFUSED_STONE_STAIRS.get());
                 output.accept(GsItems.MITHRALIUM_STONE.get());
+                output.accept(GsItems.MITHRALIUM_STONE_STAIRS.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.

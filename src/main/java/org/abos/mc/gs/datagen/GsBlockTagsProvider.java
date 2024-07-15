@@ -20,7 +20,13 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 GsBlocks.INFUSED_STONE.get(),
-                GsBlocks.MITHRALIUM_STONE.get()
+                GsBlocks.INFUSED_STONE_STAIRS.get(),
+                GsBlocks.MITHRALIUM_STONE.get(),
+                GsBlocks.MITHRALIUM_STONE_STAIRS.get()
+        );
+        tag(BlockTags.STAIRS).add(
+                GsBlocks.INFUSED_STONE_STAIRS.get(),
+                GsBlocks.MITHRALIUM_STONE_STAIRS.get()
         );
     }
 }
