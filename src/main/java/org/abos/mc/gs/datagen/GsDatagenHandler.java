@@ -30,6 +30,7 @@ public class GsDatagenHandler {
         final BlockTagsProvider gsBlockTagProvider = new GsBlockTagsProvider(output, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), gsBlockTagProvider);
         generator.addProvider(event.includeServer(), new GsItemTagsProvider(output, lookupProvider, gsBlockTagProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new GsRecipeProvider(output, lookupProvider));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(GsBlockLootSubProvider::new, LootContextParamSets.BLOCK)
         ), lookupProvider));
