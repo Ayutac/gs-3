@@ -12,6 +12,7 @@ public class GsLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        addBlock(GsBlocks.PINK_BONNET_BLOCK, "Pink Bonnet Block");
         addBlock(GsBlocks.INFUSED_STONE, "Infused Stone");
         addBlock(GsBlocks.INFUSED_STONE_STAIRS, "Infused Stone Stairs");
         addBlock(GsBlocks.INFUSED_STONE_SLAB, "Infused Stone Slab");

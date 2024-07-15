@@ -19,6 +19,7 @@ public class GsItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // mushroom blocks are evil and have to be done by hand
         withExistingParent(GsItems.INFUSED_STONE);
         withExistingParent(GsItems.INFUSED_STONE_STAIRS);
         withExistingParent(GsItems.INFUSED_STONE_SLAB);
