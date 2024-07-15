@@ -15,6 +15,7 @@ public interface GsBlocks {
     DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(GnomeSupremacyMod.MODID);
 
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_BLOCK = BLOCKS.registerBlock("pink_bonnet_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
+    DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_BLOCK = BLOCKS.registerBlock("lapis_deceiver_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<Block> INFUSED_STONE = BLOCKS.registerSimpleBlock("infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
     DeferredBlock<StairBlock> INFUSED_STONE_STAIRS = BLOCKS.registerBlock("infused_stone_stairs", props -> new StairBlock(INFUSED_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
     DeferredBlock<SlabBlock> INFUSED_STONE_SLAB = BLOCKS.registerBlock("infused_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));

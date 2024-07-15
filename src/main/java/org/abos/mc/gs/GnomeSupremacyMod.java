@@ -44,6 +44,7 @@ public class GnomeSupremacyMod
             .icon(Items.RED_MUSHROOM_BLOCK::getDefaultInstance)
             .displayItems((parameters, output) -> { // for own tabs, this method is preferred over the event
                 output.accept(GsItems.PINK_BONNET_BLOCK.get());
+                output.accept(GsItems.LAPIS_DECEIVER_BLOCK.get());
                 output.accept(GsItems.INFUSED_STONE.get());
                 output.accept(GsItems.INFUSED_STONE_STAIRS.get());
                 output.accept(GsItems.INFUSED_STONE_SLAB.get());

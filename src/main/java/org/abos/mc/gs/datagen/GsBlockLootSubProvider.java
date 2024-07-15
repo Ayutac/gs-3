@@ -21,6 +21,7 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropMushroom(GsBlocks.PINK_BONNET_BLOCK, Items.DIAMOND); // TODO sko fix the drop
+        dropMushroom(GsBlocks.LAPIS_DECEIVER_BLOCK, Items.DIAMOND); // TODO sko fix the drop
         dropSelf(GsBlocks.INFUSED_STONE.get());
         dropSelf(GsBlocks.INFUSED_STONE_STAIRS.get());
         dropSelf(GsBlocks.INFUSED_STONE_SLAB.get());
