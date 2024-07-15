@@ -15,9 +15,11 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.INFUSED_STONE, "Infused Stone");
         addBlock(GsBlocks.INFUSED_STONE_STAIRS, "Infused Stone Stairs");
         addBlock(GsBlocks.INFUSED_STONE_SLAB, "Infused Stone Slab");
+        addBlock(GsBlocks.INFUSED_STONE_WALL, "Infused Stone Wall");
         addBlock(GsBlocks.MITHRALIUM_STONE, "Mithralium Stone");
         addBlock(GsBlocks.MITHRALIUM_STONE_STAIRS, "Mithralium Stone Stairs");
         addBlock(GsBlocks.MITHRALIUM_STONE_SLAB, "Mithralium Stone Slab");
+        addBlock(GsBlocks.MITHRALIUM_STONE_WALL, "Mithralium Stone Wall");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
     }
 }

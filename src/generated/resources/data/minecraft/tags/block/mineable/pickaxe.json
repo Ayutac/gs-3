@@ -3,8 +3,10 @@
     "gnome_supremacy:infused_stone",
     "gnome_supremacy:infused_stone_stairs",
     "gnome_supremacy:infused_stone_slab",
+    "gnome_supremacy:infused_stone_wall",
     "gnome_supremacy:mithralium_stone",
     "gnome_supremacy:mithralium_stone_stairs",
-    "gnome_supremacy:mithralium_stone_slab"
+    "gnome_supremacy:mithralium_stone_slab",
+    "gnome_supremacy:mithralium_stone_wall"
   ]
 }

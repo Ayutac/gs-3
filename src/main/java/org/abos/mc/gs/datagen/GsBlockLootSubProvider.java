@@ -19,9 +19,11 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(GsBlocks.INFUSED_STONE.get());
         dropSelf(GsBlocks.INFUSED_STONE_STAIRS.get());
         dropSelf(GsBlocks.INFUSED_STONE_SLAB.get());
+        dropSelf(GsBlocks.INFUSED_STONE_WALL.get());
         dropSelf(GsBlocks.MITHRALIUM_STONE.get());
         dropSelf(GsBlocks.MITHRALIUM_STONE_STAIRS.get());
         dropSelf(GsBlocks.MITHRALIUM_STONE_SLAB.get());
+        dropSelf(GsBlocks.MITHRALIUM_STONE_WALL.get());
     }
 
     @Override

@@ -26,5 +26,9 @@ public class GsItemTagsProvider extends ItemTagsProvider {
                 GsItems.INFUSED_STONE_SLAB.get(),
                 GsItems.MITHRALIUM_STONE_SLAB.get()
         );
+        tag(ItemTags.WALLS).add(
+                GsItems.INFUSED_STONE_WALL.get(),
+                GsItems.MITHRALIUM_STONE_WALL.get()
+        );
     }
 }
