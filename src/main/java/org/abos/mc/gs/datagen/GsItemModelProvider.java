@@ -1,7 +1,9 @@
 package org.abos.mc.gs.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -19,7 +21,9 @@ public class GsItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        itemGenerated(GsItems.PINK_BONNET);
         // mushroom blocks are evil and have to be done by hand
+        itemGenerated(GsItems.LAPIS_DECEIVER);
         withExistingParent(GsItems.INFUSED_STONE);
         withExistingParent(GsItems.INFUSED_STONE_STAIRS);
         withExistingParent(GsItems.INFUSED_STONE_SLAB);
@@ -30,12 +34,17 @@ public class GsItemModelProvider extends ItemModelProvider {
         wallInventory(GsItems.MITHRALIUM_STONE_WALL, GsBlocks.MITHRALIUM_STONE);
     }
 
-    protected void withExistingParent(DeferredItem<BlockItem> itemRef) {
+    private void withExistingParent(DeferredItem<BlockItem> itemRef) {
         withExistingParent(itemRef.getRegisteredName(), modLoc("block/" + itemRef.getId().getPath()));
     }
 
-    protected void wallInventory(DeferredItem<BlockItem> wallRef, DeferredBlock<Block> blockRef) {
+    private void wallInventory(DeferredItem<BlockItem> wallRef, DeferredBlock<Block> blockRef) {
         wallInventory(wallRef.getRegisteredName(), modLoc("block/" + blockRef.getId().getPath()));
+    }
+
+    private void itemGenerated(DeferredItem<? extends Item> item) {
+        singleTexture(item.getId().getPath(), ResourceLocation.withDefaultNamespace("item/generated"),
+                "layer0", modLoc("block/" + item.getId().getPath()));
     }
 
 }

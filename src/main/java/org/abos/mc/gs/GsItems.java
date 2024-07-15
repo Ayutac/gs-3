@@ -10,7 +10,9 @@ public interface GsItems {
     // Create a Deferred Register to hold Items which will all be registered under the MODID namespace
     DeferredRegister.Items ITEMS = DeferredRegister.createItems(GnomeSupremacyMod.MODID);
 
+    DeferredItem<BlockItem> PINK_BONNET = registerBlockItem(GsBlocks.PINK_BONNET);
     DeferredItem<BlockItem> PINK_BONNET_BLOCK = registerBlockItem(GsBlocks.PINK_BONNET_BLOCK);
+    DeferredItem<BlockItem> LAPIS_DECEIVER = registerBlockItem(GsBlocks.LAPIS_DECEIVER);
     DeferredItem<BlockItem> LAPIS_DECEIVER_BLOCK = registerBlockItem(GsBlocks.LAPIS_DECEIVER_BLOCK);
     DeferredItem<BlockItem> INFUSED_STONE = registerBlockItem(GsBlocks.INFUSED_STONE);
     DeferredItem<BlockItem> INFUSED_STONE_STAIRS = registerBlockItem(GsBlocks.INFUSED_STONE_STAIRS);

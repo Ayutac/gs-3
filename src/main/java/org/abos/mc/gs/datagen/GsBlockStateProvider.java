@@ -9,6 +9,8 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import org.abos.mc.gs.GnomeSupremacyMod;
 import org.abos.mc.gs.GsBlocks;
 
+import java.util.function.Supplier;
+
 public class GsBlockStateProvider extends BlockStateProvider {
     public GsBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, GnomeSupremacyMod.MODID, exFileHelper);
@@ -16,7 +18,9 @@ public class GsBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        // mushroom blocks are evil and have to be done by hand
+        crossBlock(GsBlocks.PINK_BONNET);
+        // huge mushroom blocks are evil and have to be done by hand
+        crossBlock(GsBlocks.LAPIS_DECEIVER);
         simpleBlock(GsBlocks.INFUSED_STONE.get());
         stairsBlock(GsBlocks.INFUSED_STONE_STAIRS.get(), blockLoc(GsBlocks.INFUSED_STONE));
         slabBlock(GsBlocks.INFUSED_STONE_SLAB.get(), blockLoc(GsBlocks.INFUSED_STONE), blockLoc(GsBlocks.INFUSED_STONE));
@@ -27,8 +31,16 @@ public class GsBlockStateProvider extends BlockStateProvider {
         wallBlock(GsBlocks.MITHRALIUM_STONE_WALL.get(), blockLoc(GsBlocks.MITHRALIUM_STONE));
     }
 
-    protected ResourceLocation blockLoc(DeferredBlock<Block> blockRef) {
+    private ResourceLocation blockLoc(DeferredBlock<Block> blockRef) {
         return modLoc("block/" + blockRef.getId().getPath());
+    }
+
+    private void crossBlock(DeferredBlock<? extends Block> blockRef) {
+        simpleBlock(blockRef.get(), models().cross(blockRef.getId().getPath(), blockTexture(blockRef.get())).renderType("cutout"));
+    }
+
+    private void flowerPotBlock(DeferredBlock<? extends Block> pot, Supplier<? extends Block> plant) {
+        simpleBlock(pot.get(), models().withExistingParent(pot.getId().getPath(), "block/flower_pot_cross").texture("plant", blockTexture(plant.get())).renderType("cutout"));
     }
 
     /*private void mushroomBlock(DeferredBlock<HugeMushroomBlock> blockRef) {

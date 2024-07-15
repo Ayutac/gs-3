@@ -29,7 +29,9 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.MITHRALIUM_STONE_WALL.get()
         );
         tag(BlockTags.MINEABLE_WITH_AXE).add(
+                GsBlocks.PINK_BONNET.get(),
                 GsBlocks.PINK_BONNET_BLOCK.get(),
+                GsBlocks.LAPIS_DECEIVER.get(),
                 GsBlocks.LAPIS_DECEIVER_BLOCK.get()
         );
         tag(BlockTags.STAIRS).add(

@@ -4,12 +4,12 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import org.abos.mc.gs.GsBlocks;
+import org.abos.mc.gs.GsItems;
 
 import java.util.Set;
 
@@ -20,8 +20,10 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropMushroom(GsBlocks.PINK_BONNET_BLOCK, Items.DIAMOND); // TODO sko fix the drop
-        dropMushroom(GsBlocks.LAPIS_DECEIVER_BLOCK, Items.DIAMOND); // TODO sko fix the drop
+        dropSelf(GsBlocks.PINK_BONNET.get());
+        dropMushroom(GsBlocks.PINK_BONNET_BLOCK, GsItems.PINK_BONNET);
+        dropSelf(GsBlocks.LAPIS_DECEIVER.get());
+        dropMushroom(GsBlocks.LAPIS_DECEIVER_BLOCK, GsItems.LAPIS_DECEIVER);
         dropSelf(GsBlocks.INFUSED_STONE.get());
         dropSelf(GsBlocks.INFUSED_STONE_STAIRS.get());
         dropSelf(GsBlocks.INFUSED_STONE_SLAB.get());
