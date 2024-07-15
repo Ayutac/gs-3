@@ -18,8 +18,10 @@ public class GsItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         withExistingParent(GsItems.INFUSED_STONE);
         withExistingParent(GsItems.INFUSED_STONE_STAIRS);
+        withExistingParent(GsItems.INFUSED_STONE_SLAB);
         withExistingParent(GsItems.MITHRALIUM_STONE);
         withExistingParent(GsItems.MITHRALIUM_STONE_STAIRS);
+        withExistingParent(GsItems.MITHRALIUM_STONE_SLAB);
     }
 
     protected void withExistingParent(DeferredItem<BlockItem> itemRef) {

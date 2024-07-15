@@ -22,5 +22,9 @@ public class GsItemTagsProvider extends ItemTagsProvider {
                 GsItems.INFUSED_STONE_STAIRS.get(),
                 GsItems.MITHRALIUM_STONE_STAIRS.get()
         );
+        tag(ItemTags.SLABS).add(
+                GsItems.INFUSED_STONE_SLAB.get(),
+                GsItems.MITHRALIUM_STONE_SLAB.get()
+        );
     }
 }
