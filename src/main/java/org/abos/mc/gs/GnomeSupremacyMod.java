@@ -47,6 +47,8 @@ public class GnomeSupremacyMod
                 output.accept(GsItems.PINK_BONNET_BLOCK.get());
                 output.accept(GsItems.LAPIS_DECEIVER.get());
                 output.accept(GsItems.LAPIS_DECEIVER_BLOCK.get());
+                output.accept(GsItems.MOREL.get());
+                output.accept(GsItems.MOREL_BLOCK.get());
                 output.accept(GsItems.INFUSED_STONE.get());
                 output.accept(GsItems.INFUSED_STONE_STAIRS.get());
                 output.accept(GsItems.INFUSED_STONE_SLAB.get());

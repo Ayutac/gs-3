@@ -23,6 +23,9 @@ public interface GsBlocks {
     // TODO sko change huge mushroom this one is growing into
     DeferredBlock<MushroomBlock> LAPIS_DECEIVER = BLOCKS.registerBlock("lapis_deceiver", props -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_BLOCK = BLOCKS.registerBlock("lapis_deceiver_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
+    // TODO sko change huge mushroom this one is growing into
+    DeferredBlock<MushroomBlock> MOREL = BLOCKS.registerBlock("morel", props -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<HugeMushroomBlock> MOREL_BLOCK = BLOCKS.registerBlock("morel_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<Block> INFUSED_STONE = BLOCKS.registerSimpleBlock("infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
     DeferredBlock<StairBlock> INFUSED_STONE_STAIRS = BLOCKS.registerBlock("infused_stone_stairs", props -> new StairBlock(INFUSED_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
     DeferredBlock<SlabBlock> INFUSED_STONE_SLAB = BLOCKS.registerBlock("infused_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));

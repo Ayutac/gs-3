@@ -24,6 +24,8 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
         dropMushroom(GsBlocks.PINK_BONNET_BLOCK, GsItems.PINK_BONNET);
         dropSelf(GsBlocks.LAPIS_DECEIVER.get());
         dropMushroom(GsBlocks.LAPIS_DECEIVER_BLOCK, GsItems.LAPIS_DECEIVER);
+        dropSelf(GsBlocks.MOREL.get());
+        dropMushroom(GsBlocks.MOREL_BLOCK, GsItems.MOREL);
         dropSelf(GsBlocks.INFUSED_STONE.get());
         dropSelf(GsBlocks.INFUSED_STONE_STAIRS.get());
         dropSelf(GsBlocks.INFUSED_STONE_SLAB.get());

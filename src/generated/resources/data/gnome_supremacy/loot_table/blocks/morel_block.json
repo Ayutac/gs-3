@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "gnome_supremacy:lapis_deceiver_block"
+              "name": "gnome_supremacy:morel_block"
             },
             {
               "type": "minecraft:item",
@@ -50,7 +50,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "gnome_supremacy:lapis_deceiver"
+              "name": "gnome_supremacy:morel"
             }
           ]
         }
@@ -58,5 +58,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "gnome_supremacy:blocks/lapis_deceiver_block"
+  "random_sequence": "gnome_supremacy:blocks/morel_block"
 }

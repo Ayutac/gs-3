@@ -14,6 +14,8 @@ public interface GsItems {
     DeferredItem<BlockItem> PINK_BONNET_BLOCK = registerBlockItem(GsBlocks.PINK_BONNET_BLOCK);
     DeferredItem<BlockItem> LAPIS_DECEIVER = registerBlockItem(GsBlocks.LAPIS_DECEIVER);
     DeferredItem<BlockItem> LAPIS_DECEIVER_BLOCK = registerBlockItem(GsBlocks.LAPIS_DECEIVER_BLOCK);
+    DeferredItem<BlockItem> MOREL = registerBlockItem(GsBlocks.MOREL);
+    DeferredItem<BlockItem> MOREL_BLOCK = registerBlockItem(GsBlocks.MOREL_BLOCK);
     DeferredItem<BlockItem> INFUSED_STONE = registerBlockItem(GsBlocks.INFUSED_STONE);
     DeferredItem<BlockItem> INFUSED_STONE_STAIRS = registerBlockItem(GsBlocks.INFUSED_STONE_STAIRS);
     DeferredItem<BlockItem> INFUSED_STONE_SLAB = registerBlockItem(GsBlocks.INFUSED_STONE_SLAB);
