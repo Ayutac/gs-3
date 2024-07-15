@@ -24,6 +24,8 @@ public class GsDatagenHandler {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
         generator.addProvider(event.includeClient(), new GsLanguageProvider(output));
+        generator.addProvider(event.includeClient(), new GsBlockStateProvider(output, existingFileHelper));
+        generator.addProvider(event.includeClient(), new GsItemModelProvider(output, existingFileHelper));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(
                 new LootTableProvider.SubProviderEntry(GsBlockLootSubProvider::new, LootContextParamSets.BLOCK)
         ), lookupProvider));
