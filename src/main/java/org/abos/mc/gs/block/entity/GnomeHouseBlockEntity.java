@@ -10,6 +10,7 @@ import net.minecraft.world.WorldlyContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.StackedContents;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
@@ -71,7 +72,10 @@ public class GnomeHouseBlockEntity extends BaseContainerBlockEntity implements W
 
     @Override
     protected AbstractContainerMenu createMenu(int containerId, Inventory playerInv) {
-        return new GnomeHouseMenu(containerId, playerInv);
+        if (level == null) {
+            return null;
+        }
+        return new GnomeHouseMenu(containerId, playerInv, items, ContainerLevelAccess.create(level, worldPosition));
     }
 
     @Override
@@ -89,12 +93,14 @@ public class GnomeHouseBlockEntity extends BaseContainerBlockEntity implements W
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
-        tag.put("items", items.serializeNBT(registries));
+        var nbt = items.serializeNBT(registries);
+        tag.put("items", nbt);
     }
 
     @Override
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
-        items.deserializeNBT(registries, (CompoundTag)tag.get("items"));
+        var nbt = (CompoundTag)tag.get("items");
+        items.deserializeNBT(registries, nbt);
     }
 }
