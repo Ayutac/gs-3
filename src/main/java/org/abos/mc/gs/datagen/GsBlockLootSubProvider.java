@@ -8,8 +8,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import org.abos.mc.gs.GsBlocks;
-import org.abos.mc.gs.GsItems;
+import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsItems;
 
 import java.util.Set;
 
@@ -20,6 +20,7 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        dropSelf(GsBlocks.GNOME_HOUSE_TIER1.get());
         dropSelf(GsBlocks.PINK_BONNET.get());
         dropMushroom(GsBlocks.PINK_BONNET_BLOCK, GsItems.PINK_BONNET);
         dropSelf(GsBlocks.LAPIS_DECEIVER.get());
@@ -38,7 +39,7 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return GsBlocks.BLOCKS.getEntries()
+        return GsBlocks.REGISTER.getEntries()
                 .stream()
                 .map(Holder::value)
                 .toList();

@@ -7,17 +7,21 @@ import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import org.abos.mc.gs.GnomeSupremacyMod;
-import org.abos.mc.gs.GsBlocks;
+import org.abos.mc.gs.registry.GsBlocks;
 
 import java.util.function.Supplier;
 
 public class GsBlockStateProvider extends BlockStateProvider {
+
+    private static final String BLOCK = "block/";
+
     public GsBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, GnomeSupremacyMod.MODID, exFileHelper);
     }
 
     @Override
     protected void registerStatesAndModels() {
+        orientableBlock(GsBlocks.GNOME_HOUSE_TIER1);
         crossBlock(GsBlocks.PINK_BONNET);
         crossBlock(GsBlocks.LAPIS_DECEIVER);
         crossBlock(GsBlocks.MOREL);
@@ -33,13 +37,22 @@ public class GsBlockStateProvider extends BlockStateProvider {
     }
 
     private ResourceLocation blockLoc(DeferredBlock<Block> blockRef) {
-        return modLoc("block/" + blockRef.getId().getPath());
+        return modLoc(BLOCK + blockRef.getId().getPath());
+    }
+
+    private void orientableBlock(DeferredBlock<? extends Block> blockRef) {
+        horizontalBlock(blockRef.get(), models().orientableWithBottom(blockRef.getId().toString(),
+                modLoc(BLOCK + blockRef.getId().getPath() + "_side"),
+                modLoc(BLOCK + blockRef.getId().getPath() + "_front"),
+                modLoc(BLOCK + blockRef.getId().getPath() + "_bottom"),
+                modLoc(BLOCK + blockRef.getId().getPath() + "_top")));
     }
 
     private void crossBlock(DeferredBlock<? extends Block> blockRef) {
         simpleBlock(blockRef.get(), models().cross(blockRef.getId().getPath(), blockTexture(blockRef.get())).renderType("cutout"));
     }
 
+    // TODO sko use this
     private void flowerPotBlock(DeferredBlock<? extends Block> pot, Supplier<? extends Block> plant) {
         simpleBlock(pot.get(), models().withExistingParent(pot.getId().getPath(), "block/flower_pot_cross").texture("plant", blockTexture(plant.get())).renderType("cutout"));
     }

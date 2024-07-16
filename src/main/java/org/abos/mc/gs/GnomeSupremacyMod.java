@@ -1,6 +1,11 @@
 package org.abos.mc.gs;
 
 import net.minecraft.world.item.Items;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import org.abos.mc.gs.client.renderer.GnomeHouseRenderer;
+import org.abos.mc.gs.registry.GsBlockEntityTypes;
+import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -43,6 +48,7 @@ public class GnomeSupremacyMod
             .title(Component.translatable("itemGroup." + MODID)) //The language key for the title of the CreativeModeTab
             .icon(Items.RED_MUSHROOM_BLOCK::getDefaultInstance)
             .displayItems((parameters, output) -> { // for own tabs, this method is preferred over the event
+                output.accept(GsItems.GNOME_HOUSE_TIER1.get());
                 output.accept(GsItems.PINK_BONNET.get());
                 output.accept(GsItems.PINK_BONNET_BLOCK.get());
                 output.accept(GsItems.LAPIS_DECEIVER.get());
@@ -67,9 +73,11 @@ public class GnomeSupremacyMod
         modEventBus.addListener(this::commonSetup);
 
         // Register the Deferred Register to the mod event bus so blocks get registered
-        GsBlocks.BLOCKS.register(modEventBus);
+        GsBlocks.REGISTER.register(modEventBus);
+        // Register the Deferred Register to the mod event bus so block entities get registered
+        GsBlockEntityTypes.REGISTER.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
-        GsItems.ITEMS.register(modEventBus);
+        GsItems.REGISTER.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 
@@ -123,6 +131,11 @@ public class GnomeSupremacyMod
             // Some client setup code
 //            LOGGER.info("HELLO FROM CLIENT SETUP");
 //            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(GsBlockEntityTypes.GNOME_HOUSE.get(), GnomeHouseRenderer::new);
         }
     }
 }

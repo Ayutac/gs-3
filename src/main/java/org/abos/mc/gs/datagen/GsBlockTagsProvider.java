@@ -6,7 +6,7 @@ import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.abos.mc.gs.GnomeSupremacyMod;
-import org.abos.mc.gs.GsBlocks;
+import org.abos.mc.gs.registry.GsBlocks;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -29,6 +29,7 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.MITHRALIUM_STONE_WALL.get()
         );
         tag(BlockTags.MINEABLE_WITH_AXE).add(
+                GsBlocks.GNOME_HOUSE_TIER1.get(),
                 GsBlocks.PINK_BONNET.get(),
                 GsBlocks.PINK_BONNET_BLOCK.get(),
                 GsBlocks.LAPIS_DECEIVER.get(),

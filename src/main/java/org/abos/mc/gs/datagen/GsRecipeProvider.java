@@ -10,11 +10,12 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.abos.mc.gs.GnomeSupremacyMod;
-import org.abos.mc.gs.GsItems;
+import org.abos.mc.gs.registry.GsItems;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -28,6 +29,15 @@ public class GsRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput output) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GsItems.GNOME_HOUSE_TIER1)
+                .pattern("MMM")
+                .pattern("WLW")
+                .pattern("WWW")
+                .define('L', Items.LANTERN)
+                .define('M', Items.RED_MUSHROOM_BLOCK)
+                .define('W', Items.STRIPPED_SPRUCE_WOOD)
+                .unlockedBy("has_mushroom", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_MUSHROOM_BLOCK))
+                .save(output);
         stairs(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         stairsSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         slab(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_SLAB, output);

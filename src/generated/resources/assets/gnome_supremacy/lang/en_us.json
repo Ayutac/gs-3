@@ -1,4 +1,5 @@
 {
+  "block.gnome_supremacy.gnome_house_tier1": "Gnome Hut",
   "block.gnome_supremacy.infused_stone": "Infused Stone",
   "block.gnome_supremacy.infused_stone_slab": "Infused Stone Slab",
   "block.gnome_supremacy.infused_stone_stairs": "Infused Stone Stairs",
@@ -13,5 +14,6 @@
   "block.gnome_supremacy.morel_block": "Morel Block",
   "block.gnome_supremacy.pink_bonnet": "Pink Bonnet",
   "block.gnome_supremacy.pink_bonnet_block": "Pink Bonnet Block",
+  "container.gnome_house": "Gnome Housing",
   "itemGroup.gnome_supremacy": "Gnome Supremacy"
 }

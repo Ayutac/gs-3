@@ -10,8 +10,8 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import org.abos.mc.gs.GnomeSupremacyMod;
-import org.abos.mc.gs.GsBlocks;
-import org.abos.mc.gs.GsItems;
+import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsItems;
 
 public class GsItemModelProvider extends ItemModelProvider {
 
@@ -21,6 +21,7 @@ public class GsItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        withExistingParent(GsItems.GNOME_HOUSE_TIER1);
         itemGenerated(GsItems.PINK_BONNET);
         itemGenerated(GsItems.LAPIS_DECEIVER);
         itemGenerated(GsItems.MOREL);

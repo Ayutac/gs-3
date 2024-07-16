@@ -3,7 +3,7 @@ package org.abos.mc.gs.datagen;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.abos.mc.gs.GnomeSupremacyMod;
-import org.abos.mc.gs.GsBlocks;
+import org.abos.mc.gs.registry.GsBlocks;
 
 public class GsLanguageProvider extends LanguageProvider {
     public GsLanguageProvider(PackOutput output) {
@@ -12,6 +12,7 @@ public class GsLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        addBlock(GsBlocks.GNOME_HOUSE_TIER1, "Gnome Hut");
         addBlock(GsBlocks.PINK_BONNET, "Pink Bonnet");
         addBlock(GsBlocks.PINK_BONNET_BLOCK, "Pink Bonnet Block");
         addBlock(GsBlocks.LAPIS_DECEIVER, "Lapis Deceiver");
@@ -27,5 +28,6 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.MITHRALIUM_STONE_SLAB, "Mithralium Stone Slab");
         addBlock(GsBlocks.MITHRALIUM_STONE_WALL, "Mithralium Stone Wall");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
+        add("container.gnome_house", "Gnome Housing");
     }
 }

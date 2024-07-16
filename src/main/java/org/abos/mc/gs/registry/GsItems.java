@@ -1,15 +1,17 @@
-package org.abos.mc.gs;
+package org.abos.mc.gs.registry;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import org.abos.mc.gs.GnomeSupremacyMod;
 
 public interface GsItems {
     // Create a Deferred Register to hold Items which will all be registered under the MODID namespace
-    DeferredRegister.Items ITEMS = DeferredRegister.createItems(GnomeSupremacyMod.MODID);
+    DeferredRegister.Items REGISTER = DeferredRegister.createItems(GnomeSupremacyMod.MODID);
 
+    DeferredItem<BlockItem> GNOME_HOUSE_TIER1 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER1);
     DeferredItem<BlockItem> PINK_BONNET = registerBlockItem(GsBlocks.PINK_BONNET);
     DeferredItem<BlockItem> PINK_BONNET_BLOCK = registerBlockItem(GsBlocks.PINK_BONNET_BLOCK);
     DeferredItem<BlockItem> LAPIS_DECEIVER = registerBlockItem(GsBlocks.LAPIS_DECEIVER);
@@ -26,6 +28,6 @@ public interface GsItems {
     DeferredItem<BlockItem> MITHRALIUM_STONE_WALL = registerBlockItem(GsBlocks.MITHRALIUM_STONE_WALL);
 
     static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<? extends Block> blockRef) {
-        return ITEMS.registerSimpleBlockItem(blockRef.getId().getPath(), blockRef);
+        return REGISTER.registerSimpleBlockItem(blockRef.getId().getPath(), blockRef);
     }
 }

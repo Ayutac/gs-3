@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "minecraft:lantern"
+    },
+    "M": {
+      "item": "minecraft:red_mushroom_block"
+    },
+    "W": {
+      "item": "minecraft:stripped_spruce_wood"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "WLW",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnome_supremacy:gnome_house_tier1"
+  }
+}
