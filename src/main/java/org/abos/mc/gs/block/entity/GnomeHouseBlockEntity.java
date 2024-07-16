@@ -15,6 +15,7 @@ import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import org.abos.mc.gs.block.entity.container.GnomeHouseMenu;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.jetbrains.annotations.Nullable;
 
@@ -60,8 +61,8 @@ public class GnomeHouseBlockEntity extends BaseContainerBlockEntity implements W
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int i, Inventory inventory) {
-        return null; // TODO sko implement
+    protected AbstractContainerMenu createMenu(int containerId, Inventory playerInv) {
+        return new GnomeHouseMenu(containerId, playerInv);
     }
 
     @Override

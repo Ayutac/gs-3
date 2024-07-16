@@ -2,9 +2,12 @@ package org.abos.mc.gs;
 
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import org.abos.mc.gs.client.gui.GnomeHouseScreen;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsItems;
+import org.abos.mc.gs.registry.GsMenuTypes;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -73,12 +76,11 @@ public class GnomeSupremacyMod
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
         GsBlocks.REGISTER.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so block entities get registered
         GsBlockEntityTypes.REGISTER.register(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
         GsItems.REGISTER.register(modEventBus);
+        GsMenuTypes.REGISTER.register(modEventBus);
+
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
 
@@ -132,6 +134,11 @@ public class GnomeSupremacyMod
             // Some client setup code
 //            LOGGER.info("HELLO FROM CLIENT SETUP");
 //            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        }
+
+        @SubscribeEvent
+        private static void registerScreens(RegisterMenuScreensEvent event) {
+            event.register(GsMenuTypes.GNOME_HOUSE.get(), GnomeHouseScreen::new);
         }
 
         @SubscribeEvent
