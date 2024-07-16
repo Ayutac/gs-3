@@ -22,6 +22,8 @@ public class GsBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         orientableBlock(GsBlocks.GNOME_HOUSE_TIER1);
+        orientableBlock(GsBlocks.GNOME_HOUSE_TIER2);
+        orientableBlock(GsBlocks.GNOME_HOUSE_TIER3);
         crossBlock(GsBlocks.PINK_BONNET);
         crossBlock(GsBlocks.LAPIS_DECEIVER);
         crossBlock(GsBlocks.MOREL);

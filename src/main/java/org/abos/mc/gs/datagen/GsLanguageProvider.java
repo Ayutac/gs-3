@@ -13,6 +13,8 @@ public class GsLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addBlock(GsBlocks.GNOME_HOUSE_TIER1, "Gnome Hut");
+        addBlock(GsBlocks.GNOME_HOUSE_TIER2, "Gnome House");
+        addBlock(GsBlocks.GNOME_HOUSE_TIER3, "Gnome Villa");
         addBlock(GsBlocks.PINK_BONNET, "Pink Bonnet");
         addBlock(GsBlocks.PINK_BONNET_BLOCK, "Pink Bonnet Block");
         addBlock(GsBlocks.LAPIS_DECEIVER, "Lapis Deceiver");

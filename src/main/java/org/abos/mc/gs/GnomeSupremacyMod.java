@@ -48,6 +48,8 @@ public class GnomeSupremacyMod
             .icon(Items.RED_MUSHROOM_BLOCK::getDefaultInstance)
             .displayItems((parameters, output) -> { // for own tabs, this method is preferred over the event
                 output.accept(GsItems.GNOME_HOUSE_TIER1.get());
+                output.accept(GsItems.GNOME_HOUSE_TIER2.get());
+                output.accept(GsItems.GNOME_HOUSE_TIER3.get());
                 output.accept(GsItems.PINK_BONNET.get());
                 output.accept(GsItems.PINK_BONNET_BLOCK.get());
                 output.accept(GsItems.LAPIS_DECEIVER.get());

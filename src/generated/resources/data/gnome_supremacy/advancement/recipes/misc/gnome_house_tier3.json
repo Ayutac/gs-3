@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_house": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gnome_supremacy:gnome_house_tier2"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gnome_supremacy:gnome_house_tier3"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_house"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gnome_supremacy:gnome_house_tier3"
+    ]
+  }
+}

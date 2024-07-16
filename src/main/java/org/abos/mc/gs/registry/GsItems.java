@@ -12,6 +12,8 @@ public interface GsItems {
     DeferredRegister.Items REGISTER = DeferredRegister.createItems(GnomeSupremacyMod.MODID);
 
     DeferredItem<BlockItem> GNOME_HOUSE_TIER1 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER1);
+    DeferredItem<BlockItem> GNOME_HOUSE_TIER2 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER2);
+    DeferredItem<BlockItem> GNOME_HOUSE_TIER3 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER3);
     DeferredItem<BlockItem> PINK_BONNET = registerBlockItem(GsBlocks.PINK_BONNET);
     DeferredItem<BlockItem> PINK_BONNET_BLOCK = registerBlockItem(GsBlocks.PINK_BONNET_BLOCK);
     DeferredItem<BlockItem> LAPIS_DECEIVER = registerBlockItem(GsBlocks.LAPIS_DECEIVER);

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:emerald_block"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "H": {
+      "item": "gnome_supremacy:gnome_house_tier1"
+    },
+    "N": {
+      "item": "minecraft:nether_bricks"
+    },
+    "P": {
+      "item": "minecraft:sea_lantern"
+    }
+  },
+  "pattern": [
+    "EGE",
+    "PHP",
+    "NNN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnome_supremacy:gnome_house_tier2"
+  }
+}

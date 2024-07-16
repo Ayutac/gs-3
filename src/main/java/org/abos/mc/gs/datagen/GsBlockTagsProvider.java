@@ -30,6 +30,8 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
         );
         tag(BlockTags.MINEABLE_WITH_AXE).add(
                 GsBlocks.GNOME_HOUSE_TIER1.get(),
+                GsBlocks.GNOME_HOUSE_TIER2.get(),
+                GsBlocks.GNOME_HOUSE_TIER3.get(),
                 GsBlocks.PINK_BONNET.get(),
                 GsBlocks.PINK_BONNET_BLOCK.get(),
                 GsBlocks.LAPIS_DECEIVER.get(),

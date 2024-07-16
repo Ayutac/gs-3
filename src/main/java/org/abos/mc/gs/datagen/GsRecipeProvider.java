@@ -38,6 +38,28 @@ public class GsRecipeProvider extends RecipeProvider {
                 .define('W', Items.STRIPPED_SPRUCE_WOOD)
                 .unlockedBy("has_mushroom", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_MUSHROOM_BLOCK))
                 .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GsItems.GNOME_HOUSE_TIER2)
+                .pattern("EGE")
+                .pattern("PHP")
+                .pattern("NNN")
+                .define('E', Items.EMERALD_BLOCK)
+                .define('G', Items.GOLD_BLOCK)
+                .define('H', GsItems.GNOME_HOUSE_TIER1)
+                .define('N', Items.NETHER_BRICKS)
+                .define('P', Items.SEA_LANTERN)
+                .unlockedBy("has_house", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.GNOME_HOUSE_TIER1))
+                .save(output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GsItems.GNOME_HOUSE_TIER3)
+                .pattern("DND")
+                .pattern("EHE")
+                .pattern("PPP")
+                .define('D', Items.DIAMOND_BLOCK)
+                .define('E', Items.END_ROD)
+                .define('H', GsItems.GNOME_HOUSE_TIER2)
+                .define('N', Items.NETHERITE_INGOT)
+                .define('P', Items.PURPUR_BLOCK)
+                .unlockedBy("has_house", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.GNOME_HOUSE_TIER2))
+                .save(output);
         stairs(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         stairsSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         slab(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_SLAB, output);

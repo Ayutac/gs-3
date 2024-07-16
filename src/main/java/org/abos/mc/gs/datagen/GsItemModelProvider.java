@@ -22,6 +22,8 @@ public class GsItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         withExistingParent(GsItems.GNOME_HOUSE_TIER1);
+        withExistingParent(GsItems.GNOME_HOUSE_TIER2);
+        withExistingParent(GsItems.GNOME_HOUSE_TIER3);
         itemGenerated(GsItems.PINK_BONNET);
         itemGenerated(GsItems.LAPIS_DECEIVER);
         itemGenerated(GsItems.MOREL);

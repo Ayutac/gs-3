@@ -21,6 +21,8 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(GsBlocks.GNOME_HOUSE_TIER1.get());
+        dropSelf(GsBlocks.GNOME_HOUSE_TIER2.get());
+        dropSelf(GsBlocks.GNOME_HOUSE_TIER3.get());
         dropSelf(GsBlocks.PINK_BONNET.get());
         dropMushroom(GsBlocks.PINK_BONNET_BLOCK, GsItems.PINK_BONNET);
         dropSelf(GsBlocks.LAPIS_DECEIVER.get());

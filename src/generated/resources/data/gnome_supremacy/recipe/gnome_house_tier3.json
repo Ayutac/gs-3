@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "E": {
+      "item": "minecraft:end_rod"
+    },
+    "H": {
+      "item": "gnome_supremacy:gnome_house_tier2"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "P": {
+      "item": "minecraft:purpur_block"
+    }
+  },
+  "pattern": [
+    "DND",
+    "EHE",
+    "PPP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gnome_supremacy:gnome_house_tier3"
+  }
+}
