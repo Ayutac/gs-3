@@ -43,7 +43,7 @@ public class GnomeHouseMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack(Player player, int quickMovedSlotIndex) {
-        return ItemStack.EMPTY;
+        return ItemStack.EMPTY; // TODO sko implement
     }
 
     @Override
