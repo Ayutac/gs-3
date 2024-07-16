@@ -2,7 +2,6 @@ package org.abos.mc.gs;
 
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import org.abos.mc.gs.client.renderer.GnomeHouseRenderer;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsItems;
@@ -135,7 +134,7 @@ public class GnomeSupremacyMod
 
         @SubscribeEvent
         public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerBlockEntityRenderer(GsBlockEntityTypes.GNOME_HOUSE.get(), GnomeHouseRenderer::new);
+//            event.registerBlockEntityRenderer(GsBlockEntityTypes.GNOME_HOUSE.get(), GnomeHouseRenderer::new);
         }
     }
 }
