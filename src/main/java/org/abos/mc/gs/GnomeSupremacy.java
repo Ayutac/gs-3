@@ -34,8 +34,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(GnomeSupremacy.MODID)
-public class GnomeSupremacy
-{
+public class GnomeSupremacy {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "gnome_supremacy";
     // Directly reference a slf4j logger
