@@ -21,6 +21,9 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.LAPIS_DECEIVER_BLOCK, "Lapis Deceiver Block");
         addBlock(GsBlocks.MOREL, "Morel");
         addBlock(GsBlocks.MOREL_BLOCK, "Morel Block");
+        addBlock(GsBlocks.VIERTOUW_MUSHROOM, "Viertouw Mushroom");
+        addBlock(GsBlocks.VIERTOUW_MUSHROOM_BLOCK, "Viertouw Mushroom Block");
+        addBlock(GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK, "Pink Viertouw Mushroom Block");
         addBlock(GsBlocks.INFUSED_STONE, "Infused Stone");
         addBlock(GsBlocks.INFUSED_STONE_STAIRS, "Infused Stone Stairs");
         addBlock(GsBlocks.INFUSED_STONE_SLAB, "Infused Stone Slab");

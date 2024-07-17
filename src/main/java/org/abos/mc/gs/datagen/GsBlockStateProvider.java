@@ -27,6 +27,7 @@ public class GsBlockStateProvider extends BlockStateProvider {
         crossBlock(GsBlocks.PINK_BONNET);
         crossBlock(GsBlocks.LAPIS_DECEIVER);
         crossBlock(GsBlocks.MOREL);
+        crossBlock(GsBlocks.VIERTOUW_MUSHROOM);
         // huge mushroom blocks are evil and have to be done by hand
         simpleBlock(GsBlocks.INFUSED_STONE.get());
         stairsBlock(GsBlocks.INFUSED_STONE_STAIRS.get(), blockLoc(GsBlocks.INFUSED_STONE));

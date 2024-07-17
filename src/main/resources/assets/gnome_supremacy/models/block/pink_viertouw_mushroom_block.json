@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_single_face",
+  "textures": {
+    "texture": "gnome_supremacy:block/pink_viertouw_mushroom_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gnome_supremacy:block/pink_viertouw_mushroom_block"
+  }
+}

@@ -37,7 +37,10 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.LAPIS_DECEIVER.get(),
                 GsBlocks.LAPIS_DECEIVER_BLOCK.get(),
                 GsBlocks.MOREL.get(),
-                GsBlocks.MOREL_BLOCK.get()
+                GsBlocks.MOREL_BLOCK.get(),
+                GsBlocks.VIERTOUW_MUSHROOM.get(),
+                GsBlocks.VIERTOUW_MUSHROOM_BLOCK.get(),
+                GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK.get()
         );
         tag(BlockTags.STAIRS).add(
                 GsBlocks.INFUSED_STONE_STAIRS.get(),

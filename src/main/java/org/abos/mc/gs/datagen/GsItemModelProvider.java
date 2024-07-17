@@ -27,6 +27,7 @@ public class GsItemModelProvider extends ItemModelProvider {
         itemGenerated(GsItems.PINK_BONNET);
         itemGenerated(GsItems.LAPIS_DECEIVER);
         itemGenerated(GsItems.MOREL);
+        itemGenerated(GsItems.VIERTOUW_MUSHROOM);
         // mushroom blocks are evil and have to be done by hand
         withExistingParent(GsItems.INFUSED_STONE);
         withExistingParent(GsItems.INFUSED_STONE_STAIRS);

@@ -59,6 +59,9 @@ public class GnomeSupremacy
                 output.accept(GsItems.LAPIS_DECEIVER_BLOCK.get());
                 output.accept(GsItems.MOREL.get());
                 output.accept(GsItems.MOREL_BLOCK.get());
+                output.accept(GsItems.VIERTOUW_MUSHROOM.get());
+                output.accept(GsItems.VIERTOUW_MUSHROOM_BLOCK.get());
+                output.accept(GsItems.PINK_VIERTOUW_MUSHROOM_BLOCK.get());
                 output.accept(GsItems.INFUSED_STONE.get());
                 output.accept(GsItems.INFUSED_STONE_STAIRS.get());
                 output.accept(GsItems.INFUSED_STONE_SLAB.get());
