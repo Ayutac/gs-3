@@ -10,7 +10,6 @@
 7. Add texture
 8. Add blockstates, block model and item model manually (copy-paste)
 9. Run datagen
-10. 
 
 ## Small Mushrooms
 1. Add to `GsBlocks` (and mind the `ConfiguredFeature`)
