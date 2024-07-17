@@ -3,7 +3,9 @@ package org.abos.mc.gs;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
-import org.abos.mc.gs.client.gui.GnomeHouseScreen;
+import org.abos.mc.gs.client.gui.GnomeHouseTier1Screen;
+import org.abos.mc.gs.client.gui.GnomeHouseTier2Screen;
+import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsItems;
@@ -145,7 +147,9 @@ public class GnomeSupremacy
 
         @SubscribeEvent
         private static void registerScreens(RegisterMenuScreensEvent event) {
-            event.register(GsMenuTypes.GNOME_HOUSE.get(), GnomeHouseScreen::new);
+            event.register(GsMenuTypes.GNOME_HOUSE_TIER1.get(), GnomeHouseTier1Screen::new);
+            event.register(GsMenuTypes.GNOME_HOUSE_TIER2.get(), GnomeHouseTier2Screen::new);
+            event.register(GsMenuTypes.GNOME_HOUSE_TIER3.get(), GnomeHouseTier3Screen::new);
         }
 
         @SubscribeEvent

@@ -2,13 +2,11 @@ package org.abos.mc.gs.block;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.BlockHitResult;
+import org.abos.mc.gs.block.entity.GnomeHouseTier1BlockEntity;
+import org.jetbrains.annotations.Nullable;
 
 public class GnomeHouseTier1Block extends AbstractGnomeHouseBlock {
     public static final MapCodec<GnomeHouseTier1Block> CODEC = simpleCodec(GnomeHouseTier1Block::new);
@@ -22,11 +20,9 @@ public class GnomeHouseTier1Block extends AbstractGnomeHouseBlock {
         return CODEC;
     }
 
+    @Nullable
     @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if (!level.isClientSide && player instanceof ServerPlayer serverPlayer) {
-            serverPlayer.openMenu(state.getMenuProvider(level, pos));
-        }
-        return InteractionResult.sidedSuccess(level.isClientSide);
+    public BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return new GnomeHouseTier1BlockEntity(blockPos, blockState);
     }
 }

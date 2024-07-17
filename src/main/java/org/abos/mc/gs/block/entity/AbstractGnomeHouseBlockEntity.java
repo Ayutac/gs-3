@@ -7,28 +7,26 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.WorldlyContainer;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.StackedContents;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import org.abos.mc.gs.block.entity.container.GnomeHouseMenu;
-import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.jetbrains.annotations.Nullable;
 
-public class GnomeHouseBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, StackedContentsCompatible {
+public abstract class AbstractGnomeHouseBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, StackedContentsCompatible {
 
     private static final int[] SLOTS = new int[] {0, 1};
 
     protected ItemStackHandler items;
+    protected String titleKey;
 
-    public GnomeHouseBlockEntity(BlockPos pos, BlockState blockState) {
-        super(GsBlockEntityTypes.GNOME_HOUSE.get(), pos, blockState);
+    protected AbstractGnomeHouseBlockEntity(BlockEntityType<? extends AbstractGnomeHouseBlockEntity> bet, BlockPos pos, BlockState blockState, String titleKey) {
+        super(bet, pos, blockState);
         this.items = new ItemStackHandler(SLOTS.length);
+        this.titleKey = titleKey;
     }
 
     @Override
@@ -48,7 +46,7 @@ public class GnomeHouseBlockEntity extends BaseContainerBlockEntity implements W
 
     @Override
     protected Component getDefaultName() {
-        return Component.translatable("container.gnome_house");
+        return Component.translatable(titleKey);
     }
 
     @Override
@@ -68,14 +66,6 @@ public class GnomeHouseBlockEntity extends BaseContainerBlockEntity implements W
         for (int i = 0; i < this.items.getSlots(); i++) {
             this.items.setStackInSlot(i, items.get(i));
         }
-    }
-
-    @Override
-    protected AbstractContainerMenu createMenu(int containerId, Inventory playerInv) {
-        if (level == null) {
-            return null;
-        }
-        return new GnomeHouseMenu(containerId, playerInv, items, ContainerLevelAccess.create(level, worldPosition));
     }
 
     @Override

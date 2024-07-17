@@ -6,11 +6,11 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import org.abos.mc.gs.GnomeSupremacy;
-import org.abos.mc.gs.block.entity.container.GnomeHouseMenu;
+import org.abos.mc.gs.block.entity.container.AbstractGnomeHouseMenu;
 
-public class GnomeHouseScreen extends AbstractContainerScreen<GnomeHouseMenu> {
+public abstract class AbstractGnomeHouseScreen<M extends AbstractGnomeHouseMenu> extends AbstractContainerScreen<M> {
     private static final ResourceLocation CONTAINER_LOCATION = ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "textures/gui/container/gnome_house.png");
-    public GnomeHouseScreen(GnomeHouseMenu menu, Inventory playerInventory, Component title) {
+    protected AbstractGnomeHouseScreen(M menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
     }
 

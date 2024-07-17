@@ -9,21 +9,20 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
-import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsMenuTypes;
 
-public class GnomeHouseMenu extends AbstractContainerMenu {
+public abstract class AbstractGnomeHouseMenu extends AbstractContainerMenu {
 
-    private ContainerLevelAccess access;
+    protected ContainerLevelAccess access;
 
     // client constructor
-    public GnomeHouseMenu(int containerId, Inventory playerInv) {
+    protected AbstractGnomeHouseMenu(int containerId, Inventory playerInv) {
         this(containerId, playerInv, new ItemStackHandler(2), ContainerLevelAccess.NULL);
     }
 
     // server constructor
-    public GnomeHouseMenu(int containerId, Inventory playerInv, IItemHandler dataInventory, ContainerLevelAccess access) {
-        super(GsMenuTypes.GNOME_HOUSE.get(), containerId);
+    protected AbstractGnomeHouseMenu(int containerId, Inventory playerInv, IItemHandler dataInventory, ContainerLevelAccess access) {
+        super(GsMenuTypes.GNOME_HOUSE_TIER1.get(), containerId);
         this.access = access;
         int k;
         // container
@@ -44,10 +43,5 @@ public class GnomeHouseMenu extends AbstractContainerMenu {
     @Override
     public ItemStack quickMoveStack(Player player, int quickMovedSlotIndex) {
         return ItemStack.EMPTY; // TODO sko implement
-    }
-
-    @Override
-    public boolean stillValid(Player player) {
-        return AbstractContainerMenu.stillValid(this.access, player, GsBlocks.GNOME_HOUSE_TIER1.get());
     }
 }

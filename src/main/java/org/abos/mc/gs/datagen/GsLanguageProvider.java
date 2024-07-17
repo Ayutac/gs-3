@@ -37,6 +37,8 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.MITHRALIUM_STONE_SLAB, "Mithralium Stone Slab");
         addBlock(GsBlocks.MITHRALIUM_STONE_WALL, "Mithralium Stone Wall");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
-        add("container.gnome_house", "Gnome Housing");
+        add("container.gnome_house_tier1", "Gnome Hut");
+        add("container.gnome_house_tier2", "Gnome House");
+        add("container.gnome_house_tier3", "Gnome Villa");
     }
 }
