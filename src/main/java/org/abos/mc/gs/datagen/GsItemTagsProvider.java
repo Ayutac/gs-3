@@ -6,14 +6,14 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsItems;
 
 import java.util.concurrent.CompletableFuture;
 
 public class GsItemTagsProvider extends ItemTagsProvider {
     public GsItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, BlockTagsProvider provider, ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, provider.contentsGetter(), GnomeSupremacyMod.MODID, existingFileHelper);
+        super(output, lookupProvider, provider.contentsGetter(), GnomeSupremacy.MODID, existingFileHelper);
     }
 
     @Override

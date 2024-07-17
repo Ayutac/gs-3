@@ -5,7 +5,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.jetbrains.annotations.Nullable;
 
@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class GsBlockTagsProvider extends BlockTagsProvider {
     public GsBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, GnomeSupremacyMod.MODID, existingFileHelper);
+        super(output, lookupProvider, GnomeSupremacy.MODID, existingFileHelper);
     }
 
     @Override

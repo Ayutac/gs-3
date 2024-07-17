@@ -31,8 +31,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod(GnomeSupremacyMod.MODID)
-public class GnomeSupremacyMod
+@Mod(GnomeSupremacy.MODID)
+public class GnomeSupremacy
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "gnome_supremacy";
@@ -71,7 +71,7 @@ public class GnomeSupremacyMod
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
-    public GnomeSupremacyMod(IEventBus modEventBus, ModContainer modContainer)
+    public GnomeSupremacy(IEventBus modEventBus, ModContainer modContainer)
     {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

@@ -11,14 +11,14 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.block.GnomeHouseTier1Block;
 import org.abos.mc.gs.block.GnomeHouseTier2Block;
 import org.abos.mc.gs.block.GnomeHouseTier3Block;
 
 public interface GsBlocks {
     // Create a Deferred Register to hold Blocks which will all be registered under the MODID namespace
-    DeferredRegister.Blocks REGISTER = DeferredRegister.createBlocks(GnomeSupremacyMod.MODID);
+    DeferredRegister.Blocks REGISTER = DeferredRegister.createBlocks(GnomeSupremacy.MODID);
 
     // TODO sko update map colors for all blocks
     DeferredBlock<Block> GNOME_HOUSE_TIER1 = REGISTER.registerBlock("gnome_house_tier1", GnomeHouseTier1Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).lightLevel(state -> 5));

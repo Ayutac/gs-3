@@ -5,11 +5,11 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 
 public interface GsItems {
     // Create a Deferred Register to hold Items which will all be registered under the MODID namespace
-    DeferredRegister.Items REGISTER = DeferredRegister.createItems(GnomeSupremacyMod.MODID);
+    DeferredRegister.Items REGISTER = DeferredRegister.createItems(GnomeSupremacy.MODID);
 
     DeferredItem<BlockItem> GNOME_HOUSE_TIER1 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER1);
     DeferredItem<BlockItem> GNOME_HOUSE_TIER2 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER2);

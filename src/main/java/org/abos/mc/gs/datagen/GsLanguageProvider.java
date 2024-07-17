@@ -2,12 +2,12 @@ package org.abos.mc.gs.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
 
 public class GsLanguageProvider extends LanguageProvider {
     public GsLanguageProvider(PackOutput output) {
-        super(output, GnomeSupremacyMod.MODID, "en_us");
+        super(output, GnomeSupremacy.MODID, "en_us");
     }
 
     @Override

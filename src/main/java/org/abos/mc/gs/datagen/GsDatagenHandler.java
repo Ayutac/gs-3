@@ -10,13 +10,13 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = GnomeSupremacyMod.MODID)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = GnomeSupremacy.MODID)
 public class GsDatagenHandler {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {

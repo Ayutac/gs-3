@@ -14,7 +14,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.registries.DeferredItem;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsItems;
 
 import java.util.concurrent.CompletableFuture;
@@ -87,7 +87,7 @@ public class GsRecipeProvider extends RecipeProvider {
     private void stairsSc(ItemLike input, DeferredItem<? extends Item> result, RecipeOutput output) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result)
                 .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacyMod.MODID, result.getId().getPath() + STONECUTTER_STR));
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_STR));
     }
 
     private void slab(ItemLike input, ItemLike result, RecipeOutput output) {
@@ -101,7 +101,7 @@ public class GsRecipeProvider extends RecipeProvider {
     private void slabSc(ItemLike input, DeferredItem<? extends Item> result, RecipeOutput output) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result, 2)
                 .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacyMod.MODID, result.getId().getPath() + STONECUTTER_STR));
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_STR));
     }
 
     private void wall(ItemLike input, ItemLike result, RecipeOutput output) {
@@ -116,6 +116,6 @@ public class GsRecipeProvider extends RecipeProvider {
     private void wallSc(ItemLike input, DeferredItem<? extends Item> result, RecipeOutput output) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result)
                 .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
-                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacyMod.MODID, result.getId().getPath() + STONECUTTER_STR));
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_STR));
     }
 }

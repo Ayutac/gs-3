@@ -9,14 +9,14 @@ import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsItems;
 
 public class GsItemModelProvider extends ItemModelProvider {
 
     public GsItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, GnomeSupremacyMod.MODID, existingFileHelper);
+        super(output, GnomeSupremacy.MODID, existingFileHelper);
     }
 
     @Override

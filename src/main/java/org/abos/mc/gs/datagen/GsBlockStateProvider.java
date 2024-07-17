@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import org.abos.mc.gs.GnomeSupremacyMod;
+import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
 
 import java.util.function.Supplier;
@@ -16,7 +16,7 @@ public class GsBlockStateProvider extends BlockStateProvider {
     private static final String BLOCK = "block/";
 
     public GsBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, GnomeSupremacyMod.MODID, exFileHelper);
+        super(output, GnomeSupremacy.MODID, exFileHelper);
     }
 
     @Override
