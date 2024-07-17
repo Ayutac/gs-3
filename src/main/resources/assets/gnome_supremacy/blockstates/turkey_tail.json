@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "gnome_supremacy:block/turkey_tail",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "gnome_supremacy:block/turkey_tail"
+    },
+    "facing=west": {
+      "model": "gnome_supremacy:block/turkey_tail",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "gnome_supremacy:block/turkey_tail",
+      "y": 270
+    }
+  }
+}

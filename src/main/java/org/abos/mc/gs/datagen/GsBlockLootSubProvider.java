@@ -32,6 +32,8 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(GsBlocks.VIERTOUW_MUSHROOM.get());
         dropMushroom(GsBlocks.VIERTOUW_MUSHROOM_BLOCK, GsItems.VIERTOUW_MUSHROOM);
         dropMushroom(GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK, GsItems.VIERTOUW_MUSHROOM);
+        dropSelf(GsBlocks.TURKEY_TAIL.get());
+        dropSelf(GsBlocks.CHICKEN_OF_THE_WOODS.get());
         dropSelf(GsBlocks.INFUSED_STONE.get());
         dropSelf(GsBlocks.INFUSED_STONE_STAIRS.get());
         dropSelf(GsBlocks.INFUSED_STONE_SLAB.get());

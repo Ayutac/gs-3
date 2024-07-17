@@ -23,6 +23,8 @@ public interface GsItems {
     DeferredItem<BlockItem> VIERTOUW_MUSHROOM = registerBlockItem(GsBlocks.VIERTOUW_MUSHROOM);
     DeferredItem<BlockItem> VIERTOUW_MUSHROOM_BLOCK = registerBlockItem(GsBlocks.VIERTOUW_MUSHROOM_BLOCK);
     DeferredItem<BlockItem> PINK_VIERTOUW_MUSHROOM_BLOCK = registerBlockItem(GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK);
+    DeferredItem<BlockItem> TURKEY_TAIL = registerBlockItem(GsBlocks.TURKEY_TAIL);
+    DeferredItem<BlockItem> CHICKEN_OF_THE_WOODS = registerBlockItem(GsBlocks.CHICKEN_OF_THE_WOODS);
     DeferredItem<BlockItem> INFUSED_STONE = registerBlockItem(GsBlocks.INFUSED_STONE);
     DeferredItem<BlockItem> INFUSED_STONE_STAIRS = registerBlockItem(GsBlocks.INFUSED_STONE_STAIRS);
     DeferredItem<BlockItem> INFUSED_STONE_SLAB = registerBlockItem(GsBlocks.INFUSED_STONE_SLAB);

@@ -62,6 +62,8 @@ public class GnomeSupremacy
                 output.accept(GsItems.VIERTOUW_MUSHROOM.get());
                 output.accept(GsItems.VIERTOUW_MUSHROOM_BLOCK.get());
                 output.accept(GsItems.PINK_VIERTOUW_MUSHROOM_BLOCK.get());
+                output.accept(GsItems.TURKEY_TAIL.get());
+                output.accept(GsItems.CHICKEN_OF_THE_WOODS.get());
                 output.accept(GsItems.INFUSED_STONE.get());
                 output.accept(GsItems.INFUSED_STONE_STAIRS.get());
                 output.accept(GsItems.INFUSED_STONE_SLAB.get());

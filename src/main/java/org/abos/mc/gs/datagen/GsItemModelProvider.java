@@ -28,6 +28,8 @@ public class GsItemModelProvider extends ItemModelProvider {
         itemGenerated(GsItems.LAPIS_DECEIVER);
         itemGenerated(GsItems.MOREL);
         itemGenerated(GsItems.VIERTOUW_MUSHROOM);
+        itemGenerated(GsItems.TURKEY_TAIL);
+        itemGenerated(GsItems.CHICKEN_OF_THE_WOODS);
         // mushroom blocks are evil and have to be done by hand
         withExistingParent(GsItems.INFUSED_STONE);
         withExistingParent(GsItems.INFUSED_STONE_STAIRS);
