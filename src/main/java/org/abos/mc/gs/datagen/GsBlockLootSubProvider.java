@@ -24,8 +24,10 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(GsBlocks.GNOME_HOUSE_TIER2.get());
         dropSelf(GsBlocks.GNOME_HOUSE_TIER3.get());
         dropSelf(GsBlocks.PINK_BONNET.get());
+        dropWhenSilkTouch(GsBlocks.PINK_BONNET_STEM_BLOCK.get());
         dropMushroom(GsBlocks.PINK_BONNET_BLOCK, GsItems.PINK_BONNET);
         dropSelf(GsBlocks.LAPIS_DECEIVER.get());
+        dropWhenSilkTouch(GsBlocks.LAPIS_DECEIVER_STEM_BLOCK.get());
         dropMushroom(GsBlocks.LAPIS_DECEIVER_BLOCK, GsItems.LAPIS_DECEIVER);
         dropSelf(GsBlocks.MOREL.get());
         dropMushroom(GsBlocks.MOREL_BLOCK, GsItems.MOREL);

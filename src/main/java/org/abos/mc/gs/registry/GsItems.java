@@ -15,8 +15,10 @@ public interface GsItems {
     DeferredItem<BlockItem> GNOME_HOUSE_TIER2 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER2);
     DeferredItem<BlockItem> GNOME_HOUSE_TIER3 = registerBlockItem(GsBlocks.GNOME_HOUSE_TIER3);
     DeferredItem<BlockItem> PINK_BONNET = registerBlockItem(GsBlocks.PINK_BONNET);
+    DeferredItem<BlockItem> PINK_BONNET_STEM_BLOCK = registerBlockItem(GsBlocks.PINK_BONNET_STEM_BLOCK);
     DeferredItem<BlockItem> PINK_BONNET_BLOCK = registerBlockItem(GsBlocks.PINK_BONNET_BLOCK);
     DeferredItem<BlockItem> LAPIS_DECEIVER = registerBlockItem(GsBlocks.LAPIS_DECEIVER);
+    DeferredItem<BlockItem> LAPIS_DECEIVER_STEM_BLOCK = registerBlockItem(GsBlocks.LAPIS_DECEIVER_STEM_BLOCK);
     DeferredItem<BlockItem> LAPIS_DECEIVER_BLOCK = registerBlockItem(GsBlocks.LAPIS_DECEIVER_BLOCK);
     DeferredItem<BlockItem> MOREL = registerBlockItem(GsBlocks.MOREL);
     DeferredItem<BlockItem> MOREL_BLOCK = registerBlockItem(GsBlocks.MOREL_BLOCK);

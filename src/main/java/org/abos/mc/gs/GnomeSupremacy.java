@@ -54,8 +54,10 @@ public class GnomeSupremacy
                 output.accept(GsItems.GNOME_HOUSE_TIER2.get());
                 output.accept(GsItems.GNOME_HOUSE_TIER3.get());
                 output.accept(GsItems.PINK_BONNET.get());
+                output.accept(GsItems.PINK_BONNET_STEM_BLOCK.get());
                 output.accept(GsItems.PINK_BONNET_BLOCK.get());
                 output.accept(GsItems.LAPIS_DECEIVER.get());
+                output.accept(GsItems.LAPIS_DECEIVER_STEM_BLOCK.get());
                 output.accept(GsItems.LAPIS_DECEIVER_BLOCK.get());
                 output.accept(GsItems.MOREL.get());
                 output.accept(GsItems.MOREL_BLOCK.get());

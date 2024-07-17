@@ -28,10 +28,12 @@ public interface GsBlocks {
     DeferredBlock<Block> GNOME_HOUSE_TIER3 = REGISTER.registerBlock("gnome_house_tier3", GnomeHouseTier3Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).lightLevel(state -> 15));
     // TODO sko change huge mushroom this one is growing into
     DeferredBlock<MushroomBlock> PINK_BONNET = REGISTER.registerBlock("pink_bonnet", props -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<HugeMushroomBlock> PINK_BONNET_STEM_BLOCK = REGISTER.registerBlock("pink_bonnet_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_BLOCK = REGISTER.registerBlock("pink_bonnet_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     // TODO sko change huge mushroom this one is growing into
     DeferredBlock<MushroomBlock> LAPIS_DECEIVER = REGISTER.registerBlock("lapis_deceiver", props -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_BLOCK = REGISTER.registerBlock("lapis_deceiver_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
+    DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_STEM_BLOCK = REGISTER.registerBlock("lapis_deceiver_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     // TODO sko change huge mushroom this one is growing into
     DeferredBlock<MushroomBlock> MOREL = REGISTER.registerBlock("morel", props -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> MOREL_BLOCK = REGISTER.registerBlock("morel_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
