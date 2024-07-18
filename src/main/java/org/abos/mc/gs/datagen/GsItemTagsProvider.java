@@ -4,10 +4,12 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsItems;
+import org.abos.mc.gs.registry.GsTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -29,6 +31,19 @@ public class GsItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.WALLS).add(
                 GsItems.INFUSED_STONE_WALL.get(),
                 GsItems.MITHRALIUM_STONE_WALL.get()
+        );
+        tag(GsTags.GNOME_TOOLS).add(
+                Items.IRON_PICKAXE,
+                Items.IRON_SHOVEL,
+                Items.FISHING_ROD,
+                Items.IRON_AXE,
+                Items.SHEARS,
+                Items.IRON_SWORD,
+                Items.BRUSH,
+                Items.TRIDENT,
+                Items.LEAD,
+                Items.IRON_HOE,
+                Items.WRITABLE_BOOK
         );
     }
 }
