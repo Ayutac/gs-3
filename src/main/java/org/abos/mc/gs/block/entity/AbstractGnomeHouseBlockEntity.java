@@ -18,7 +18,9 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractGnomeHouseBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, StackedContentsCompatible {
 
-    private static final int[] SLOTS = new int[] {0, 1};
+    protected static final int[] SLOTS = new int[] {0, 1};
+    protected static final int FOOD_SLOT = 0;
+    protected static final int TOOL_SLOT = 1;
 
     protected ItemStackHandler items;
     protected String titleKey;
@@ -36,7 +38,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends BaseContainerBlockEn
 
     @Override
     public boolean canPlaceItemThroughFace(int i, ItemStack itemStack, @Nullable Direction direction) {
-        return true;
+        return false;
     }
 
     @Override
