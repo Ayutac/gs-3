@@ -13,21 +13,19 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.items.ItemStackHandler;
+import org.abos.mc.gs.util.GnomeHouseInventory;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractGnomeHouseBlockEntity extends BaseContainerBlockEntity implements WorldlyContainer, StackedContentsCompatible {
 
     protected static final int[] SLOTS = new int[] {0, 1};
-    protected static final int FOOD_SLOT = 0;
-    protected static final int TOOL_SLOT = 1;
 
-    protected ItemStackHandler items;
+    protected GnomeHouseInventory items;
     protected String titleKey;
 
     protected AbstractGnomeHouseBlockEntity(BlockEntityType<? extends AbstractGnomeHouseBlockEntity> bet, BlockPos pos, BlockState blockState, String titleKey) {
         super(bet, pos, blockState);
-        this.items = new ItemStackHandler(SLOTS.length);
+        this.items = createGnomeHouseInventory();
         this.titleKey = titleKey;
     }
 
@@ -81,6 +79,8 @@ public abstract class AbstractGnomeHouseBlockEntity extends BaseContainerBlockEn
             stackedContents.accountStack(items.getStackInSlot(i));
         }
     }
+
+    protected abstract GnomeHouseInventory createGnomeHouseInventory();
 
     @Override
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
