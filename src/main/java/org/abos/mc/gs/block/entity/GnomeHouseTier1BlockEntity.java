@@ -2,6 +2,7 @@ package org.abos.mc.gs.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,7 +17,7 @@ public class GnomeHouseTier1BlockEntity extends AbstractGnomeHouseBlockEntity {
     }
 
     @Override
-    protected AbstractContainerMenu createMenu(int containerId, Inventory playerInv) {
+    public AbstractContainerMenu createMenu(int containerId, Inventory playerInv, Player player) {
         if (level == null) {
             return null;
         }
@@ -24,7 +25,7 @@ public class GnomeHouseTier1BlockEntity extends AbstractGnomeHouseBlockEntity {
     }
 
     @Override
-    protected GnomeHouseInventory createGnomeHouseInventory() {
+    protected GnomeHouseInventory createItemHandler() {
         return new GnomeHouseInventory(GsTags.GNOME_TIER1_FOOD);
     }
 }

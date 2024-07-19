@@ -28,4 +28,12 @@ public class GnomeHouseInventory extends ItemStackHandler {
         }
         return false;
     }
+
+    @Override
+    public int getSlotLimit(int slot) {
+        if (slot == TOOL_SLOT) {
+            return 1;
+        }
+        return super.getSlotLimit(slot);
+    }
 }
