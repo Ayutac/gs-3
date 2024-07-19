@@ -16,6 +16,7 @@ import org.abos.mc.gs.block.GnomeHouseTier1Block;
 import org.abos.mc.gs.block.GnomeHouseTier2Block;
 import org.abos.mc.gs.block.GnomeHouseTier3Block;
 import org.abos.mc.gs.block.TreeMushroomBlock;
+import org.abos.mc.gs.util.Util;
 
 public interface GsBlocks {
     // Create a Deferred Register to hold Blocks which will all be registered under the MODID namespace
@@ -41,8 +42,8 @@ public interface GsBlocks {
     DeferredBlock<MushroomBlock> VIERTOUW_MUSHROOM = REGISTER.registerBlock("viertouw_mushroom", props -> new MushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> VIERTOUW_MUSHROOM_BLOCK = REGISTER.registerBlock("viertouw_mushroom_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<HugeMushroomBlock> PINK_VIERTOUW_MUSHROOM_BLOCK = REGISTER.registerBlock("pink_viertouw_mushroom_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
-    DeferredBlock<TreeMushroomBlock> TURKEY_TAIL = REGISTER.registerBlock("turkey_tail", TreeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
-    DeferredBlock<TreeMushroomBlock> CHICKEN_OF_THE_WOODS = REGISTER.registerBlock("chicken_of_the_woods", TreeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<TreeMushroomBlock> TURKEY_TAIL = REGISTER.registerBlock("turkey_tail", props -> new TreeMushroomBlock(Util.createFaceShapeMap(0.1, 0.2, 0.45, 0.9, 0.45, 1.0), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<TreeMushroomBlock> CHICKEN_OF_THE_WOODS = REGISTER.registerBlock("chicken_of_the_woods", props -> new TreeMushroomBlock(Util.createFaceShapeMap(0.1, 0.65, 0.5, 0.9, 0.9, 1.0), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<Block> INFUSED_STONE = REGISTER.registerSimpleBlock("infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
     DeferredBlock<StairBlock> INFUSED_STONE_STAIRS = REGISTER.registerBlock("infused_stone_stairs", props -> new StairBlock(INFUSED_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
     DeferredBlock<SlabBlock> INFUSED_STONE_SLAB = REGISTER.registerBlock("infused_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
