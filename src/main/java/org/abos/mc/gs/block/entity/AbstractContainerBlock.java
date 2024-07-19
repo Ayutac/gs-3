@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 
+// TODO sko drop content on break
 public abstract class AbstractContainerBlock extends BlockEntity implements IItemHandlerModifiable, WorldlyContainer, MenuProvider, Nameable, StackedContentsCompatible {
 
     protected final ItemStackHandler items;
