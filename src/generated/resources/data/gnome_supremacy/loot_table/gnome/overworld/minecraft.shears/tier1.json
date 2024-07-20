@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:mutton",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:white_wool",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:light_gray_wool",
+          "weight": 40
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "gnome_supremacy:gnome/overworld/minecraft.shears/tier1"
+}

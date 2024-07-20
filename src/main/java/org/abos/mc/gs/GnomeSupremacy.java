@@ -9,6 +9,7 @@ import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsItems;
+import org.abos.mc.gs.registry.GsLootTables;
 import org.abos.mc.gs.registry.GsMenuTypes;
 import org.slf4j.Logger;
 
@@ -88,6 +89,7 @@ public class GnomeSupremacy {
         GsBlockEntityTypes.REGISTER.register(modEventBus);
         GsItems.REGISTER.register(modEventBus);
         GsMenuTypes.REGISTER.register(modEventBus);
+        GsLootTables.class.getName(); // for static initialization only
 
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);

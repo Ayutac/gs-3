@@ -32,7 +32,8 @@ public class GsDatagenHandler {
         generator.addProvider(event.includeServer(), new GsItemTagsProvider(output, lookupProvider, gsBlockTagProvider, existingFileHelper));
         generator.addProvider(event.includeServer(), new GsRecipeProvider(output, lookupProvider));
         generator.addProvider(event.includeServer(), new LootTableProvider(output, Set.of(), List.of(
-                new LootTableProvider.SubProviderEntry(GsBlockLootSubProvider::new, LootContextParamSets.BLOCK)
+                new LootTableProvider.SubProviderEntry(GsBlockLootSubProvider::new, LootContextParamSets.BLOCK),
+                new LootTableProvider.SubProviderEntry(GsLootTableSubProvider::new, LootContextParamSets.CHEST)
         ), lookupProvider));
     }
 }

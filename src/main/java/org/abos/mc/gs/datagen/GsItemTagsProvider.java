@@ -35,15 +35,15 @@ public class GsItemTagsProvider extends ItemTagsProvider {
         tag(GsTags.GNOME_TOOLS).add(
                 Items.IRON_PICKAXE,
                 Items.IRON_SHOVEL,
-                Items.FISHING_ROD,
+                //Items.FISHING_ROD,
                 Items.IRON_AXE,
                 Items.SHEARS,
                 Items.IRON_SWORD,
                 Items.BRUSH,
                 Items.TRIDENT,
                 Items.LEAD,
-                Items.IRON_HOE,
-                Items.WRITABLE_BOOK
+                Items.IRON_HOE//,
+                //Items.WRITABLE_BOOK
         );
         tag(GsTags.GNOME_TIER1_FOOD).add(Items.COOKED_PORKCHOP);
         tag(GsTags.GNOME_TIER2_FOOD).add(Items.COOKED_BEEF);
