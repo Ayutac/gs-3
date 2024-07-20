@@ -18,7 +18,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Map;
 
-// TODO sko make only placeable on wood
 public class TreeMushroomBlock extends Block {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
