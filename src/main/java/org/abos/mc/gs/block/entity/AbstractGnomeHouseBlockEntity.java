@@ -28,7 +28,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
     protected static final int[] SLOTS = new int[] {0, 1};
 
     // TODO sko make this configurable
-    protected static final int tickDelta = 20;
+    protected static final int tickDelta = 20*30; // 30 seconds
 
     protected String titleKey;
 
