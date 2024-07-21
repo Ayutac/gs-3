@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "gnome_supremacy:polished_mithralium_stone"
+  },
+  "result": {
+    "count": 1,
+    "id": "gnome_supremacy:tiled_mithralium_stone_stairs"
+  }
+}

@@ -22,6 +22,7 @@ import java.util.concurrent.CompletableFuture;
 public class GsRecipeProvider extends RecipeProvider {
 
     private static final String STONECUTTER_STR = "_from_stonecutter";
+    private static final String STONECUTTER_VIA_STR = STONECUTTER_STR + "_via_";
 
     public GsRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries);
@@ -60,43 +61,96 @@ public class GsRecipeProvider extends RecipeProvider {
                 .define('P', Items.PURPUR_BLOCK)
                 .unlockedBy("has_house", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.GNOME_HOUSE_TIER2))
                 .save(output);
-        // TODO recipes to get variants (polished etc)
         stairs(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         stairsSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         slab(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_SLAB, output);
         slabSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_SLAB, output);
         wall(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_WALL, output);
         wallSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_WALL, output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GsItems.POLISHED_INFUSED_STONE)
+                .pattern("XX")
+                .pattern("XX")
+                .define('X', GsItems.INFUSED_STONE)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.INFUSED_STONE))
+                .save(output);
+        blockScVia(GsItems.INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE, output);
         stairs(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_STAIRS, output);
         stairsSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_STAIRS, output);
+        stairsScVia(GsItems.INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_STAIRS, output);
         slab(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_SLAB, output);
         slabSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_SLAB, output);
+        slabScVia(GsItems.INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_SLAB, output);
         wall(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
         wallSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
+        wallScVia(GsItems.INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GsItems.CHISELED_INFUSED_STONE)
+                .pattern("X")
+                .pattern("X")
+                .define('X', GsItems.POLISHED_INFUSED_STONE_SLAB)
+                .unlockedBy("has_slab", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.POLISHED_INFUSED_STONE))
+                .save(output);
+        blockScVia(GsItems.INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE, output);
+        blockScVia(GsItems.POLISHED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE, output);
         stairs(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_STAIRS, output);
         stairsSc(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_STAIRS, output);
+        stairsScVia(GsItems.INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_STAIRS, output);
+        stairsScVia(GsItems.POLISHED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_STAIRS, output);
         slab(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_SLAB, output);
         slabSc(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_SLAB, output);
+        slabScVia(GsItems.INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_SLAB, output);
+        slabScVia(GsItems.POLISHED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_SLAB, output);
         wall(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_WALL, output);
         wallSc(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_WALL, output);
+        wallScVia(GsItems.INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_WALL, output);
+        wallScVia(GsItems.POLISHED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_WALL, output);
         stairs(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_STAIRS, output);
         stairsSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_STAIRS, output);
         slab(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_SLAB, output);
         slabSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_SLAB, output);
         wall(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_WALL, output);
         wallSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_WALL, output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GsItems.POLISHED_MITHRALIUM_STONE)
+                .pattern("XX")
+                .pattern("XX")
+                .define('X', GsItems.MITHRALIUM_STONE)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.MITHRALIUM_STONE))
+                .save(output);
+        blockScVia(GsItems.MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE, output);
         stairs(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_STAIRS, output);
         stairsSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_STAIRS, output);
+        stairsScVia(GsItems.MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_STAIRS, output);
         slab(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_SLAB, output);
         slabSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_SLAB, output);
+        slabScVia(GsItems.MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_SLAB, output);
         wall(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
         wallSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
+        wallScVia(GsItems.MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GsItems.TILED_MITHRALIUM_STONE)
+                .pattern("XX")
+                .pattern("XX")
+                .define('X', GsItems.POLISHED_MITHRALIUM_STONE)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.POLISHED_MITHRALIUM_STONE))
+                .save(output);
+        blockScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE, output);
+        blockScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE, output);
         stairs(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
         stairsSc(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
+        stairsScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
+        stairsScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
         slab(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
         slabSc(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
+        slabScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
+        slabScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
         wall(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
         wallSc(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
+        wallScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
+        wallScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
+    }
+
+    private void blockScVia(DeferredItem<? extends Item> input, DeferredItem<? extends Item> result, RecipeOutput output) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_VIA_STR + input.getId().getPath()));
     }
 
     private void stairs(ItemLike input, ItemLike result, RecipeOutput output) {
@@ -115,6 +169,12 @@ public class GsRecipeProvider extends RecipeProvider {
                 .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_STR));
     }
 
+    private void stairsScVia(DeferredItem<? extends Item> input, DeferredItem<? extends Item> result, RecipeOutput output) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_VIA_STR + input.getId().getPath()));
+    }
+
     private void slab(ItemLike input, ItemLike result, RecipeOutput output) {
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result, 6)
                 .pattern("XXX")
@@ -127,6 +187,12 @@ public class GsRecipeProvider extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result, 2)
                 .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
                 .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_STR));
+    }
+
+    private void slabScVia(DeferredItem<? extends Item> input, DeferredItem<? extends Item> result, RecipeOutput output) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result, 2)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_VIA_STR + input.getId().getPath()));
     }
 
     private void wall(ItemLike input, ItemLike result, RecipeOutput output) {
@@ -142,5 +208,11 @@ public class GsRecipeProvider extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result)
                 .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
                 .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_STR));
+    }
+
+    private void wallScVia(DeferredItem<? extends Item> input, DeferredItem<? extends Item> result, RecipeOutput output) {
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, result)
+                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(input))
+                .save(output, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, result.getId().getPath() + STONECUTTER_VIA_STR + input.getId().getPath()));
     }
 }
