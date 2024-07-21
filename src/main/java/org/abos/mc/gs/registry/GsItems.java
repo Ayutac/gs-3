@@ -31,6 +31,10 @@ public interface GsItems {
     DeferredItem<BlockItem> INFUSED_STONE_STAIRS = registerBlockItem(GsBlocks.INFUSED_STONE_STAIRS);
     DeferredItem<BlockItem> INFUSED_STONE_SLAB = registerBlockItem(GsBlocks.INFUSED_STONE_SLAB);
     DeferredItem<BlockItem> INFUSED_STONE_WALL = registerBlockItem(GsBlocks.INFUSED_STONE_WALL);
+    DeferredItem<BlockItem> POLISHED_INFUSED_STONE = registerBlockItem(GsBlocks.POLISHED_INFUSED_STONE);
+    DeferredItem<BlockItem> POLISHED_INFUSED_STONE_STAIRS = registerBlockItem(GsBlocks.POLISHED_INFUSED_STONE_STAIRS);
+    DeferredItem<BlockItem> POLISHED_INFUSED_STONE_SLAB = registerBlockItem(GsBlocks.POLISHED_INFUSED_STONE_SLAB);
+    DeferredItem<BlockItem> POLISHED_INFUSED_STONE_WALL = registerBlockItem(GsBlocks.POLISHED_INFUSED_STONE_WALL);
     DeferredItem<BlockItem> MITHRALIUM_STONE = registerBlockItem(GsBlocks.MITHRALIUM_STONE);
     DeferredItem<BlockItem> MITHRALIUM_STONE_STAIRS = registerBlockItem(GsBlocks.MITHRALIUM_STONE_STAIRS);
     DeferredItem<BlockItem> MITHRALIUM_STONE_SLAB = registerBlockItem(GsBlocks.MITHRALIUM_STONE_SLAB);

@@ -60,12 +60,19 @@ public class GsRecipeProvider extends RecipeProvider {
                 .define('P', Items.PURPUR_BLOCK)
                 .unlockedBy("has_house", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.GNOME_HOUSE_TIER2))
                 .save(output);
+        // TODO recipes to get variants (polished etc)
         stairs(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         stairsSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_STAIRS, output);
         slab(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_SLAB, output);
         slabSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_SLAB, output);
         wall(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_WALL, output);
         wallSc(GsItems.INFUSED_STONE, GsItems.INFUSED_STONE_WALL, output);
+        stairs(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_STAIRS, output);
+        stairsSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_STAIRS, output);
+        slab(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_SLAB, output);
+        slabSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_SLAB, output);
+        wall(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
+        wallSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
         stairs(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_STAIRS, output);
         stairsSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_STAIRS, output);
         slab(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_SLAB, output);
