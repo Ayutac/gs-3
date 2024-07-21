@@ -21,6 +21,7 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import org.abos.mc.gs.GnomeSupremacy;
+import org.abos.mc.gs.GsConfig;
 import org.abos.mc.gs.util.GnomeHouseInventory;
 import org.jetbrains.annotations.Nullable;
 
@@ -28,8 +29,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
 
     protected static final int[] SLOTS = new int[] {0, 1};
 
-    // TODO sko make this configurable
-    protected static final int tickDelta = 20*30; // 30 seconds
+    protected static final int tickDelta = GsConfig.GNOME_DROP_TICKS.get();
 
     protected String titleKey;
 
