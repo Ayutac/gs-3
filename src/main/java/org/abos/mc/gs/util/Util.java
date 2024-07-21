@@ -22,4 +22,8 @@ public final class Util {
         return result;
     }
 
+    public static VoxelShape createSymmetricalShape(double minXZ, double minY, double maxY) {
+        return Shapes.create(minXZ, minY, minXZ, 1.0-minXZ, maxY, 1.0-minXZ);
+    }
+
 }
