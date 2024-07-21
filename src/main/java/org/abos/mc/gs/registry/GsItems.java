@@ -47,6 +47,10 @@ public interface GsItems {
     DeferredItem<BlockItem> POLISHED_MITHRALIUM_STONE_STAIRS = registerBlockItem(GsBlocks.POLISHED_MITHRALIUM_STONE_STAIRS);
     DeferredItem<BlockItem> POLISHED_MITHRALIUM_STONE_SLAB = registerBlockItem(GsBlocks.POLISHED_MITHRALIUM_STONE_SLAB);
     DeferredItem<BlockItem> POLISHED_MITHRALIUM_STONE_WALL = registerBlockItem(GsBlocks.POLISHED_MITHRALIUM_STONE_WALL);
+    DeferredItem<BlockItem> TILED_MITHRALIUM_STONE = registerBlockItem(GsBlocks.TILED_MITHRALIUM_STONE);
+    DeferredItem<BlockItem> TILED_MITHRALIUM_STONE_STAIRS = registerBlockItem(GsBlocks.TILED_MITHRALIUM_STONE_STAIRS);
+    DeferredItem<BlockItem> TILED_MITHRALIUM_STONE_SLAB = registerBlockItem(GsBlocks.TILED_MITHRALIUM_STONE_SLAB);
+    DeferredItem<BlockItem> TILED_MITHRALIUM_STONE_WALL = registerBlockItem(GsBlocks.TILED_MITHRALIUM_STONE_WALL);
 
     static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<? extends Block> blockRef) {
         return REGISTER.registerSimpleBlockItem(blockRef.getId().getPath(), blockRef);

@@ -51,6 +51,10 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_STAIRS, "Polished Mithralium Stone Stairs");
         addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_SLAB, "Polished Mithralium Stone Slab");
         addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_WALL, "Polished Mithralium Stone Wall");
+        addBlock(GsBlocks.TILED_MITHRALIUM_STONE, "Tiled Mithralium Stone");
+        addBlock(GsBlocks.TILED_MITHRALIUM_STONE_STAIRS, "Tiled Mithralium Stone Stairs");
+        addBlock(GsBlocks.TILED_MITHRALIUM_STONE_SLAB, "Tiled Mithralium Stone Slab");
+        addBlock(GsBlocks.TILED_MITHRALIUM_STONE_WALL, "Tiled Mithralium Stone Wall");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
     }
 }
