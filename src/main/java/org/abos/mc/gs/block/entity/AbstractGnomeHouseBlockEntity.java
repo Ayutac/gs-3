@@ -9,6 +9,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -81,13 +82,44 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
             // tier
             final String tier = houseEntity instanceof GnomeHouseTier3BlockEntity ? "tier3" : (houseEntity instanceof GnomeHouseTier2BlockEntity ? "tier2" : "tier1");
             // item result
-            LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome/" + toolId + "/overworld/" + tier)));
-            LootParams lootParams = new LootParams.Builder((ServerLevel)level)
+            final LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome/" + toolId + "/overworld/" + tier)));
+            final LootParams lootParams = new LootParams.Builder((ServerLevel)level)
                     .withParameter(LootContextParams.ORIGIN, pos.getBottomCenter())
                     .withParameter(LootContextParams.BLOCK_ENTITY, houseEntity)
                     .create(LootContextParamSets.CHEST);
-            NonNullList<ItemStack> loot = NonNullList.copyOf(lootTable.getRandomItems(lootParams));
-            Containers.dropContents(level, pos, loot);
+            final NonNullList<ItemStack> loot = NonNullList.copyOf(lootTable.getRandomItems(lootParams));
+            // search for container below
+            final BlockEntity be = level.getBlockEntity(pos.below());
+            if (be instanceof Container container) {
+                for (ItemStack itemStack : loot) {
+                    for (int i = 0; i < container.getContainerSize(); i++) {
+                        if (container.canPlaceItem(i, itemStack)) {
+                            ItemStack containerStack = container.getItem(i);
+                            if (containerStack.isEmpty()) {
+                                containerStack = itemStack;
+                            }
+                            else {
+                                containerStack.setCount(containerStack.getCount() + itemStack.getCount());
+                            }
+                            container.setItem(i, containerStack);
+                            break;
+                        }
+                    }
+                }
+            }
+//            else if (be instanceof IItemHandlerModifiable handler) {
+//                for (ItemStack itemStack : loot) {
+//                    for (int i = 0; i < handler.getSlots(); i++) {
+//                        if (handler.isItemValid(i, itemStack)) {
+//                            handler.insertItem(i, itemStack, false);
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+            else {
+                Containers.dropContents(level, pos, loot);
+            }
         }
     }
 
