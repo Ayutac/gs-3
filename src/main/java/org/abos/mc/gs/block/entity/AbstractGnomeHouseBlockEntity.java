@@ -77,11 +77,11 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
             if (toolStack.isEmpty()) {
                 return;
             }
-            final String toolId = BuiltInRegistries.ITEM.getKey(toolStack.getItem()).toString().replace(':','.');
+            final String toolId = BuiltInRegistries.ITEM.getKey(toolStack.getItem()).toString().replace(':','/');
             // tier
             final String tier = houseEntity instanceof GnomeHouseTier3BlockEntity ? "tier3" : (houseEntity instanceof GnomeHouseTier2BlockEntity ? "tier2" : "tier1");
             // item result
-            LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome/overworld/" + toolId + "/" + tier)));
+            LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome/" + toolId + "/overworld/" + tier)));
             LootParams lootParams = new LootParams.Builder((ServerLevel)level)
                     .withParameter(LootContextParams.ORIGIN, pos.getBottomCenter())
                     .withParameter(LootContextParams.BLOCK_ENTITY, houseEntity)
