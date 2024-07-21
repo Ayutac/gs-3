@@ -2,7 +2,6 @@ package org.abos.mc.gs.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
@@ -15,6 +14,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.abos.mc.gs.registry.GsTags;
 
 import java.util.Map;
 
@@ -47,10 +47,10 @@ public class TreeMushroomBlock extends Block {
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         return switch (state.getValue(FACING)) {
-            case NORTH -> level.getBlockState(pos.south()).is(BlockTags.LOGS);
-            case EAST -> level.getBlockState(pos.west()).is(BlockTags.LOGS);
-            case SOUTH -> level.getBlockState(pos.north()).is(BlockTags.LOGS);
-            case WEST -> level.getBlockState(pos.east()).is(BlockTags.LOGS);
+            case NORTH -> level.getBlockState(pos.south()).is(GsTags.TREE_MUSHROOM_PLANTABLE_ON);
+            case EAST -> level.getBlockState(pos.west()).is(GsTags.TREE_MUSHROOM_PLANTABLE_ON);
+            case SOUTH -> level.getBlockState(pos.north()).is(GsTags.TREE_MUSHROOM_PLANTABLE_ON);
+            case WEST -> level.getBlockState(pos.east()).is(GsTags.TREE_MUSHROOM_PLANTABLE_ON);
             default -> false;
         };
     }

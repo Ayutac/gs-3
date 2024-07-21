@@ -7,6 +7,7 @@ import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -85,6 +86,9 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.MITHRALIUM_STONE_WALL.get(),
                 GsBlocks.POLISHED_MITHRALIUM_STONE_WALL.get(),
                 GsBlocks.TILED_MITHRALIUM_STONE_WALL.get()
+        );
+        tag(GsTags.TREE_MUSHROOM_PLANTABLE_ON).addTag(
+                BlockTags.LOGS
         );
     }
 }
