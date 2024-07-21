@@ -36,6 +36,10 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.POLISHED_INFUSED_STONE_STAIRS, "Polished Infused Stone Stairs");
         addBlock(GsBlocks.POLISHED_INFUSED_STONE_SLAB, "Polished Infused Stone Slab");
         addBlock(GsBlocks.POLISHED_INFUSED_STONE_WALL, "Polished Infused Stone Wall");
+        addBlock(GsBlocks.CHISELED_INFUSED_STONE, "Chiseled Infused Stone");
+        addBlock(GsBlocks.CHISELED_INFUSED_STONE_STAIRS, "Chiseled Infused Stone Stairs");
+        addBlock(GsBlocks.CHISELED_INFUSED_STONE_SLAB, "Chiseled Infused Stone Slab");
+        addBlock(GsBlocks.CHISELED_INFUSED_STONE_WALL, "Chiseled Infused Stone Wall");
         addBlock(GsBlocks.MITHRALIUM_STONE, "Mithralium Stone");
         addBlock(GsBlocks.MITHRALIUM_STONE_STAIRS, "Mithralium Stone Stairs");
         addBlock(GsBlocks.MITHRALIUM_STONE_SLAB, "Mithralium Stone Slab");

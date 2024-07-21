@@ -76,6 +76,10 @@ public class GnomeSupremacy {
                 output.accept(GsItems.POLISHED_INFUSED_STONE_STAIRS.get());
                 output.accept(GsItems.POLISHED_INFUSED_STONE_SLAB.get());
                 output.accept(GsItems.POLISHED_INFUSED_STONE_WALL.get());
+                output.accept(GsItems.CHISELED_INFUSED_STONE.get());
+                output.accept(GsItems.CHISELED_INFUSED_STONE_STAIRS.get());
+                output.accept(GsItems.CHISELED_INFUSED_STONE_SLAB.get());
+                output.accept(GsItems.CHISELED_INFUSED_STONE_WALL.get());
                 output.accept(GsItems.MITHRALIUM_STONE.get());
                 output.accept(GsItems.MITHRALIUM_STONE_STAIRS.get());
                 output.accept(GsItems.MITHRALIUM_STONE_SLAB.get());

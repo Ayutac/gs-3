@@ -27,6 +27,10 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.POLISHED_INFUSED_STONE_STAIRS.get(),
                 GsBlocks.POLISHED_INFUSED_STONE_SLAB.get(),
                 GsBlocks.POLISHED_INFUSED_STONE_WALL.get(),
+                GsBlocks.CHISELED_INFUSED_STONE.get(),
+                GsBlocks.CHISELED_INFUSED_STONE_STAIRS.get(),
+                GsBlocks.CHISELED_INFUSED_STONE_SLAB.get(),
+                GsBlocks.CHISELED_INFUSED_STONE_WALL.get(),
                 GsBlocks.MITHRALIUM_STONE.get(),
                 GsBlocks.MITHRALIUM_STONE_STAIRS.get(),
                 GsBlocks.MITHRALIUM_STONE_SLAB.get(),
@@ -53,16 +57,19 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.STAIRS).add(
                 GsBlocks.INFUSED_STONE_STAIRS.get(),
                 GsBlocks.POLISHED_INFUSED_STONE_STAIRS.get(),
+                GsBlocks.CHISELED_INFUSED_STONE_STAIRS.get(),
                 GsBlocks.MITHRALIUM_STONE_STAIRS.get()
         );
         tag(BlockTags.SLABS).add(
                 GsBlocks.INFUSED_STONE_SLAB.get(),
                 GsBlocks.POLISHED_INFUSED_STONE_SLAB.get(),
+                GsBlocks.CHISELED_INFUSED_STONE_SLAB.get(),
                 GsBlocks.MITHRALIUM_STONE_SLAB.get()
         );
         tag(BlockTags.WALLS).add(
                 GsBlocks.INFUSED_STONE_WALL.get(),
                 GsBlocks.POLISHED_INFUSED_STONE_WALL.get(),
+                GsBlocks.CHISELED_INFUSED_STONE_WALL.get(),
                 GsBlocks.MITHRALIUM_STONE_WALL.get()
         );
     }

@@ -23,16 +23,19 @@ public class GsItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.STAIRS).add(
                 GsItems.INFUSED_STONE_STAIRS.get(),
                 GsItems.POLISHED_INFUSED_STONE_STAIRS.get(),
+                GsItems.CHISELED_INFUSED_STONE_STAIRS.get(),
                 GsItems.MITHRALIUM_STONE_STAIRS.get()
         );
         tag(ItemTags.SLABS).add(
                 GsItems.INFUSED_STONE_SLAB.get(),
                 GsItems.POLISHED_INFUSED_STONE_SLAB.get(),
+                GsItems.CHISELED_INFUSED_STONE_SLAB.get(),
                 GsItems.MITHRALIUM_STONE_SLAB.get()
         );
         tag(ItemTags.WALLS).add(
                 GsItems.INFUSED_STONE_WALL.get(),
                 GsItems.POLISHED_INFUSED_STONE_WALL.get(),
+                GsItems.CHISELED_INFUSED_STONE_WALL.get(),
                 GsItems.MITHRALIUM_STONE_WALL.get()
         );
         tag(GsTags.GNOME_TOOLS).add(

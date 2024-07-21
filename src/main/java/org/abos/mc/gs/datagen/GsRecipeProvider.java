@@ -73,6 +73,12 @@ public class GsRecipeProvider extends RecipeProvider {
         slabSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_SLAB, output);
         wall(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
         wallSc(GsItems.POLISHED_INFUSED_STONE, GsItems.POLISHED_INFUSED_STONE_WALL, output);
+        stairs(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_STAIRS, output);
+        stairsSc(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_STAIRS, output);
+        slab(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_SLAB, output);
+        slabSc(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_SLAB, output);
+        wall(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_WALL, output);
+        wallSc(GsItems.CHISELED_INFUSED_STONE, GsItems.CHISELED_INFUSED_STONE_WALL, output);
         stairs(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_STAIRS, output);
         stairsSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_STAIRS, output);
         slab(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_SLAB, output);
