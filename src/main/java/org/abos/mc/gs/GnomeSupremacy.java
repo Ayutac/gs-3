@@ -1,8 +1,10 @@
 package org.abos.mc.gs;
 
+import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import org.abos.mc.gs.client.gui.GnomeHouseTier1Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier2Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
@@ -146,8 +148,17 @@ public class GnomeSupremacy {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
-        // Do something when the server starts
-//        LOGGER.info("HELLO from server starting");
+        // Nothing needed
+    }
+
+    @SubscribeEvent
+    public void addWandererTrades(WandererTradesEvent event) {
+        event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.PINK_BONNET.get(), 1, 1,12, 1));
+        event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.LAPIS_DECEIVER.get(), 1, 1,12, 1));
+        event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.MOREL.get(), 1, 1,12, 1));
+        event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.VIERTOUW_MUSHROOM.get(), 1, 1,12, 1));
+        event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.TURKEY_TAIL.get(), 1, 1,12, 1));
+        event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.CHICKEN_OF_THE_WOODS.get(), 1, 1,12, 1));
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
