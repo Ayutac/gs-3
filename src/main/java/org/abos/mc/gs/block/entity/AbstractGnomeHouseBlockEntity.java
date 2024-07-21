@@ -90,6 +90,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
             final NonNullList<ItemStack> loot = NonNullList.copyOf(lootTable.getRandomItems(lootParams));
             // search for container below
             final BlockEntity be = level.getBlockEntity(pos.below());
+            boolean fitted = false;
             if (be instanceof Container container) {
                 for (ItemStack itemStack : loot) {
                     for (int i = 0; i < container.getContainerSize(); i++) {
@@ -98,10 +99,14 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
                             if (containerStack.isEmpty()) {
                                 containerStack = itemStack;
                             }
+                            else if (!containerStack.is(itemStack.getItem())) {
+                                continue;
+                            }
                             else {
                                 containerStack.setCount(containerStack.getCount() + itemStack.getCount());
                             }
                             container.setItem(i, containerStack);
+                            fitted = true;
                             break;
                         }
                     }
@@ -117,7 +122,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
 //                    }
 //                }
 //            }
-            else {
+            if (!fitted) {
                 Containers.dropContents(level, pos, loot);
             }
         }
