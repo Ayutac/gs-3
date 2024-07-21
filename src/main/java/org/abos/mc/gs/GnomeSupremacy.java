@@ -84,6 +84,10 @@ public class GnomeSupremacy {
                 output.accept(GsItems.MITHRALIUM_STONE_STAIRS.get());
                 output.accept(GsItems.MITHRALIUM_STONE_SLAB.get());
                 output.accept(GsItems.MITHRALIUM_STONE_WALL.get());
+                output.accept(GsItems.POLISHED_MITHRALIUM_STONE.get());
+                output.accept(GsItems.POLISHED_MITHRALIUM_STONE_STAIRS.get());
+                output.accept(GsItems.POLISHED_MITHRALIUM_STONE_SLAB.get());
+                output.accept(GsItems.POLISHED_MITHRALIUM_STONE_WALL.get());
             }).build());
 
     // The constructor for the mod class is the first code that is run when your mod is loaded.

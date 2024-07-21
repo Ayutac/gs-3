@@ -85,6 +85,12 @@ public class GsRecipeProvider extends RecipeProvider {
         slabSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_SLAB, output);
         wall(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_WALL, output);
         wallSc(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_STONE_WALL, output);
+        stairs(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_STAIRS, output);
+        stairsSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_STAIRS, output);
+        slab(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_SLAB, output);
+        slabSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_SLAB, output);
+        wall(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
+        wallSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
     }
 
     private void stairs(ItemLike input, ItemLike result, RecipeOutput output) {

@@ -15,6 +15,10 @@
     "gnome_supremacy:mithralium_stone",
     "gnome_supremacy:mithralium_stone_stairs",
     "gnome_supremacy:mithralium_stone_slab",
-    "gnome_supremacy:mithralium_stone_wall"
+    "gnome_supremacy:mithralium_stone_wall",
+    "gnome_supremacy:polished_mithralium_stone",
+    "gnome_supremacy:polished_mithralium_stone_stairs",
+    "gnome_supremacy:polished_mithralium_stone_slab",
+    "gnome_supremacy:polished_mithralium_stone_wall"
   ]
 }

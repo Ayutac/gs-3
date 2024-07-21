@@ -47,6 +47,10 @@ public class GsItemModelProvider extends ItemModelProvider {
         withExistingParent(GsItems.MITHRALIUM_STONE_STAIRS);
         withExistingParent(GsItems.MITHRALIUM_STONE_SLAB);
         wallInventory(GsItems.MITHRALIUM_STONE_WALL, GsBlocks.MITHRALIUM_STONE);
+        withExistingParent(GsItems.POLISHED_MITHRALIUM_STONE);
+        withExistingParent(GsItems.POLISHED_MITHRALIUM_STONE_STAIRS);
+        withExistingParent(GsItems.POLISHED_MITHRALIUM_STONE_SLAB);
+        wallInventory(GsItems.POLISHED_MITHRALIUM_STONE_WALL, GsBlocks.POLISHED_MITHRALIUM_STONE);
     }
 
     private void withExistingParent(DeferredItem<BlockItem> itemRef) {

@@ -60,4 +60,9 @@ public interface GsBlocks {
     DeferredBlock<StairBlock> MITHRALIUM_STONE_STAIRS = REGISTER.registerBlock("mithralium_stone_stairs", props -> new StairBlock(MITHRALIUM_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
     DeferredBlock<SlabBlock> MITHRALIUM_STONE_SLAB = REGISTER.registerBlock("mithralium_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
     DeferredBlock<WallBlock> MITHRALIUM_STONE_WALL = REGISTER.registerBlock("mithralium_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+    DeferredBlock<Block> POLISHED_MITHRALIUM_STONE = REGISTER.registerSimpleBlock("polished_mithralium_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+    DeferredBlock<StairBlock> POLISHED_MITHRALIUM_STONE_STAIRS = REGISTER.registerBlock("polished_mithralium_stone_stairs", props -> new StairBlock(POLISHED_MITHRALIUM_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
+    DeferredBlock<SlabBlock> POLISHED_MITHRALIUM_STONE_SLAB = REGISTER.registerBlock("polished_mithralium_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+    DeferredBlock<WallBlock> POLISHED_MITHRALIUM_STONE_WALL = REGISTER.registerBlock("polished_mithralium_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+
 }

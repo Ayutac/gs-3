@@ -13,8 +13,11 @@ public class GsLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addBlock(GsBlocks.GNOME_HOUSE_TIER1, "Gnome Hut");
+        add("container.gnome_house_tier1", "Gnome Hut");
         addBlock(GsBlocks.GNOME_HOUSE_TIER2, "Gnome House");
+        add("container.gnome_house_tier2", "Gnome House");
         addBlock(GsBlocks.GNOME_HOUSE_TIER3, "Gnome Villa");
+        add("container.gnome_house_tier3", "Gnome Villa");
         addBlock(GsBlocks.PINK_BONNET, "Pink Bonnet");
         addBlock(GsBlocks.PINK_BONNET_STEM_BLOCK, "Pink Bonnet Stem Block");
         addBlock(GsBlocks.PINK_BONNET_BLOCK, "Pink Bonnet Block");
@@ -44,9 +47,10 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.MITHRALIUM_STONE_STAIRS, "Mithralium Stone Stairs");
         addBlock(GsBlocks.MITHRALIUM_STONE_SLAB, "Mithralium Stone Slab");
         addBlock(GsBlocks.MITHRALIUM_STONE_WALL, "Mithralium Stone Wall");
+        addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE, "Polished Mithralium Stone");
+        addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_STAIRS, "Polished Mithralium Stone Stairs");
+        addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_SLAB, "Polished Mithralium Stone Slab");
+        addBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_WALL, "Polished Mithralium Stone Wall");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
-        add("container.gnome_house_tier1", "Gnome Hut");
-        add("container.gnome_house_tier2", "Gnome House");
-        add("container.gnome_house_tier3", "Gnome Villa");
     }
 }
