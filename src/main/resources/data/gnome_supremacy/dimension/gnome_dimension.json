@@ -1,0 +1,72 @@
+{
+  "type": "gnome_supremacy:gnome_dimension_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "gnome_supremacy:mushroom_fields",
+          "parameters": {
+            "temperature": -0.236,
+            "humidity": 0.26,
+            "continentalness": -0.51,
+            "erosion": -0.276,
+            "weirdness": 0.16,
+            "depth": 0.792,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "gnome_supremacy:enormous_birch_forest",
+          "parameters": {
+            "temperature": 0.188,
+            "humidity": 0.536,
+            "continentalness": 0.982,
+            "erosion": -0.094,
+            "weirdness": 0.968,
+            "depth": 0.1,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "gnome_supremacy:enormous_oak_forest",
+          "parameters": {
+            "temperature": 0.962,
+            "humidity": 0.838,
+            "continentalness": -0.012,
+            "erosion": -0.12,
+            "weirdness": -0.446,
+            "depth": 0.464,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "gnome_supremacy:enormous_dark_oak_forest",
+          "parameters": {
+            "temperature": -0.184,
+            "humidity": -0.506,
+            "continentalness": 0.81,
+            "erosion": -0.248,
+            "weirdness": 0.556,
+            "depth": 0.432,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "gnome_supremacy:enormous_taiga",
+          "parameters": {
+            "temperature": -0.636,
+            "humidity": 0.368,
+            "continentalness": 0.616,
+            "erosion": 0.082,
+            "weirdness": -0.094,
+            "depth": 0.54,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
