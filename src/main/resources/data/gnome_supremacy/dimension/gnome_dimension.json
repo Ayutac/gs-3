@@ -2,7 +2,7 @@
   "type": "gnome_supremacy:gnome_dimension_type",
   "generator": {
     "type": "minecraft:noise",
-    "settings": "minecraft:overworld",
+    "settings": "gnome_supremacy:gnome_noise",
     "biome_source": {
       "type": "minecraft:multi_noise",
       "biomes": [
