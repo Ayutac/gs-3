@@ -49,10 +49,7 @@ public class GsBlockStateProvider extends BlockStateProvider {
         stairsBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_STAIRS.get(), blockLoc(GsBlocks.POLISHED_MITHRALIUM_STONE));
         slabBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_SLAB.get(), blockLoc(GsBlocks.POLISHED_MITHRALIUM_STONE), blockLoc(GsBlocks.POLISHED_MITHRALIUM_STONE));
         wallBlock(GsBlocks.POLISHED_MITHRALIUM_STONE_WALL.get(), blockLoc(GsBlocks.POLISHED_MITHRALIUM_STONE));
-        simpleBlock(GsBlocks.TILED_MITHRALIUM_STONE.get());
-        stairsBlock(GsBlocks.TILED_MITHRALIUM_STONE_STAIRS.get(), blockLoc(GsBlocks.TILED_MITHRALIUM_STONE));
-        slabBlock(GsBlocks.TILED_MITHRALIUM_STONE_SLAB.get(), blockLoc(GsBlocks.TILED_MITHRALIUM_STONE), blockLoc(GsBlocks.TILED_MITHRALIUM_STONE));
-        wallBlock(GsBlocks.TILED_MITHRALIUM_STONE_WALL.get(), blockLoc(GsBlocks.TILED_MITHRALIUM_STONE));
+        logBlock(GsBlocks.MITHRALIUM_PILLAR.get());
     }
 
     private ResourceLocation blockLoc(DeferredBlock<Block> blockRef) {

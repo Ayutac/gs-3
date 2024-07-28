@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "gnome_supremacy:block/mithralium_pillar_top",
+    "side": "gnome_supremacy:block/mithralium_pillar"
+  }
+}

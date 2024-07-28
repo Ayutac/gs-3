@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gnome_supremacy:tiled_mithralium_stone_stairs"
+          "name": "gnome_supremacy:mithralium_pillar"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "gnome_supremacy:blocks/tiled_mithralium_stone_stairs"
+  "random_sequence": "gnome_supremacy:blocks/mithralium_pillar"
 }

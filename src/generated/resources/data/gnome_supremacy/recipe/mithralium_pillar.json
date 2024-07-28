@@ -3,15 +3,15 @@
   "category": "building",
   "key": {
     "X": {
-      "item": "gnome_supremacy:polished_mithralium_stone"
+      "item": "gnome_supremacy:mithralium_stone_slab"
     }
   },
   "pattern": [
-    "XX",
-    "XX"
+    "X",
+    "X"
   ],
   "result": {
     "count": 1,
-    "id": "gnome_supremacy:tiled_mithralium_stone"
+    "id": "gnome_supremacy:mithralium_pillar"
   }
 }

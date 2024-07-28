@@ -125,26 +125,13 @@ public class GsRecipeProvider extends RecipeProvider {
         wall(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
         wallSc(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
         wallScVia(GsItems.MITHRALIUM_STONE, GsItems.POLISHED_MITHRALIUM_STONE_WALL, output);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GsItems.TILED_MITHRALIUM_STONE)
-                .pattern("XX")
-                .pattern("XX")
-                .define('X', GsItems.POLISHED_MITHRALIUM_STONE)
-                .unlockedBy("has_stone", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.POLISHED_MITHRALIUM_STONE))
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GsItems.MITHRALIUM_PILLAR)
+                .pattern("X")
+                .pattern("X")
+                .define('X', GsItems.MITHRALIUM_STONE_SLAB)
+                .unlockedBy("has_slab", InventoryChangeTrigger.TriggerInstance.hasItems(GsItems.MITHRALIUM_STONE_SLAB))
                 .save(output);
-        blockScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE, output);
-        blockScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE, output);
-        stairs(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
-        stairsSc(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
-        stairsScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
-        stairsScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_STAIRS, output);
-        slab(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
-        slabSc(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
-        slabScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
-        slabScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_SLAB, output);
-        wall(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
-        wallSc(GsItems.TILED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
-        wallScVia(GsItems.MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
-        wallScVia(GsItems.POLISHED_MITHRALIUM_STONE, GsItems.TILED_MITHRALIUM_STONE_WALL, output);
+        blockScVia(GsItems.MITHRALIUM_STONE, GsItems.MITHRALIUM_PILLAR, output);
     }
 
     private void blockScVia(DeferredItem<? extends Item> input, DeferredItem<? extends Item> result, RecipeOutput output) {

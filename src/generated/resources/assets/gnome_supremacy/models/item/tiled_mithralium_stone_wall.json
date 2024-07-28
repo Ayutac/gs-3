@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/wall_inventory",
-  "textures": {
-    "wall": "gnome_supremacy:block/tiled_mithralium_stone"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "gnome_supremacy:block/tiled_mithralium_stone",
-    "side": "gnome_supremacy:block/tiled_mithralium_stone",
-    "top": "gnome_supremacy:block/tiled_mithralium_stone"
-  }
-}

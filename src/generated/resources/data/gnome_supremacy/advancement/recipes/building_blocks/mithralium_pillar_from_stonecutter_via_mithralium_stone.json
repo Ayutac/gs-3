@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block": {
+    "has_stone": {
       "conditions": {
         "items": [
           {
-            "items": "gnome_supremacy:tiled_mithralium_stone"
+            "items": "gnome_supremacy:mithralium_stone"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gnome_supremacy:tiled_mithralium_stone_wall"
+        "recipe": "gnome_supremacy:mithralium_pillar_from_stonecutter_via_mithralium_stone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_block"
+      "has_stone"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gnome_supremacy:tiled_mithralium_stone_wall"
+      "gnome_supremacy:mithralium_pillar_from_stonecutter_via_mithralium_stone"
     ]
   }
 }
