@@ -37,10 +37,10 @@ public class GsBlockStateProvider extends BlockStateProvider {
         stairsBlock(GsBlocks.POLISHED_INFUSED_STONE_STAIRS.get(), blockLoc(GsBlocks.POLISHED_INFUSED_STONE));
         slabBlock(GsBlocks.POLISHED_INFUSED_STONE_SLAB.get(), blockLoc(GsBlocks.POLISHED_INFUSED_STONE), blockLoc(GsBlocks.POLISHED_INFUSED_STONE));
         wallBlock(GsBlocks.POLISHED_INFUSED_STONE_WALL.get(), blockLoc(GsBlocks.POLISHED_INFUSED_STONE));
-        simpleBlock(GsBlocks.CHISELED_INFUSED_STONE.get());
-        stairsBlock(GsBlocks.CHISELED_INFUSED_STONE_STAIRS.get(), blockLoc(GsBlocks.CHISELED_INFUSED_STONE));
-        slabBlock(GsBlocks.CHISELED_INFUSED_STONE_SLAB.get(), blockLoc(GsBlocks.CHISELED_INFUSED_STONE), blockLoc(GsBlocks.CHISELED_INFUSED_STONE));
-        wallBlock(GsBlocks.CHISELED_INFUSED_STONE_WALL.get(), blockLoc(GsBlocks.CHISELED_INFUSED_STONE));
+        simpleBlock(GsBlocks.TILED_INFUSED_STONE.get());
+        stairsBlock(GsBlocks.TILED_INFUSED_STONE_STAIRS.get(), blockLoc(GsBlocks.TILED_INFUSED_STONE));
+        slabBlock(GsBlocks.TILED_INFUSED_STONE_SLAB.get(), blockLoc(GsBlocks.TILED_INFUSED_STONE), blockLoc(GsBlocks.TILED_INFUSED_STONE));
+        wallBlock(GsBlocks.TILED_INFUSED_STONE_WALL.get(), blockLoc(GsBlocks.TILED_INFUSED_STONE));
         simpleBlock(GsBlocks.MITHRALIUM_STONE.get());
         stairsBlock(GsBlocks.MITHRALIUM_STONE_STAIRS.get(), blockLoc(GsBlocks.MITHRALIUM_STONE));
         slabBlock(GsBlocks.MITHRALIUM_STONE_SLAB.get(), blockLoc(GsBlocks.MITHRALIUM_STONE), blockLoc(GsBlocks.MITHRALIUM_STONE));

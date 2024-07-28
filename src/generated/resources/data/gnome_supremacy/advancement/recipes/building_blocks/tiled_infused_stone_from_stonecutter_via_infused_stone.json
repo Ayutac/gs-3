@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gnome_supremacy:infused_stone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gnome_supremacy:tiled_infused_stone_from_stonecutter_via_infused_stone"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gnome_supremacy:tiled_infused_stone_from_stonecutter_via_infused_stone"
+    ]
+  }
+}

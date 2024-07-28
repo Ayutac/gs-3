@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gnome_supremacy:block/tiled_infused_stone_slab"
+    },
+    "type=double": {
+      "model": "gnome_supremacy:block/tiled_infused_stone"
+    },
+    "type=top": {
+      "model": "gnome_supremacy:block/tiled_infused_stone_slab_top"
+    }
+  }
+}

@@ -51,10 +51,10 @@ public interface GsBlocks {
     DeferredBlock<StairBlock> POLISHED_INFUSED_STONE_STAIRS = REGISTER.registerBlock("polished_infused_stone_stairs", props -> new StairBlock(POLISHED_INFUSED_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
     DeferredBlock<SlabBlock> POLISHED_INFUSED_STONE_SLAB = REGISTER.registerBlock("polished_infused_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
     DeferredBlock<WallBlock> POLISHED_INFUSED_STONE_WALL = REGISTER.registerBlock("polished_infused_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
-    DeferredBlock<Block> CHISELED_INFUSED_STONE = REGISTER.registerSimpleBlock("chiseled_infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
-    DeferredBlock<StairBlock> CHISELED_INFUSED_STONE_STAIRS = REGISTER.registerBlock("chiseled_infused_stone_stairs", props -> new StairBlock(CHISELED_INFUSED_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
-    DeferredBlock<SlabBlock> CHISELED_INFUSED_STONE_SLAB = REGISTER.registerBlock("chiseled_infused_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
-    DeferredBlock<WallBlock> CHISELED_INFUSED_STONE_WALL = REGISTER.registerBlock("chiseled_infused_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
+    DeferredBlock<Block> TILED_INFUSED_STONE = REGISTER.registerSimpleBlock("tiled_infused_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+    DeferredBlock<StairBlock> TILED_INFUSED_STONE_STAIRS = REGISTER.registerBlock("tiled_infused_stone_stairs", props -> new StairBlock(TILED_INFUSED_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
+    DeferredBlock<SlabBlock> TILED_INFUSED_STONE_SLAB = REGISTER.registerBlock("tiled_infused_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
+    DeferredBlock<WallBlock> TILED_INFUSED_STONE_WALL = REGISTER.registerBlock("tiled_infused_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
     DeferredBlock<Block> MITHRALIUM_STONE = REGISTER.registerSimpleBlock("mithralium_stone", BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
     DeferredBlock<StairBlock> MITHRALIUM_STONE_STAIRS = REGISTER.registerBlock("mithralium_stone_stairs", props -> new StairBlock(MITHRALIUM_STONE.get().defaultBlockState(), props), BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_STAIRS));
     DeferredBlock<SlabBlock> MITHRALIUM_STONE_SLAB = REGISTER.registerBlock("mithralium_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
