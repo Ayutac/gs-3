@@ -23,6 +23,10 @@ public class GsConfig
             .comment("Duration between Gnome drops in ticks")
             .defineInRange("gnomeDropTicks", 20*30, 1, Integer.MAX_VALUE);
 
+    public static final ModConfigSpec.IntValue GNOME_FOOD_WORK = BUILDER
+            .comment("How many drops a Gnome gives for one food item")
+            .defineInRange("gnomeFoodWork", 8, 1, Integer.MAX_VALUE);
+
 //    public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
 //            .comment("What you want the introduction message to be for the magic number")
 //            .define("magicNumberIntroduction", "The magic number is... ");

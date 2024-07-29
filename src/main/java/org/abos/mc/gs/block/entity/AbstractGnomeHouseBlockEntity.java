@@ -2,9 +2,11 @@ package org.abos.mc.gs.block.entity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -30,10 +32,12 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
     protected static final int[] SLOTS = new int[] {0, 1};
 
     protected static final int tickDelta = GsConfig.GNOME_DROP_TICKS.get();
+    protected static final int workDelta = GsConfig.GNOME_FOOD_WORK.get();
 
     protected String titleKey;
 
     protected int tickCounter = 0;
+    protected int workCounter = 0;
 
     protected AbstractGnomeHouseBlockEntity(BlockEntityType<? extends AbstractGnomeHouseBlockEntity> bet, BlockPos pos, BlockState blockState, String titleKey) {
         super(bet, pos, blockState);
@@ -60,6 +64,20 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
         return Component.translatable(titleKey);
     }
 
+    @Override
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
+        tag.putInt("tickCounter", tickCounter);
+        tag.putInt("workCounter", workCounter);
+    }
+
+    @Override
+    protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
+        this.tickCounter = tag.getInt("tickCounter");
+        this.workCounter = tag.getInt("workCounter");
+    }
+
     public static void tick(Level level, BlockPos pos, BlockState state, BlockEntity blockEntity) {
         if (blockEntity instanceof AbstractGnomeHouseBlockEntity houseEntity) {
             if (++houseEntity.tickCounter % tickDelta != 0) {
@@ -68,16 +86,16 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
             if (!(level instanceof ServerLevel) || level.dimension() != Level.OVERWORLD) {
                 return;
             }
-            // food condition
-            // TODO sko change this to fuel
-            if (houseEntity.getStackInSlot(GnomeHouseInventory.FOOD_SLOT).isEmpty()) {
-                return;
-            }
             // tool condition
             final ItemStack toolStack = houseEntity.getStackInSlot(GnomeHouseInventory.TOOL_SLOT);
             if (toolStack.isEmpty()) {
                 return;
             }
+            // food condition
+            if (++houseEntity.workCounter >= workDelta && !eat(houseEntity)) {
+                return;
+            }
+            // get tool path
             final String toolId = BuiltInRegistries.ITEM.getKey(toolStack.getItem()).toString().replace(':','/');
             // tier
             final String tier = houseEntity instanceof GnomeHouseTier3BlockEntity ? "tier3" : (houseEntity instanceof GnomeHouseTier2BlockEntity ? "tier2" : "tier1");
@@ -126,6 +144,16 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
                 Containers.dropContents(level, pos, loot);
             }
         }
+    }
+
+    public static boolean eat(AbstractGnomeHouseBlockEntity houseEntity) {
+        final ItemStack food = houseEntity.getStackInSlot(GnomeHouseInventory.FOOD_SLOT);
+        if (food.isEmpty()) {
+            return false;
+        }
+        food.setCount(food.getCount()-1);
+        houseEntity.workCounter = 0;
+        return true;
     }
 
 }
