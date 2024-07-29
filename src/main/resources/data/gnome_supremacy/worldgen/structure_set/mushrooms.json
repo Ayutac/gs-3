@@ -1,0 +1,26 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 2254634,
+    "separation": 1,
+    "spacing": 2
+  },
+  "structures": [
+    {
+      "structure": "gnome_supremacy:pink_bonnet",
+      "weight": 2
+    },
+    {
+      "structure": "gnome_supremacy:lapis_deceiver",
+      "weight": 2
+    },
+    {
+      "structure": "gnome_supremacy:morel",
+      "weight": 2
+    },
+    {
+      "structure": "gnome_supremacy:viertouw",
+      "weight": 1
+    }
+  ]
+}
