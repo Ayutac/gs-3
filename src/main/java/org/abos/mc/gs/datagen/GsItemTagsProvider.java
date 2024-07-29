@@ -54,8 +54,8 @@ public class GsItemTagsProvider extends ItemTagsProvider {
                 Items.IRON_HOE//,
                 //Items.WRITABLE_BOOK
         );
-        tag(GsTags.GNOME_TIER1_FOOD).add(Items.COOKED_PORKCHOP);
-        tag(GsTags.GNOME_TIER2_FOOD).add(Items.COOKED_BEEF);
+        tag(GsTags.GNOME_TIER1_FOOD).add(Items.BAKED_POTATO);
+        tag(GsTags.GNOME_TIER2_FOOD).add(Items.BREAD);
         tag(GsTags.GNOME_TIER3_FOOD).add(Items.GOLDEN_CARROT);
     }
 }
