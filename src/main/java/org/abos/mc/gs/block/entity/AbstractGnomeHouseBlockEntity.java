@@ -29,7 +29,7 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlock {
 
-    protected static final int[] SLOTS = new int[] {0, 1};
+    protected static final int[] SLOTS = new int[] {GnomeHouseInventory.FOOD_SLOT, GnomeHouseInventory.TOOL_SLOT};
 
     protected static final int tickDelta = GsConfig.GNOME_DROP_TICKS.get();
     protected static final int workDelta = GsConfig.GNOME_FOOD_WORK.get();
