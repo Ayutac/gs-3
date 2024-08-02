@@ -27,8 +27,7 @@ public interface GsBlocks {
     DeferredBlock<Block> GNOME_HOUSE_TIER1 = REGISTER.registerBlock("gnome_house_tier1", GnomeHouseTier1Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).lightLevel(state -> 5));
     DeferredBlock<Block> GNOME_HOUSE_TIER2 = REGISTER.registerBlock("gnome_house_tier2", GnomeHouseTier2Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).lightLevel(state -> 10));
     DeferredBlock<Block> GNOME_HOUSE_TIER3 = REGISTER.registerBlock("gnome_house_tier3", GnomeHouseTier3Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).lightLevel(state -> 15));
-    // TODO sko change huge mushroom this one is growing into
-    DeferredBlock<GroundMushroomBlock> PINK_BONNET = REGISTER.registerBlock("pink_bonnet", props -> new GroundMushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, Util.createSymmetricalShape(0.25, 0.0, 13d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<GroundMushroomBlock> PINK_BONNET = REGISTER.registerBlock("pink_bonnet", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_PINK_BONNET, Util.createSymmetricalShape(0.25, 0.0, 13d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_STEM_BLOCK = REGISTER.registerBlock("pink_bonnet_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_BLOCK = REGISTER.registerBlock("pink_bonnet_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     // TODO sko change huge mushroom this one is growing into

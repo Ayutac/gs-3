@@ -10,6 +10,7 @@ import org.abos.mc.gs.client.gui.GnomeHouseTier2Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsFeatures;
 import org.abos.mc.gs.registry.GsItems;
 import org.abos.mc.gs.registry.GsLootTables;
 import org.abos.mc.gs.registry.GsMenuTypes;
@@ -100,6 +101,7 @@ public class GnomeSupremacy {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
+        GsFeatures.REGISTER.register(modEventBus);
         GsBlocks.REGISTER.register(modEventBus);
         GsBlockEntityTypes.REGISTER.register(modEventBus);
         GsItems.REGISTER.register(modEventBus);
