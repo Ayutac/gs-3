@@ -22,3 +22,10 @@
 8. Add to `GsLanguageProvider`
 9. Add texture (under blocks, not items)
 10. Run datagen
+
+## Mushroom feature
+1. Add to `GsConfiguredFeatures`
+2. Add to `GsFeatures` (that is the feature *type*)
+3. Maybe update which small mushroom grows into it in `GsBlocks`
+4. Implement Feature (type) in `worldgen` package
+5. Add JSON to `configured_feature`
