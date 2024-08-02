@@ -6,6 +6,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFea
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.abos.mc.gs.GnomeSupremacy;
+import org.abos.mc.gs.worldgen.HugeLapisDeceiverFeature;
 import org.abos.mc.gs.worldgen.HugePinkBonnetFeature;
 
 public interface GsFeatures {
@@ -13,5 +14,6 @@ public interface GsFeatures {
     DeferredRegister<Feature<?>> REGISTER = DeferredRegister.create(BuiltInRegistries.FEATURE, GnomeSupremacy.MODID);
 
     DeferredHolder<Feature<?>, HugePinkBonnetFeature> HUGE_PINK_BONNET = REGISTER.register("huge_pink_bonnet", () -> new HugePinkBonnetFeature(HugeMushroomFeatureConfiguration.CODEC));
+    DeferredHolder<Feature<?>, HugeLapisDeceiverFeature> HUGE_LAPIS_DECEIVER = REGISTER.register("huge_lapis_deceiver", () -> new HugeLapisDeceiverFeature(HugeMushroomFeatureConfiguration.CODEC));
 
 }

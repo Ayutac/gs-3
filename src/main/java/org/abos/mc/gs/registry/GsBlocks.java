@@ -30,8 +30,7 @@ public interface GsBlocks {
     DeferredBlock<GroundMushroomBlock> PINK_BONNET = REGISTER.registerBlock("pink_bonnet", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_PINK_BONNET, Util.createSymmetricalShape(0.25, 0.0, 13d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_STEM_BLOCK = REGISTER.registerBlock("pink_bonnet_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_BLOCK = REGISTER.registerBlock("pink_bonnet_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
-    // TODO sko change huge mushroom this one is growing into
-    DeferredBlock<GroundMushroomBlock> LAPIS_DECEIVER = REGISTER.registerBlock("lapis_deceiver", props -> new GroundMushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, Util.createSymmetricalShape(5d/16, 0.0, 1.0), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<GroundMushroomBlock> LAPIS_DECEIVER = REGISTER.registerBlock("lapis_deceiver", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_LAPIS_DECEIVER, Util.createSymmetricalShape(5d/16, 0.0, 1.0), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_BLOCK = REGISTER.registerBlock("lapis_deceiver_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_STEM_BLOCK = REGISTER.registerBlock("lapis_deceiver_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     // TODO sko change huge mushroom this one is growing into
