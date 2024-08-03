@@ -8,8 +8,13 @@ import org.abos.mc.gs.GnomeSupremacy;
 
 public interface GsConfiguredFeatures {
 
-    ResourceKey<ConfiguredFeature<?, ?>> HUGE_PINK_BONNET = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "huge_pink_bonnet"));
-    ResourceKey<ConfiguredFeature<?, ?>> HUGE_LAPIS_DECEIVER = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "huge_lapis_deceiver"));
-    ResourceKey<ConfiguredFeature<?, ?>> HUGE_MOREL = ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "huge_morel"));
+    ResourceKey<ConfiguredFeature<?, ?>> HUGE_PINK_BONNET = register("huge_pink_bonnet");
+    ResourceKey<ConfiguredFeature<?, ?>> HUGE_LAPIS_DECEIVER = register("huge_lapis_deceiver");
+    ResourceKey<ConfiguredFeature<?, ?>> HUGE_MOREL = register("huge_morel");
+    ResourceKey<ConfiguredFeature<?, ?>> HUGE_VIERTOUW_MUSHROOM = register("huge_viertouw_mushroom");
+
+    static ResourceKey<ConfiguredFeature<?, ?>> register(String id) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, id));
+    }
 
 }

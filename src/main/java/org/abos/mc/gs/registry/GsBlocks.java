@@ -1,6 +1,5 @@
 package org.abos.mc.gs.registry;
 
-import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.HugeMushroomBlock;
@@ -35,8 +34,7 @@ public interface GsBlocks {
     DeferredBlock<HugeMushroomBlock> LAPIS_DECEIVER_STEM_BLOCK = REGISTER.registerBlock("lapis_deceiver_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     DeferredBlock<GroundMushroomBlock> MOREL = REGISTER.registerBlock("morel", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_MOREL, Util.createSymmetricalShape(0.25, 0.0, 11d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> MOREL_BLOCK = REGISTER.registerBlock("morel_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
-    // TODO sko change huge mushroom this one is growing into
-    DeferredBlock<GroundMushroomBlock> VIERTOUW_MUSHROOM = REGISTER.registerBlock("viertouw_mushroom", props -> new GroundMushroomBlock(TreeFeatures.HUGE_BROWN_MUSHROOM, Util.createSymmetricalShape(1d/16, 0.0, 15d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<GroundMushroomBlock> VIERTOUW_MUSHROOM = REGISTER.registerBlock("viertouw_mushroom", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_VIERTOUW_MUSHROOM, Util.createSymmetricalShape(1d/16, 0.0, 15d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> VIERTOUW_MUSHROOM_BLOCK = REGISTER.registerBlock("viertouw_mushroom_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<HugeMushroomBlock> PINK_VIERTOUW_MUSHROOM_BLOCK = REGISTER.registerBlock("pink_viertouw_mushroom_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<TreeMushroomBlock> TURKEY_TAIL = REGISTER.registerBlock("turkey_tail", props -> new TreeMushroomBlock(Util.createFaceShapeMap(1d/16, 0.2, 0.45, 15d/16, 7d/16, 1.0), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
