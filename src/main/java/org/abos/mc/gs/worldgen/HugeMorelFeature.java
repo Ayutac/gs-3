@@ -14,12 +14,12 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
     }
 
     @Override
-    protected int getTreeHeight(RandomSource random) {
-        return Math.max(5, super.getTreeHeight(random)-2);
+    protected int getTreeHeight(RandomSource rng) {
+        return Math.max(5, super.getTreeHeight(rng)-2);
     }
 
     @Override
-    protected void makeCap(LevelAccessor world, RandomSource rng, BlockPos blockPos, int height, BlockPos.MutableBlockPos mutableBlockPos, HugeMushroomFeatureConfiguration config) {
+    protected void makeCap(LevelAccessor world, RandomSource rng, BlockPos blockPos, int height, BlockPos.MutableBlockPos mutablePos, HugeMushroomFeatureConfiguration config) {
         BlockState blockState = config.capProvider.getState(rng, blockPos);
         // negative Z is North
         // positive X is East
@@ -34,9 +34,9 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                             .setValue(HugeMushroomBlock.SOUTH, z == 1)
                             .setValue(HugeMushroomBlock.WEST, x == -1);
                 }
-                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height - 1, z);
-                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 2 * x, height - 3, z);
-                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height - 3, 2 * z);
+                setBlockMaybe(world, blockPos, mutablePos, blockState, x, height - 1, z);
+                setBlockMaybe(world, blockPos, mutablePos, blockState, 2 * x, height - 3, z);
+                setBlockMaybe(world, blockPos, mutablePos, blockState, x, height - 3, 2 * z);
                 if (hasDirectionalProperties(blockState)) {
                     blockState = blockState
                             .setValue(HugeMushroomBlock.UP, false)
@@ -45,9 +45,9 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                             .setValue(HugeMushroomBlock.SOUTH, z == 1)
                             .setValue(HugeMushroomBlock.WEST, x == -1);
                 }
-                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height - 2, z);
-                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 2 * x, height - 4, z);
-                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height - 4, 2 * z);
+                setBlockMaybe(world, blockPos, mutablePos, blockState, x, height - 2, z);
+                setBlockMaybe(world, blockPos, mutablePos, blockState, 2 * x, height - 4, z);
+                setBlockMaybe(world, blockPos, mutablePos, blockState, x, height - 4, 2 * z);
             }
             if (hasDirectionalProperties(blockState)) {
                 blockState = blockState
@@ -57,8 +57,8 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                         .setValue(HugeMushroomBlock.SOUTH, true)
                         .setValue(HugeMushroomBlock.WEST, x == -1);
             }
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height, 0);
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 2 * x, height - 2, 0);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, x, height, 0);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 2 * x, height - 2, 0);
             if (hasDirectionalProperties(blockState)) {
                 blockState = blockState
                         .setValue(HugeMushroomBlock.UP, false)
@@ -67,9 +67,9 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                         .setValue(HugeMushroomBlock.SOUTH, false)
                         .setValue(HugeMushroomBlock.WEST, x == -1);
             }
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height - 1, 0);
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 2 * x, height - 3, 0);
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 2 * x, height - 4, 0);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, x, height - 1, 0);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 2 * x, height - 3, 0);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 2 * x, height - 4, 0);
         }
         for (int z : directions) {
             if (hasDirectionalProperties(blockState)) {
@@ -80,8 +80,8 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                         .setValue(HugeMushroomBlock.SOUTH, z == 1)
                         .setValue(HugeMushroomBlock.WEST, true);
             }
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height, z);
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 2, 2 * z);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height, z);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height - 2, 2 * z);
             if (hasDirectionalProperties(blockState)) {
                 blockState = blockState
                         .setValue(HugeMushroomBlock.UP, false)
@@ -90,9 +90,9 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                         .setValue(HugeMushroomBlock.SOUTH, z == 1)
                         .setValue(HugeMushroomBlock.WEST, false);
             }
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 1, z);
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 3, 2 * z);
-            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 4, 2 * z);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height - 1, z);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height - 3, 2 * z);
+            setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height - 4, 2 * z);
         }
         if (hasDirectionalProperties(blockState)) {
             blockState = blockState
@@ -102,17 +102,17 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                     .setValue(HugeMushroomBlock.SOUTH, false)
                     .setValue(HugeMushroomBlock.WEST, false);
         }
-        setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 2, -1);
-        setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 1, height - 2, 0);
-        setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 2, 1);
-        setBlockMaybe(world, blockPos, mutableBlockPos, blockState, -1, height - 2, 0);
+        setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height - 2, -1);
+        setBlockMaybe(world, blockPos, mutablePos, blockState, 1, height - 2, 0);
+        setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height - 2, 1);
+        setBlockMaybe(world, blockPos, mutablePos, blockState, -1, height - 2, 0);
         for (int y = height - 3; y >= height - 4; y--) {
             for (int x = -1; x <= 1; x++) {
                 for (int z = -1; z <= 1; z++) {
                     if (x == 0 && z == 0) {
                         continue;
                     }
-                    setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, y, z);
+                    setBlockMaybe(world, blockPos, mutablePos, blockState, x, y, z);
                 }
             }
         }
@@ -124,6 +124,6 @@ public class HugeMorelFeature extends GsAbstractHugeMushroomFeature {
                     .setValue(HugeMushroomBlock.SOUTH, false)
                     .setValue(HugeMushroomBlock.WEST, false);
         }
-        setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height, 0);
+        setBlockMaybe(world, blockPos, mutablePos, blockState, 0, height, 0);
     }
 }
