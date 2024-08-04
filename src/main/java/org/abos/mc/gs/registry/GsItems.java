@@ -48,6 +48,7 @@ public interface GsItems {
     DeferredItem<BlockItem> POLISHED_MITHRALIUM_STONE_SLAB = registerBlockItem(GsBlocks.POLISHED_MITHRALIUM_STONE_SLAB);
     DeferredItem<BlockItem> POLISHED_MITHRALIUM_STONE_WALL = registerBlockItem(GsBlocks.POLISHED_MITHRALIUM_STONE_WALL);
     DeferredItem<BlockItem> MITHRALIUM_PILLAR = registerBlockItem(GsBlocks.MITHRALIUM_PILLAR);
+    DeferredItem<BlockItem> GNOME_TELEPORTER = registerBlockItem(GsBlocks.GNOME_TELEPORTER);
 
     static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<? extends Block> blockRef) {
         return REGISTER.registerSimpleBlockItem(blockRef.getId().getPath(), blockRef);

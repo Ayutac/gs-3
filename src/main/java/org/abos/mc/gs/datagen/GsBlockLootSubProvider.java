@@ -57,6 +57,7 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
         dropSelf(GsBlocks.POLISHED_MITHRALIUM_STONE_SLAB.get());
         dropSelf(GsBlocks.POLISHED_MITHRALIUM_STONE_WALL.get());
         dropSelf(GsBlocks.MITHRALIUM_PILLAR.get());
+        dropSelf(GsBlocks.GNOME_TELEPORTER.get());
     }
 
     @Override

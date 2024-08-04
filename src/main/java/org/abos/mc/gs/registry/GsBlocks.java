@@ -60,5 +60,6 @@ public interface GsBlocks {
     DeferredBlock<SlabBlock> POLISHED_MITHRALIUM_STONE_SLAB = REGISTER.registerBlock("polished_mithralium_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
     DeferredBlock<WallBlock> POLISHED_MITHRALIUM_STONE_WALL = REGISTER.registerBlock("polished_mithralium_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
     DeferredBlock<RotatedPillarBlock> MITHRALIUM_PILLAR = REGISTER.registerBlock("mithralium_pillar", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
+    DeferredBlock<Block> GNOME_TELEPORTER = REGISTER.registerSimpleBlock("gnome_teleporter", BlockBehaviour.Properties.ofFullCopy(Blocks.REINFORCED_DEEPSLATE));
 
 }
