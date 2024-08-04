@@ -1,9 +1,0 @@
-{
-  "parent": "minecraft:block/orientable_with_bottom",
-  "textures": {
-    "bottom": "gnome_supremacy:block/gnome_house_tier3_bottom",
-    "front": "gnome_supremacy:block/gnome_house_tier3_front",
-    "side": "gnome_supremacy:block/gnome_house_tier3_side",
-    "top": "gnome_supremacy:block/gnome_house_tier3_top"
-  }
-}

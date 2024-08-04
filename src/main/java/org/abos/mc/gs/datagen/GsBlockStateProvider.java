@@ -21,9 +21,6 @@ public class GsBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        orientableBlock(GsBlocks.GNOME_HOUSE_TIER1);
-        orientableBlock(GsBlocks.GNOME_HOUSE_TIER2);
-        orientableBlock(GsBlocks.GNOME_HOUSE_TIER3);
         crossBlock(GsBlocks.PINK_BONNET);
         crossBlock(GsBlocks.LAPIS_DECEIVER);
         crossBlock(GsBlocks.MOREL);
@@ -57,14 +54,6 @@ public class GsBlockStateProvider extends BlockStateProvider {
         return modLoc(BLOCK + blockRef.getId().getPath());
     }
 
-    private void orientableBlock(DeferredBlock<? extends Block> blockRef) {
-        horizontalBlock(blockRef.get(), models().orientableWithBottom(blockRef.getId().toString(),
-                modLoc(BLOCK + blockRef.getId().getPath() + "_side"),
-                modLoc(BLOCK + blockRef.getId().getPath() + "_front"),
-                modLoc(BLOCK + blockRef.getId().getPath() + "_bottom"),
-                modLoc(BLOCK + blockRef.getId().getPath() + "_top")));
-    }
-
     private void crossBlock(DeferredBlock<? extends Block> blockRef) {
         simpleBlock(blockRef.get(), models().cross(blockRef.getId().getPath(), blockTexture(blockRef.get())).renderType("cutout"));
     }
@@ -73,23 +62,4 @@ public class GsBlockStateProvider extends BlockStateProvider {
     private void flowerPotBlock(DeferredBlock<? extends Block> pot, Supplier<? extends Block> plant) {
         simpleBlock(pot.get(), models().withExistingParent(pot.getId().getPath(), "block/flower_pot_cross").texture("plant", blockTexture(plant.get())).renderType("cutout"));
     }
-
-    /*private void mushroomBlock(DeferredBlock<HugeMushroomBlock> blockRef) {
-        ResourceLocation outside = ResourceLocation.fromNamespaceAndPath(GnomeSupremacyMod.MODID, "block/" + blockRef.getId().getPath());
-        ResourceLocation inside = ResourceLocation.withDefaultNamespace("block/mushroom_block_inside");
-        MultiPartGenerator.multiPart(blockRef.get())
-                .with(Condition.condition().term(BlockStateProperties.NORTH, true), Variant.variant().with(VariantProperties.MODEL, outside))
-                .with(Condition.condition().term(BlockStateProperties.EAST, true), Variant.variant().with(VariantProperties.MODEL, outside).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90).with(VariantProperties.UV_LOCK, true))
-                .with(Condition.condition().term(BlockStateProperties.SOUTH, true), Variant.variant().with(VariantProperties.MODEL, outside).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180).with(VariantProperties.UV_LOCK, true))
-                .with(Condition.condition().term(BlockStateProperties.WEST, true), Variant.variant().with(VariantProperties.MODEL, outside).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270).with(VariantProperties.UV_LOCK, true))
-                .with(Condition.condition().term(BlockStateProperties.UP, true), Variant.variant().with(VariantProperties.MODEL, outside).with(VariantProperties.X_ROT, VariantProperties.Rotation.R270).with(VariantProperties.UV_LOCK, true))
-                .with(Condition.condition().term(BlockStateProperties.DOWN, true), Variant.variant().with(VariantProperties.MODEL, outside).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.UV_LOCK, true))
-                .with(Condition.condition().term(BlockStateProperties.NORTH, false), Variant.variant().with(VariantProperties.MODEL, inside))
-                .with(Condition.condition().term(BlockStateProperties.EAST, false), Variant.variant().with(VariantProperties.MODEL, inside).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90).with(VariantProperties.UV_LOCK, false))
-                .with(Condition.condition().term(BlockStateProperties.SOUTH, false), Variant.variant().with(VariantProperties.MODEL, inside).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180).with(VariantProperties.UV_LOCK, false))
-                .with(Condition.condition().term(BlockStateProperties.WEST, false), Variant.variant().with(VariantProperties.MODEL, inside).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270).with(VariantProperties.UV_LOCK, false))
-                .with(Condition.condition().term(BlockStateProperties.UP, false), Variant.variant().with(VariantProperties.MODEL, inside).with(VariantProperties.X_ROT, VariantProperties.Rotation.R270).with(VariantProperties.UV_LOCK, false))
-                .with(Condition.condition().term(BlockStateProperties.DOWN, false), Variant.variant().with(VariantProperties.MODEL, inside).with(VariantProperties.X_ROT, VariantProperties.Rotation.R90).with(VariantProperties.UV_LOCK, false));
-
-    }*/
 }
