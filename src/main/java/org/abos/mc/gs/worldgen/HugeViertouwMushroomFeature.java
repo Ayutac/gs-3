@@ -317,15 +317,105 @@ public class HugeViertouwMushroomFeature extends GsAbstractHugeMushroomFeature {
         setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 2, height + 1, 0);
         setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height + 1, 2);
         setBlockMaybe(world, blockPos, mutableBlockPos, blockState, -2, height + 1, 0);
-        // do the pink part
+        // do the pink bonds
         blockState = GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK.get().defaultBlockState();
-        blockState = blockState
-                .setValue(HugeMushroomBlock.UP, true)
-                .setValue(HugeMushroomBlock.NORTH, true)
-                .setValue(HugeMushroomBlock.EAST, false)
-                .setValue(HugeMushroomBlock.SOUTH, false)
-                .setValue(HugeMushroomBlock.WEST, false)
-                .setValue(HugeMushroomBlock.DOWN, false);
+        for (int x : directions) {
+            for (int z : directions) {
+                blockState = blockState
+                        .setValue(HugeMushroomBlock.UP, false)
+                        .setValue(HugeMushroomBlock.NORTH, true)
+                        .setValue(HugeMushroomBlock.EAST, true)
+                        .setValue(HugeMushroomBlock.SOUTH, true)
+                        .setValue(HugeMushroomBlock.WEST, true)
+                        .setValue(HugeMushroomBlock.DOWN, false);
+                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height - 1, z);
+                setBlockMaybe(world, blockPos, mutableBlockPos, blockState, x, height - 1, 4 * z);
+            }
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, true)
+                    .setValue(HugeMushroomBlock.NORTH, false)
+                    .setValue(HugeMushroomBlock.EAST, true)
+                    .setValue(HugeMushroomBlock.SOUTH, false)
+                    .setValue(HugeMushroomBlock.WEST, true)
+                    .setValue(HugeMushroomBlock.DOWN, true);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height, 0);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height - 2, 0);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, true)
+                    .setValue(HugeMushroomBlock.NORTH, x == 1)
+                    .setValue(HugeMushroomBlock.EAST, true)
+                    .setValue(HugeMushroomBlock.SOUTH, x == -1)
+                    .setValue(HugeMushroomBlock.WEST, true)
+                    .setValue(HugeMushroomBlock.DOWN, false);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height, -x);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, true)
+                    .setValue(HugeMushroomBlock.NORTH, x == -1)
+                    .setValue(HugeMushroomBlock.EAST, true)
+                    .setValue(HugeMushroomBlock.SOUTH, x == 1)
+                    .setValue(HugeMushroomBlock.WEST, true)
+                    .setValue(HugeMushroomBlock.DOWN, false);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height, x);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, false)
+                    .setValue(HugeMushroomBlock.NORTH, x == 1)
+                    .setValue(HugeMushroomBlock.EAST, true)
+                    .setValue(HugeMushroomBlock.SOUTH, x == -1)
+                    .setValue(HugeMushroomBlock.WEST, true)
+                    .setValue(HugeMushroomBlock.DOWN, true);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height - 2, -x);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, false)
+                    .setValue(HugeMushroomBlock.NORTH, x == -1)
+                    .setValue(HugeMushroomBlock.EAST, true)
+                    .setValue(HugeMushroomBlock.SOUTH, x == 1)
+                    .setValue(HugeMushroomBlock.WEST, true)
+                    .setValue(HugeMushroomBlock.DOWN, true);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 4 * x, height - 2, x);
+        }
+        for (int z : directions) {
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, true)
+                    .setValue(HugeMushroomBlock.NORTH, true)
+                    .setValue(HugeMushroomBlock.EAST, false)
+                    .setValue(HugeMushroomBlock.SOUTH, true)
+                    .setValue(HugeMushroomBlock.WEST, false)
+                    .setValue(HugeMushroomBlock.DOWN, true);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height, 4 * z);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, 0, height - 2, 4 * z);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, true)
+                    .setValue(HugeMushroomBlock.NORTH, true)
+                    .setValue(HugeMushroomBlock.EAST, z == -1)
+                    .setValue(HugeMushroomBlock.SOUTH, true)
+                    .setValue(HugeMushroomBlock.WEST, z == 1)
+                    .setValue(HugeMushroomBlock.DOWN, false);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, -z, height, 4 * z);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, true)
+                    .setValue(HugeMushroomBlock.NORTH, true)
+                    .setValue(HugeMushroomBlock.EAST, z == 1)
+                    .setValue(HugeMushroomBlock.SOUTH, true)
+                    .setValue(HugeMushroomBlock.WEST, z == -1)
+                    .setValue(HugeMushroomBlock.DOWN, false);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, z, height, 4 * z);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, false)
+                    .setValue(HugeMushroomBlock.NORTH, true)
+                    .setValue(HugeMushroomBlock.EAST, z == -1)
+                    .setValue(HugeMushroomBlock.SOUTH, true)
+                    .setValue(HugeMushroomBlock.WEST, z == 1)
+                    .setValue(HugeMushroomBlock.DOWN, true);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, -z, height - 2, 4 * z);
+            blockState = blockState
+                    .setValue(HugeMushroomBlock.UP, false)
+                    .setValue(HugeMushroomBlock.NORTH, true)
+                    .setValue(HugeMushroomBlock.EAST, z == 1)
+                    .setValue(HugeMushroomBlock.SOUTH, true)
+                    .setValue(HugeMushroomBlock.WEST, z == -1)
+                    .setValue(HugeMushroomBlock.DOWN, true);
+            setBlockMaybe(world, blockPos, mutableBlockPos, blockState, z, height - 2, 4 * z);
+        }
 
     }
 }
