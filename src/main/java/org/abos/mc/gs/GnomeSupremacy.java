@@ -2,6 +2,8 @@ package org.abos.mc.gs;
 
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
@@ -113,8 +115,7 @@ public class GnomeSupremacy {
         CREATIVE_MODE_TABS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
+        // Note that this is necessary if and only if we want *this* class to respond directly to events.
         NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
@@ -124,22 +125,16 @@ public class GnomeSupremacy {
         modContainer.registerConfig(ModConfig.Type.COMMON, GsConfig.SPEC);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-        // Some common setup code
-//        LOGGER.info("HELLO FROM COMMON SETUP");
-//
-//        if (Config.logDirtBlock)
-//            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-//
-//        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-//
-//        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
+        pot.addPlant(GsBlocks.PINK_BONNET.getId(), GsBlocks.POTTED_PINK_BONNET);
+        pot.addPlant(GsBlocks.LAPIS_DECEIVER.getId(), GsBlocks.POTTED_LAPIS_DECEIVER);
+        pot.addPlant(GsBlocks.MOREL.getId(), GsBlocks.POTTED_MOREL);
+        pot.addPlant(GsBlocks.VIERTOUW_MUSHROOM.getId(), GsBlocks.POTTED_VIERTOUW_MUSHROOM);
     }
 
     // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event)
-    {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 //        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS)
 //            event.accept(EXAMPLE_BLOCK_ITEM);
     }

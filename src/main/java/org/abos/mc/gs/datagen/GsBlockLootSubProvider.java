@@ -28,11 +28,14 @@ public class GsBlockLootSubProvider extends BlockLootSubProvider {
         dropWhenSilkTouch(GsBlocks.PINK_BONNET_STEM_BLOCK.get());
         dropMushroom(GsBlocks.PINK_BONNET_BLOCK, GsItems.PINK_BONNET);
         dropSelf(GsBlocks.LAPIS_DECEIVER.get());
+        dropPottedContents(GsBlocks.POTTED_LAPIS_DECEIVER.get());
         dropWhenSilkTouch(GsBlocks.LAPIS_DECEIVER_STEM_BLOCK.get());
         dropMushroom(GsBlocks.LAPIS_DECEIVER_BLOCK, GsItems.LAPIS_DECEIVER);
         dropSelf(GsBlocks.MOREL.get());
+        dropPottedContents(GsBlocks.POTTED_MOREL.get());
         dropMushroom(GsBlocks.MOREL_BLOCK, GsItems.MOREL);
         dropSelf(GsBlocks.VIERTOUW_MUSHROOM.get());
+        dropPottedContents(GsBlocks.POTTED_VIERTOUW_MUSHROOM.get());
         dropMushroom(GsBlocks.VIERTOUW_MUSHROOM_BLOCK, GsItems.VIERTOUW_MUSHROOM);
         dropMushroom(GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK, GsItems.VIERTOUW_MUSHROOM);
         dropSelf(GsBlocks.TURKEY_TAIL.get());

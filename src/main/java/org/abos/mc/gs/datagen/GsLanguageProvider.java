@@ -23,11 +23,14 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.PINK_BONNET_STEM_BLOCK, "Pink Bonnet Stem Block");
         addBlock(GsBlocks.PINK_BONNET_BLOCK, "Pink Bonnet Block");
         addBlock(GsBlocks.LAPIS_DECEIVER, "Lapis Deceiver");
+        addBlock(GsBlocks.POTTED_LAPIS_DECEIVER, "Potted Lapis Deceiver");
         addBlock(GsBlocks.LAPIS_DECEIVER_STEM_BLOCK, "Lapis Deceiver Stem Block");
         addBlock(GsBlocks.LAPIS_DECEIVER_BLOCK, "Lapis Deceiver Block");
         addBlock(GsBlocks.MOREL, "Morel");
+        addBlock(GsBlocks.POTTED_MOREL, "Potted Morel");
         addBlock(GsBlocks.MOREL_BLOCK, "Morel Block");
         addBlock(GsBlocks.VIERTOUW_MUSHROOM, "Viertouw Mushroom");
+        addBlock(GsBlocks.POTTED_VIERTOUW_MUSHROOM, "Potted Viertouw Mushroom");
         addBlock(GsBlocks.VIERTOUW_MUSHROOM_BLOCK, "Viertouw Mushroom Block");
         addBlock(GsBlocks.PINK_VIERTOUW_MUSHROOM_BLOCK, "Pink Viertouw Mushroom Block");
         addBlock(GsBlocks.TURKEY_TAIL, "Turkey Tail");
