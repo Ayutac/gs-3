@@ -1,12 +1,26 @@
 package org.abos.mc.gs;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
+import net.minecraft.world.entity.projectile.ThrownEnderpearl;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
+import org.abos.mc.gs.block.entity.AbstractGnomeHouseBlockEntity;
 import org.abos.mc.gs.client.gui.GnomeHouseTier1Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier2Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
@@ -154,6 +168,33 @@ public class GnomeSupremacy {
         event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.VIERTOUW_MUSHROOM.get(), 1, 1,12, 1));
         event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.TURKEY_TAIL.get(), 1, 1,12, 1));
         event.getGenericTrades().add(new VillagerTrades.ItemsForEmeralds(GsItems.CHICKEN_OF_THE_WOODS.get(), 1, 1,12, 1));
+    }
+
+    @SubscribeEvent
+    public void accessToGnomeDimension(EntityTeleportEvent.EnderPearl event) {
+        final ThrownEnderpearl pearl = event.getPearlEntity();
+        final Level world = pearl.level();
+        if (world.dimension() != Level.OVERWORLD || !(world instanceof ServerLevel server)) {
+            return;
+        }
+        final HitResult hit = ProjectileUtil.getHitResultOnMoveVector(pearl, e -> false);
+        if (!(hit instanceof BlockHitResult blockHit)) {
+            return;
+        }
+        final BlockPos pos = blockHit.getBlockPos();
+        final BlockEntity be = world.getBlockEntity(pos);
+        if (!(be instanceof AbstractGnomeHouseBlockEntity)) {
+            return;
+        }
+        event.setCanceled(true);
+        final ServerPlayer player = event.getPlayer();
+        final Level gnomeDim = server.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension")));
+        final BlockPos.MutableBlockPos targetPos = new BlockPos.MutableBlockPos(pos.getX()*4, gnomeDim.getMaxBuildHeight(), pos.getZ()*4);
+        while (gnomeDim.getBlockState(targetPos).isAir()) {
+            targetPos.setY(targetPos.getY()-1);
+        }
+        targetPos.setY(targetPos.getY()+1);
+        player.teleportTo((ServerLevel)gnomeDim, targetPos.getX(), targetPos.getY(), targetPos.getZ(), player.xRotO, player.yRotO);
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
