@@ -16,6 +16,7 @@ import org.abos.mc.gs.registry.GsFeatures;
 import org.abos.mc.gs.registry.GsItems;
 import org.abos.mc.gs.registry.GsLootTables;
 import org.abos.mc.gs.registry.GsMenuTypes;
+import org.abos.mc.gs.registry.GsPlacedFeatures;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -105,6 +106,7 @@ public class GnomeSupremacy {
         modEventBus.addListener(this::commonSetup);
 
         GsFeatures.REGISTER.register(modEventBus);
+        GsPlacedFeatures.class.getName(); // for static initialization only
         GsBlocks.REGISTER.register(modEventBus);
         GsBlockEntityTypes.REGISTER.register(modEventBus);
         GsItems.REGISTER.register(modEventBus);
