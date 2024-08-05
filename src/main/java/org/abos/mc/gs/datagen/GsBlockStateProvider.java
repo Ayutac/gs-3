@@ -22,6 +22,7 @@ public class GsBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         crossBlock(GsBlocks.PINK_BONNET);
+        flowerPotBlock(GsBlocks.POTTED_PINK_BONNET, GsBlocks.PINK_BONNET);
         crossBlock(GsBlocks.LAPIS_DECEIVER);
         crossBlock(GsBlocks.MOREL);
         crossBlock(GsBlocks.VIERTOUW_MUSHROOM);
@@ -58,7 +59,6 @@ public class GsBlockStateProvider extends BlockStateProvider {
         simpleBlock(blockRef.get(), models().cross(blockRef.getId().getPath(), blockTexture(blockRef.get())).renderType("cutout"));
     }
 
-    // TODO sko use this
     private void flowerPotBlock(DeferredBlock<? extends Block> pot, Supplier<? extends Block> plant) {
         simpleBlock(pot.get(), models().withExistingParent(pot.getId().getPath(), "block/flower_pot_cross").texture("plant", blockTexture(plant.get())).renderType("cutout"));
     }

@@ -2,6 +2,7 @@ package org.abos.mc.gs.registry;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -27,6 +28,7 @@ public interface GsBlocks {
     DeferredBlock<Block> GNOME_HOUSE_TIER2 = REGISTER.registerBlock("gnome_house_tier2", GnomeHouseTier2Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).noOcclusion().lightLevel(state -> 10));
     DeferredBlock<Block> GNOME_HOUSE_TIER3 = REGISTER.registerBlock("gnome_house_tier3", GnomeHouseTier3Block::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE).noOcclusion().lightLevel(state -> 15));
     DeferredBlock<GroundMushroomBlock> PINK_BONNET = REGISTER.registerBlock("pink_bonnet", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_PINK_BONNET, Util.createSymmetricalShape(0.25, 0.0, 13d/16), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));
+    DeferredBlock<FlowerPotBlock> POTTED_PINK_BONNET = REGISTER.registerBlock("potted_pink_bonnet", props -> new FlowerPotBlock(() -> (FlowerPotBlock)Blocks.FLOWER_POT, PINK_BONNET, props), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_BROWN_MUSHROOM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_STEM_BLOCK = REGISTER.registerBlock("pink_bonnet_stem_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MUSHROOM_STEM));
     DeferredBlock<HugeMushroomBlock> PINK_BONNET_BLOCK = REGISTER.registerBlock("pink_bonnet_block", HugeMushroomBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM_BLOCK));
     DeferredBlock<GroundMushroomBlock> LAPIS_DECEIVER = REGISTER.registerBlock("lapis_deceiver", props -> new GroundMushroomBlock(GsConfiguredFeatures.HUGE_LAPIS_DECEIVER, Util.createSymmetricalShape(5d/16, 0.0, 1.0), props), BlockBehaviour.Properties.ofFullCopy(Blocks.BROWN_MUSHROOM));

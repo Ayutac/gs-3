@@ -19,6 +19,7 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.GNOME_HOUSE_TIER3, "Gnome Villa");
         add("container.gnome_house_tier3", "Gnome Villa");
         addBlock(GsBlocks.PINK_BONNET, "Pink Bonnet");
+        addBlock(GsBlocks.POTTED_PINK_BONNET, "Potted Pink Bonnet");
         addBlock(GsBlocks.PINK_BONNET_STEM_BLOCK, "Pink Bonnet Stem Block");
         addBlock(GsBlocks.PINK_BONNET_BLOCK, "Pink Bonnet Block");
         addBlock(GsBlocks.LAPIS_DECEIVER, "Lapis Deceiver");

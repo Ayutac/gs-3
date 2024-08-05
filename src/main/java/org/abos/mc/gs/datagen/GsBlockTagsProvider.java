@@ -81,6 +81,9 @@ public class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.MITHRALIUM_STONE_WALL.get(),
                 GsBlocks.POLISHED_MITHRALIUM_STONE_WALL.get()
         );
+        tag(BlockTags.FLOWER_POTS).add(
+                GsBlocks.POTTED_PINK_BONNET.get()
+        );
         tag(GsTags.TREE_MUSHROOM_PLANTABLE_ON).addTag(
                 BlockTags.LOGS
         );
