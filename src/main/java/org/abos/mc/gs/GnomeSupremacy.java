@@ -189,7 +189,7 @@ public class GnomeSupremacy {
         final ServerPlayer player = event.getPlayer();
         final Level gnomeDim = server.getServer().getLevel(GsDimensions.GNOME_DIMENSION);
         final BlockPos targetPos = Util.teleportationGoalIntoGnomeDimension(pos, gnomeDim);
-        player.teleportTo((ServerLevel)gnomeDim, targetPos.getX(), targetPos.getY(), targetPos.getZ(), player.xRotO, player.yRotO);
+        player.teleportTo((ServerLevel)gnomeDim, targetPos.getX(), targetPos.getY(), targetPos.getZ(), player.getXRot(), player.getYRot());
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
