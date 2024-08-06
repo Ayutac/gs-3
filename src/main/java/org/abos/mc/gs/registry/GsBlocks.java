@@ -15,6 +15,7 @@ import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.block.GnomeHouseTier1Block;
 import org.abos.mc.gs.block.GnomeHouseTier2Block;
 import org.abos.mc.gs.block.GnomeHouseTier3Block;
+import org.abos.mc.gs.block.GnomeTeleporterBlock;
 import org.abos.mc.gs.block.GroundMushroomBlock;
 import org.abos.mc.gs.block.TreeMushroomBlock;
 import org.abos.mc.gs.util.Util;
@@ -65,6 +66,6 @@ public interface GsBlocks {
     DeferredBlock<SlabBlock> POLISHED_MITHRALIUM_STONE_SLAB = REGISTER.registerBlock("polished_mithralium_stone_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_SLAB));
     DeferredBlock<WallBlock> POLISHED_MITHRALIUM_STONE_WALL = REGISTER.registerBlock("polished_mithralium_stone_wall", WallBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICK_WALL));
     DeferredBlock<RotatedPillarBlock> MITHRALIUM_PILLAR = REGISTER.registerBlock("mithralium_pillar", RotatedPillarBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.STONE_BRICKS));
-    DeferredBlock<Block> GNOME_TELEPORTER = REGISTER.registerSimpleBlock("gnome_teleporter", BlockBehaviour.Properties.ofFullCopy(Blocks.REINFORCED_DEEPSLATE));
+    DeferredBlock<Block> GNOME_TELEPORTER = REGISTER.registerBlock("gnome_teleporter", GnomeTeleporterBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.REINFORCED_DEEPSLATE));
 
 }
