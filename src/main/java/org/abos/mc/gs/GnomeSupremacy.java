@@ -1,9 +1,6 @@
 package org.abos.mc.gs;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -26,10 +23,12 @@ import org.abos.mc.gs.client.gui.GnomeHouseTier2Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsDimensions;
 import org.abos.mc.gs.registry.GsFeatures;
 import org.abos.mc.gs.registry.GsItems;
 import org.abos.mc.gs.registry.GsLootTables;
 import org.abos.mc.gs.registry.GsMenuTypes;
+import org.abos.mc.gs.util.Util;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -188,12 +187,8 @@ public class GnomeSupremacy {
         }
         event.setCanceled(true);
         final ServerPlayer player = event.getPlayer();
-        final Level gnomeDim = server.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension")));
-        final BlockPos.MutableBlockPos targetPos = new BlockPos.MutableBlockPos(pos.getX()*4, gnomeDim.getMaxBuildHeight(), pos.getZ()*4);
-        while (gnomeDim.getBlockState(targetPos).isAir()) {
-            targetPos.setY(targetPos.getY()-1);
-        }
-        targetPos.setY(targetPos.getY()+1);
+        final Level gnomeDim = server.getServer().getLevel(GsDimensions.GNOME_DIMENSION);
+        final BlockPos targetPos = Util.teleportationGoalIntoGnomeDimension(pos, gnomeDim);
         player.teleportTo((ServerLevel)gnomeDim, targetPos.getX(), targetPos.getY(), targetPos.getZ(), player.xRotO, player.yRotO);
     }
 
