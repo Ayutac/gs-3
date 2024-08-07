@@ -30,7 +30,7 @@ public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGe
                         true, false, false)
                 .addCriterion("has_block", InventoryChangeTrigger.TriggerInstance.hasItems(Items.RED_MUSHROOM_BLOCK))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "mushroom"), existingFileHelper);
-        final AdvancementHolder gnome_house_tier1 = Advancement.Builder.advancement()
+        final AdvancementHolder gnomeHouseTier1 = Advancement.Builder.advancement()
                 .display(GsBlocks.GNOME_HOUSE_TIER1,
                         Component.translatable("advancements.gnome_supremacy.gnome_house_tier1.title"),
                         Component.translatable("advancements.gnome_supremacy.gnome_house_tier1.description"),
@@ -40,44 +40,44 @@ public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .parent(mushroom)
                 .addCriterion("has_block", InventoryChangeTrigger.TriggerInstance.hasItems(GsBlocks.GNOME_HOUSE_TIER1))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_house_tier1"), existingFileHelper);
-        final AdvancementHolder gnome_house_tier2 = Advancement.Builder.advancement()
+        final AdvancementHolder gnomeHouseTier2 = Advancement.Builder.advancement()
                 .display(GsBlocks.GNOME_HOUSE_TIER2,
                         Component.translatable("advancements.gnome_supremacy.gnome_house_tier2.title"),
                         Component.translatable("advancements.gnome_supremacy.gnome_house_tier2.description"),
                         null,
                         AdvancementType.TASK,
                         true, false, false)
-                .parent(gnome_house_tier1)
+                .parent(gnomeHouseTier1)
                 .addCriterion("has_block", InventoryChangeTrigger.TriggerInstance.hasItems(GsBlocks.GNOME_HOUSE_TIER2))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_house_tier2"), existingFileHelper);
-        final AdvancementHolder gnome_house_tier3 = Advancement.Builder.advancement()
+        final AdvancementHolder gnomeHouseTier3 = Advancement.Builder.advancement()
                 .display(GsBlocks.GNOME_HOUSE_TIER3,
                         Component.translatable("advancements.gnome_supremacy.gnome_house_tier3.title"),
                         Component.translatable("advancements.gnome_supremacy.gnome_house_tier3.description"),
                         null,
                         AdvancementType.GOAL,
                         true, false, false)
-                .parent(gnome_house_tier2)
+                .parent(gnomeHouseTier2)
                 .addCriterion("has_block", InventoryChangeTrigger.TriggerInstance.hasItems(GsBlocks.GNOME_HOUSE_TIER3))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_house_tier3"), existingFileHelper);
-        final AdvancementHolder gnome_dimension = Advancement.Builder.advancement()
+        final AdvancementHolder gnomeDimension = Advancement.Builder.advancement()
                 .display(Items.ENDER_PEARL,
                         Component.translatable("advancements.gnome_supremacy.gnome_dimension.title"),
                         Component.translatable("advancements.gnome_supremacy.gnome_dimension.description"),
                         null,
                         AdvancementType.TASK,
                         true, false, false)
-                .parent(gnome_house_tier1)
+                .parent(gnomeHouseTier1)
                 .addCriterion("entered_dimension", ChangeDimensionTrigger.TriggerInstance.changedDimensionTo(GsDimensions.GNOME_DIMENSION))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension"), existingFileHelper);
-        final AdvancementHolder gnome_dimension_back = Advancement.Builder.advancement()
+        final AdvancementHolder gnomeDimensionBack = Advancement.Builder.advancement()
                 .display(GsBlocks.GNOME_TELEPORTER,
                         Component.translatable("advancements.gnome_supremacy.gnome_dimension_back.title"),
                         Component.translatable("advancements.gnome_supremacy.gnome_dimension_back.description"),
                         null,
                         AdvancementType.GOAL,
                         true, false, false)
-                .parent(gnome_dimension)
+                .parent(gnomeDimension)
                 .addCriterion("entered_dimension", ChangeDimensionTrigger.TriggerInstance.changedDimension(GsDimensions.GNOME_DIMENSION, Level.OVERWORLD))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension_back"), existingFileHelper);
     }
