@@ -371,15 +371,6 @@ public class GsLootTableSubProvider implements LootTableSubProvider {
                 )
         );
         biConsumer.accept(
-                GsLootTables.OVERWORLD_RANCHER1,
-                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
-                        .add(LootItem.lootTableItem(Items.PORKCHOP).setWeight(40))
-                        .add(LootItem.lootTableItem(Items.CHICKEN).setWeight(30))
-                        .add(LootItem.lootTableItem(Items.FEATHER).setWeight(20))
-                        .add(LootItem.lootTableItem(Items.EGG).setWeight(10))
-                )
-        );
-        biConsumer.accept(
                 GsLootTables.OVERWORLD_RANCHER2,
                 LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
                         .add(LootItem.lootTableItem(Items.PORKCHOP).setWeight(20))
