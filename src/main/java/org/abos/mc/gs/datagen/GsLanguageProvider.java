@@ -70,5 +70,7 @@ public class GsLanguageProvider extends LanguageProvider {
         add("advancements.gnome_supremacy.gnome_dimension.description", "Enter the Gnome Dimension");
         add("advancements.gnome_supremacy.gnome_dimension_back.title", "A Way out");
         add("advancements.gnome_supremacy.gnome_dimension_back.description", "Dive into a Gnome well");
+        add("advancements.gnome_supremacy.gnome_dimension_biomes.title", "Little Wanderer");
+        add("advancements.gnome_supremacy.gnome_dimension_biomes.description", "Visit all Gnome Biomes");
     }
 }
