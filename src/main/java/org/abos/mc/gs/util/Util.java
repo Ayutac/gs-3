@@ -1,6 +1,8 @@
 package org.abos.mc.gs.util;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -24,6 +26,24 @@ public final class Util {
 
     public static VoxelShape createSymmetricalShape(double minXZ, double minY, double maxY) {
         return Shapes.create(minXZ, minY, minXZ, 1.0-minXZ, maxY, 1.0-minXZ);
+    }
+
+    public static BlockPos teleportationGoalIntoGnomeDimension(BlockPos start, LevelAccessor gnomeDim) {
+        BlockPos.MutableBlockPos result = new BlockPos.MutableBlockPos(4 * start.getX(), gnomeDim.getMaxBuildHeight(), 4 * start.getZ());
+        while (gnomeDim.getBlockState(result).isAir()) {
+            result.setY(result.getY() - 1);
+        }
+        result.setY(result.getY() + 1);
+        return new BlockPos(result.getX(), result.getY(), result.getZ());
+    }
+
+    public static BlockPos teleportationGoalIntoVanillaDimension(BlockPos start, LevelAccessor vanillaDim) {
+        BlockPos.MutableBlockPos result = new BlockPos.MutableBlockPos(start.getX() / 4, vanillaDim.getMaxBuildHeight(), start.getZ() / 4);
+        while (vanillaDim.getBlockState(result).isAir()) {
+            result.setY(result.getY() - 1);
+        }
+        result.setY(result.getY() + 1);
+        return new BlockPos(result.getX(), result.getY(), result.getZ());
     }
 
 }

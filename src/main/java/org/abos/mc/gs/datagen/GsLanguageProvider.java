@@ -58,5 +58,17 @@ public class GsLanguageProvider extends LanguageProvider {
         addBlock(GsBlocks.MITHRALIUM_PILLAR, "Mithralium Pillar");
         addBlock(GsBlocks.GNOME_TELEPORTER, "Gnome Teleporter");
         add("itemGroup.gnome_supremacy", "Gnome Supremacy");
+        add("advancements.gnome_supremacy.mushroom.title", "On Shrooms");
+        add("advancements.gnome_supremacy.mushroom.description", "Obtain a red mushroom");
+        add("advancements.gnome_supremacy.gnome_house_tier1.title", "Once upon a time");
+        add("advancements.gnome_supremacy.gnome_house_tier1.description", "Obtain a Gnome Hut");
+        add("advancements.gnome_supremacy.gnome_house_tier2.title", "Far, far away");
+        add("advancements.gnome_supremacy.gnome_house_tier2.description", "Obtain a Gnome House");
+        add("advancements.gnome_supremacy.gnome_house_tier3.title", "They lived happily ever after");
+        add("advancements.gnome_supremacy.gnome_house_tier3.description", "Obtain a Gnome Villa");
+        add("advancements.gnome_supremacy.gnome_dimension.title", "It's bigger on the Inside");
+        add("advancements.gnome_supremacy.gnome_dimension.description", "Enter the Gnome Dimension");
+        add("advancements.gnome_supremacy.gnome_dimension_back.title", "A Way out");
+        add("advancements.gnome_supremacy.gnome_dimension_back.description", "Dive into a Gnome well");
     }
 }

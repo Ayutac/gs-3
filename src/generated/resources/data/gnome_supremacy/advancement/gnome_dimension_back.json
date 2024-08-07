@@ -1,0 +1,32 @@
+{
+  "parent": "gnome_supremacy:gnome_dimension",
+  "criteria": {
+    "entered_dimension": {
+      "conditions": {
+        "from": "gnome_supremacy:gnome_dimension",
+        "to": "minecraft:overworld"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.gnome_supremacy.gnome_dimension_back.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "gnome_supremacy:gnome_teleporter"
+    },
+    "title": {
+      "translate": "advancements.gnome_supremacy.gnome_dimension_back.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_dimension"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

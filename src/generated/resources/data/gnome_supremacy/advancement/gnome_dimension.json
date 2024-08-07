@@ -1,0 +1,30 @@
+{
+  "parent": "gnome_supremacy:gnome_house_tier1",
+  "criteria": {
+    "entered_dimension": {
+      "conditions": {
+        "to": "gnome_supremacy:gnome_dimension"
+      },
+      "trigger": "minecraft:changed_dimension"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.gnome_supremacy.gnome_dimension.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:ender_pearl"
+    },
+    "title": {
+      "translate": "advancements.gnome_supremacy.gnome_dimension.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_dimension"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
