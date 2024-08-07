@@ -1,16 +1,15 @@
 {
-  "feature": "gnome_supremacy:huge_viertouw_mushroom_patch",
+  "feature": "gnome_supremacy:huge_viertouw_mushroom",
   "placement": [
-    {
-      "type": "minecraft:rarity_filter",
-      "chance": 256
-    },
     {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
       "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

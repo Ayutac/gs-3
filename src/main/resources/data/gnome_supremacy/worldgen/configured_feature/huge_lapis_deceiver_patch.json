@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:random_patch",
-  "config": {
-    "feature": "gnome_supremacy:huge_lapis_deceiver",
-    "tries": 30,
-    "xz_spread": 7,
-    "y_spread": 3
-  }
-}

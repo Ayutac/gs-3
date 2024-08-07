@@ -1,9 +1,9 @@
 {
-  "feature": "gnome_supremacy:huge_pink_bonnet_patch",
+  "feature": "gnome_supremacy:huge_pink_bonnet",
   "placement": [
     {
       "type": "minecraft:rarity_filter",
-      "chance": 256
+      "chance": 2
     },
     {
       "type": "minecraft:in_square"
@@ -11,6 +11,9 @@
     {
       "type": "minecraft:heightmap",
       "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }
