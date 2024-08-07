@@ -2,6 +2,10 @@
   "feature": "gnome_supremacy:huge_morel",
   "placement": [
     {
+      "type": "minecraft:rarity_filter",
+      "chance": 4
+    },
+    {
       "type": "minecraft:in_square"
     },
     {

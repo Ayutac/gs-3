@@ -2,10 +2,6 @@
   "feature": "gnome_supremacy:huge_pink_bonnet",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 2
-    },
-    {
       "type": "minecraft:in_square"
     },
     {
