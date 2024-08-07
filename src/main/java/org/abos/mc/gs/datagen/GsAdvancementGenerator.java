@@ -86,11 +86,11 @@ public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension_back"), existingFileHelper);
         final var biomeGetter = provider.lookupOrThrow(Registries.BIOME);
         final AdvancementHolder gnomeDimensionBiomes = Advancement.Builder.advancement()
-                .display(GsBlocks.GNOME_TELEPORTER,
+                .display(Items.LEATHER_BOOTS,
                         Component.translatable("advancements.gnome_supremacy.gnome_dimension_biomes.title"),
                         Component.translatable("advancements.gnome_supremacy.gnome_dimension_biomes.description"),
                         null,
-                        AdvancementType.GOAL,
+                        AdvancementType.CHALLENGE,
                         true, false, false)
                 .parent(gnomeDimension)
                 .addCriterion("entered_birch", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_BIRCH_FOREST))))
