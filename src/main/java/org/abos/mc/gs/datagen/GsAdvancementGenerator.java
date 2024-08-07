@@ -2,6 +2,7 @@ package org.abos.mc.gs.datagen;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
@@ -98,6 +99,7 @@ public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .addCriterion("entered_oak", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_OAK_FOREST))))
                 .addCriterion("entered_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_TAIGA_FOREST))))
                 .addCriterion("entered_mushroom_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.MUSHROOM_FIELDS))))
+                .rewards(AdvancementRewards.Builder.experience(500))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension_biomes"), existingFileHelper);
     }
 }
