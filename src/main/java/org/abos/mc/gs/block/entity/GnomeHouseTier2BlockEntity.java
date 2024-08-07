@@ -21,7 +21,7 @@ public class GnomeHouseTier2BlockEntity extends AbstractGnomeHouseBlockEntity {
         if (level == null) {
             return null;
         }
-        return new GnomeHouseTier2Menu(containerId, playerInv, items, ContainerLevelAccess.create(level, worldPosition));
+        return new GnomeHouseTier2Menu(containerId, playerInv, items, data, ContainerLevelAccess.create(level, worldPosition));
     }
 
     @Override
