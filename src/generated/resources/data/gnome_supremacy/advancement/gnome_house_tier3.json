@@ -1,0 +1,35 @@
+{
+  "parent": "gnome_supremacy:gnome_house_tier2",
+  "criteria": {
+    "has_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "gnome_supremacy:gnome_house_tier3"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.gnome_supremacy.gnome_house_tier3.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "gnome_supremacy:gnome_house_tier3"
+    },
+    "title": {
+      "translate": "advancements.gnome_supremacy.gnome_house_tier3.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
