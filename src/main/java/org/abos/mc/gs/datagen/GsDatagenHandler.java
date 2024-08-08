@@ -21,7 +21,7 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = GnomeSupremacy.MODID)
-public class GsDatagenHandler {
+public final class GsDatagenHandler {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {

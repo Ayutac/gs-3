@@ -13,7 +13,7 @@ import org.abos.mc.gs.registry.GsItems;
 
 import java.util.Set;
 
-public class GsBlockLootSubProvider extends BlockLootSubProvider {
+public final class GsBlockLootSubProvider extends BlockLootSubProvider {
     protected GsBlockLootSubProvider(HolderLookup.Provider lookupProvider) {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags(), lookupProvider);
     }

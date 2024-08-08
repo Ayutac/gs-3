@@ -19,7 +19,7 @@ import org.abos.mc.gs.registry.GsItems;
 
 import java.util.concurrent.CompletableFuture;
 
-public class GsRecipeProvider extends RecipeProvider {
+public final class GsRecipeProvider extends RecipeProvider {
 
     private static final String STONECUTTER_STR = "_from_stonecutter";
     private static final String STONECUTTER_VIA_STR = STONECUTTER_STR + "_via_";

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class GsBlockTagsProvider extends BlockTagsProvider {
+public final class GsBlockTagsProvider extends BlockTagsProvider {
     public GsBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, GnomeSupremacy.MODID, existingFileHelper);
     }

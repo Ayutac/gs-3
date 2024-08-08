@@ -5,7 +5,7 @@ import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
 
-public class GsLanguageProvider extends LanguageProvider {
+public final class GsLanguageProvider extends LanguageProvider {
     public GsLanguageProvider(PackOutput output) {
         super(output, GnomeSupremacy.MODID, "en_us");
     }

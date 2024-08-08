@@ -13,7 +13,7 @@ import org.abos.mc.gs.registry.GsTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class GsItemTagsProvider extends ItemTagsProvider {
+public final class GsItemTagsProvider extends ItemTagsProvider {
     public GsItemTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, BlockTagsProvider provider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, provider.contentsGetter(), GnomeSupremacy.MODID, existingFileHelper);
     }

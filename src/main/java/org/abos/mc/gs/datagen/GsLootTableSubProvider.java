@@ -12,7 +12,7 @@ import org.abos.mc.gs.registry.GsLootTables;
 
 import java.util.function.BiConsumer;
 
-public class GsLootTableSubProvider implements LootTableSubProvider {
+public final class GsLootTableSubProvider implements LootTableSubProvider {
     protected GsLootTableSubProvider(HolderLookup.Provider lookupProvider) {
     }
 

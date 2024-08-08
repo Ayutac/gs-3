@@ -11,7 +11,7 @@ import org.abos.mc.gs.registry.GsBlocks;
 
 import java.util.function.Supplier;
 
-public class GsBlockStateProvider extends BlockStateProvider {
+public final class GsBlockStateProvider extends BlockStateProvider {
 
     private static final String BLOCK = "block/";
 

@@ -13,7 +13,7 @@ import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsItems;
 
-public class GsItemModelProvider extends ItemModelProvider {
+public final class GsItemModelProvider extends ItemModelProvider {
 
     public GsItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, GnomeSupremacy.MODID, existingFileHelper);

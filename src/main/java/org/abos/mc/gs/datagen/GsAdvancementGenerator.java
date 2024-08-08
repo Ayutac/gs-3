@@ -23,7 +23,7 @@ import org.abos.mc.gs.registry.GsDimensions;
 
 import java.util.function.Consumer;
 
-public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGenerator {
+public final class GsAdvancementGenerator implements AdvancementProvider.AdvancementGenerator {
     @Override
     public void generate(HolderLookup.Provider provider, Consumer<AdvancementHolder> consumer, ExistingFileHelper existingFileHelper) {
         final AdvancementHolder mushroom = Advancement.Builder.advancement()
