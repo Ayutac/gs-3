@@ -97,7 +97,7 @@ public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .addCriterion("entered_birch", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_BIRCH_FOREST))))
                 .addCriterion("entered_dark_oak", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_DARK_OAK_FOREST))))
                 .addCriterion("entered_oak", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_OAK_FOREST))))
-                .addCriterion("entered_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_TAIGA_FOREST))))
+                .addCriterion("entered_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_TAIGA))))
                 .addCriterion("entered_mushroom_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.MUSHROOM_FIELDS))))
                 .rewards(AdvancementRewards.Builder.experience(500))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension_biomes"), existingFileHelper);

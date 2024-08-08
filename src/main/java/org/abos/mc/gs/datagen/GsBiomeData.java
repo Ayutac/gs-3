@@ -30,7 +30,7 @@ public final class GsBiomeData {
         context.register(GsBiomes.ENORMOUS_BIRCH_FOREST, enormousBirchForest(context));
         context.register(GsBiomes.ENORMOUS_DARK_OAK_FOREST, enormousDarkOakForest(context));
         context.register(GsBiomes.ENORMOUS_OAK_FOREST, enormousOakForest(context));
-        context.register(GsBiomes.ENORMOUS_TAIGA_FOREST, enormousTaigaForest(context));
+        context.register(GsBiomes.ENORMOUS_TAIGA, enormousTaiga(context));
         context.register(GsBiomes.MUSHROOM_FIELDS, mushroomFields(context));
     }
 
@@ -120,7 +120,7 @@ public final class GsBiomeData {
         return builder.build();
     }
 
-    public static Biome enormousTaigaForest(BootstrapContext<Biome> context) {
+    public static Biome enormousTaiga(BootstrapContext<Biome> context) {
         final Biome.BiomeBuilder builder = new Biome.BiomeBuilder();
         builder.downfall(0.8f);
         builder.temperature(0.25f);

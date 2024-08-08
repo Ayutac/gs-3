@@ -10,7 +10,7 @@ public interface GsBiomes {
     ResourceKey<Biome> ENORMOUS_BIRCH_FOREST = register("enormous_birch_forest");
     ResourceKey<Biome> ENORMOUS_DARK_OAK_FOREST = register("enormous_dark_oak_forest");
     ResourceKey<Biome> ENORMOUS_OAK_FOREST = register("enormous_oak_forest");
-    ResourceKey<Biome> ENORMOUS_TAIGA_FOREST = register("enormous_taiga_forest");
+    ResourceKey<Biome> ENORMOUS_TAIGA = register("enormous_taiga");
     ResourceKey<Biome> MUSHROOM_FIELDS = register("mushroom_fields");
 
     static ResourceKey<Biome> register(String id) {

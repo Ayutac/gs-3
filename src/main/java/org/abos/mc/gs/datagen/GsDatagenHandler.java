@@ -44,8 +44,8 @@ public class GsDatagenHandler {
                 .add(Registries.BIOME, GsBiomeData::bootstrap);
         DatapackBuiltinEntriesProvider dataPackProvider = generator.addProvider(event.includeServer(),
                 new DatapackBuiltinEntriesProvider(output, lookupProvider, registrySetBuilder, Set.of(GnomeSupremacy.MODID)));
-        CompletableFuture<HolderLookup.Provider> biomeProvider = dataPackProvider.getRegistryProvider();
-        generator.addProvider(event.includeServer(), new AdvancementProvider(output, biomeProvider, existingFileHelper, List.of(
+        CompletableFuture<HolderLookup.Provider> worldgenProvider = dataPackProvider.getRegistryProvider();
+        generator.addProvider(event.includeServer(), new AdvancementProvider(output, worldgenProvider, existingFileHelper, List.of(
                 new GsAdvancementGenerator()
         )));
     }

@@ -73,7 +73,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "gnome_supremacy:enormous_taiga_forest"
+                "biomes": "gnome_supremacy:enormous_taiga"
               }
             }
           }
