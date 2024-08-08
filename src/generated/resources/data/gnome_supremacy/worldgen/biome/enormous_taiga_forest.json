@@ -3,10 +3,10 @@
     "air": [
       "minecraft:cave",
       "minecraft:cave_extra_underground",
-      "minecraft:canyon"
+      "minecraft:cave_extra_underground"
     ]
   },
-  "downfall": 1.0,
+  "downfall": 0.8,
   "effects": {
     "fog_color": 12638463,
     "mood_sound": {
@@ -15,7 +15,7 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "sky_color": 7842047,
+    "sky_color": 8233983,
     "water_color": 4159204,
     "water_fog_color": 329011
   },
@@ -28,10 +28,10 @@
     [],
     [
       "minecraft:ore_gravel",
-      "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "minecraft:underwater_magma"
     ],
     [],
     [
@@ -39,13 +39,13 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:mushroom_island_vegetation",
+      "minecraft:patch_large_fern",
+      "minecraft:trees_taiga",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_taiga_2",
       "minecraft:brown_mushroom_taiga",
       "minecraft:red_mushroom_taiga",
-      "gnome_supremacy:huge_pink_bonnet",
-      "gnome_supremacy:huge_lapis_deceiver",
-      "gnome_supremacy:huge_morel",
-      "gnome_supremacy:huge_viertouw_mushroom"
+      "minecraft:patch_berry_common"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -63,14 +63,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:mooshroom",
-        "maxCount": 8,
-        "minCount": 4,
-        "weight": 8
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [],
     "underground_water_creature": [
@@ -84,5 +77,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.9
+  "temperature": 0.25
 }
