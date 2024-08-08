@@ -2,10 +2,14 @@ package org.abos.mc.gs.datagen;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementHolder;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.critereon.ChangeDimensionTrigger;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.advancements.critereon.LocationPredicate;
+import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -13,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.abos.mc.gs.GnomeSupremacy;
+import org.abos.mc.gs.registry.GsBiomes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsDimensions;
 
@@ -80,5 +85,21 @@ public class GsAdvancementGenerator implements AdvancementProvider.AdvancementGe
                 .parent(gnomeDimension)
                 .addCriterion("entered_dimension", ChangeDimensionTrigger.TriggerInstance.changedDimension(GsDimensions.GNOME_DIMENSION, Level.OVERWORLD))
                 .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension_back"), existingFileHelper);
+        final var biomeGetter = provider.lookupOrThrow(Registries.BIOME);
+        final AdvancementHolder gnomeDimensionBiomes = Advancement.Builder.advancement()
+                .display(Items.LEATHER_BOOTS,
+                        Component.translatable("advancements.gnome_supremacy.gnome_dimension_biomes.title"),
+                        Component.translatable("advancements.gnome_supremacy.gnome_dimension_biomes.description"),
+                        null,
+                        AdvancementType.CHALLENGE,
+                        true, false, false)
+                .parent(gnomeDimension)
+                .addCriterion("entered_birch", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_BIRCH_FOREST))))
+                .addCriterion("entered_dark_oak", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_DARK_OAK_FOREST))))
+                .addCriterion("entered_oak", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_OAK_FOREST))))
+                .addCriterion("entered_taiga", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.ENORMOUS_TAIGA))))
+                .addCriterion("entered_mushroom_fields", PlayerTrigger.TriggerInstance.located(LocationPredicate.Builder.inBiome(biomeGetter.getOrThrow(GsBiomes.MUSHROOM_FIELDS))))
+                .rewards(AdvancementRewards.Builder.experience(500))
+                .save(consumer, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_dimension_biomes"), existingFileHelper);
     }
 }

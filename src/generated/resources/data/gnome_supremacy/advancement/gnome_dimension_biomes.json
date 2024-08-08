@@ -1,0 +1,120 @@
+{
+  "parent": "gnome_supremacy:gnome_dimension",
+  "criteria": {
+    "entered_birch": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "gnome_supremacy:enormous_birch_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "entered_dark_oak": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "gnome_supremacy:enormous_dark_oak_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "entered_mushroom_fields": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "gnome_supremacy:mushroom_fields"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "entered_oak": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "gnome_supremacy:enormous_oak_forest"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    },
+    "entered_taiga": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "gnome_supremacy:enormous_taiga"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.gnome_supremacy.gnome_dimension_biomes.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:leather_boots"
+    },
+    "title": {
+      "translate": "advancements.gnome_supremacy.gnome_dimension_biomes.title"
+    }
+  },
+  "requirements": [
+    [
+      "entered_birch"
+    ],
+    [
+      "entered_dark_oak"
+    ],
+    [
+      "entered_oak"
+    ],
+    [
+      "entered_taiga"
+    ],
+    [
+      "entered_mushroom_fields"
+    ]
+  ],
+  "rewards": {
+    "experience": 500
+  },
+  "sends_telemetry_event": true
+}

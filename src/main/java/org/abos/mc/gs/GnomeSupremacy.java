@@ -21,6 +21,7 @@ import org.abos.mc.gs.block.entity.AbstractGnomeHouseBlockEntity;
 import org.abos.mc.gs.client.gui.GnomeHouseTier1Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier2Screen;
 import org.abos.mc.gs.client.gui.GnomeHouseTier3Screen;
+import org.abos.mc.gs.registry.GsBiomes;
 import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsDimensions;
@@ -120,6 +121,7 @@ public class GnomeSupremacy {
 
         GsFeatures.REGISTER.register(modEventBus);
         GsPlacedFeatures.class.getName(); // for static initialization only
+        GsBiomes.class.getName(); // for static initialization only
         GsBlocks.REGISTER.register(modEventBus);
         GsBlockEntityTypes.REGISTER.register(modEventBus);
         GsItems.REGISTER.register(modEventBus);
