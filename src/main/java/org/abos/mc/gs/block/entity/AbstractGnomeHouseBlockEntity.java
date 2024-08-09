@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.Containers;
+import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -31,17 +32,43 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
 
     protected static final int[] SLOTS = new int[] {GnomeHouseInventory.FOOD_SLOT, GnomeHouseInventory.TOOL_SLOT};
 
-    protected static final int tickDelta = GsConfig.GNOME_DROP_TICKS.get();
-    protected static final int workDelta = GsConfig.GNOME_FOOD_WORK.get();
+    public static final int TICK_DELTA = GsConfig.GNOME_DROP_TICKS.get();
+    public static final int WORK_DELTA = GsConfig.GNOME_FOOD_WORK.get();
 
     protected String titleKey;
 
     protected int tickCounter = 0;
     protected int workCounter = 0;
+    protected boolean hasFood = false;
+    protected ContainerData data;
 
     protected AbstractGnomeHouseBlockEntity(BlockEntityType<? extends AbstractGnomeHouseBlockEntity> bet, BlockPos pos, BlockState blockState, String titleKey) {
         super(bet, pos, blockState);
         this.titleKey = titleKey;
+        data = new ContainerData() {
+            @Override
+            public int get(int i) {
+                return switch (i) {
+                    case 0 -> AbstractGnomeHouseBlockEntity.this.tickCounter;
+                    case 1 -> AbstractGnomeHouseBlockEntity.this.workCounter;
+                    default -> AbstractGnomeHouseBlockEntity.this.hasFood ? 1 : 0;
+                };
+            }
+
+            @Override
+            public void set(int i, int i1) {
+                switch (i) {
+                    case 0 -> AbstractGnomeHouseBlockEntity.this.tickCounter = i1;
+                    case 1 -> AbstractGnomeHouseBlockEntity.this.workCounter = i1;
+                    default -> AbstractGnomeHouseBlockEntity.this.hasFood = i1 != 0;
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 3;
+            }
+        };
     }
 
     @Override
@@ -80,7 +107,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
 
     public static void tick(Level level, BlockPos pos, BlockState state, BlockEntity blockEntity) {
         if (blockEntity instanceof AbstractGnomeHouseBlockEntity houseEntity) {
-            if (++houseEntity.tickCounter % tickDelta != 0) {
+            if (++houseEntity.tickCounter % TICK_DELTA != 0) {
                 return;
             }
             if (!(level instanceof ServerLevel) || level.dimension() != Level.OVERWORLD) {
@@ -92,9 +119,11 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
                 return;
             }
             // food condition
-            if (++houseEntity.workCounter >= workDelta && !eat(houseEntity)) {
+            if (++houseEntity.workCounter >= WORK_DELTA && !eat(houseEntity)) {
+                houseEntity.hasFood = false;
                 return;
             }
+            houseEntity.hasFood = true;
             // get tool path
             final String toolId = BuiltInRegistries.ITEM.getKey(toolStack.getItem()).toString().replace(':','/');
             // tier

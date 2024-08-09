@@ -59,7 +59,7 @@ public class GnomeSupremacy {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "gnome_supremacy";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the MODID namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
