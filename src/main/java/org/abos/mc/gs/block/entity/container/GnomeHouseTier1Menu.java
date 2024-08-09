@@ -7,14 +7,15 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.neoforged.neoforge.items.IItemHandler;
 import org.abos.mc.gs.registry.GsBlocks;
+import org.abos.mc.gs.registry.GsMenuTypes;
 
 public class GnomeHouseTier1Menu extends AbstractGnomeHouseMenu {
     public GnomeHouseTier1Menu(int containerId, Inventory playerInv) {
-        super(containerId, playerInv);
+        super(GsMenuTypes.GNOME_HOUSE_TIER1.get(), containerId, playerInv);
     }
 
     public GnomeHouseTier1Menu(int containerId, Inventory playerInv, IItemHandler dataInventory, ContainerData data, ContainerLevelAccess access) {
-        super(containerId, playerInv, dataInventory, data, access);
+        super(GsMenuTypes.GNOME_HOUSE_TIER1.get(), containerId, playerInv, dataInventory, data, access);
     }
 
     @Override
