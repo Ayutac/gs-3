@@ -31,30 +31,28 @@ public abstract class AbstractGnomeHouseMenu extends AbstractContainerMenu {
         super(menuType, containerId);
         this.access = access;
         this.data = data;
+        this.addDataSlots(data);
         int k;
         // container
         this.addSlot(new SlotItemHandler(dataInventory, 0, 62, 35));
         this.addSlot(new SlotItemHandler(dataInventory, 1, 98, 35));
         // inventory
-        for(k = 0; k < 3; ++k) {
+        for (k = 0; k < 3; ++k) {
             for(int j = 0; j < 9; ++j) {
                 this.addSlot(new Slot(playerInv, j + k * 9 + 9, 8 + j * 18, 84 + k * 18));
             }
         }
         // hotbar
-        for(k = 0; k < 9; ++k) {
+        for (k = 0; k < 9; ++k) {
             this.addSlot(new Slot(playerInv, k, 8 + k * 18, 142));
         }
     }
 
     public double getTickProgress() {
-        double v = (data.get(0) % AbstractGnomeHouseBlockEntity.TICK_DELTA) / (double) AbstractGnomeHouseBlockEntity.TICK_DELTA;
-        GnomeSupremacy.LOGGER.warn(Double.toString(v));
-        return v;
+        return (data.get(0) % AbstractGnomeHouseBlockEntity.TICK_DELTA) / (double) AbstractGnomeHouseBlockEntity.TICK_DELTA;
     }
 
     public boolean hasFood() {
-        GnomeSupremacy.LOGGER.warn(Integer.toString(data.get(2)));
         return data.get(2) != 0;
     }
 
