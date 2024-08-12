@@ -25,6 +25,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import org.abos.mc.gs.GnomeSupremacy;
 import org.abos.mc.gs.GsConfig;
+import org.abos.mc.gs.util.GnomeHouseData;
 import org.abos.mc.gs.util.GnomeHouseInventory;
 import org.jetbrains.annotations.Nullable;
 
@@ -45,30 +46,7 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
     protected AbstractGnomeHouseBlockEntity(BlockEntityType<? extends AbstractGnomeHouseBlockEntity> bet, BlockPos pos, BlockState blockState, String titleKey) {
         super(bet, pos, blockState);
         this.titleKey = titleKey;
-        data = new ContainerData() {
-            @Override
-            public int get(int i) {
-                return switch (i) {
-                    case 0 -> AbstractGnomeHouseBlockEntity.this.tickCounter;
-                    case 1 -> AbstractGnomeHouseBlockEntity.this.workCounter;
-                    default -> AbstractGnomeHouseBlockEntity.this.hasFood ? 1 : 0;
-                };
-            }
-
-            @Override
-            public void set(int i, int i1) {
-                switch (i) {
-                    case 0 -> AbstractGnomeHouseBlockEntity.this.tickCounter = i1;
-                    case 1 -> AbstractGnomeHouseBlockEntity.this.workCounter = i1;
-                    default -> AbstractGnomeHouseBlockEntity.this.hasFood = i1 != 0;
-                }
-            }
-
-            @Override
-            public int getCount() {
-                return 3;
-            }
-        };
+        data = new GnomeHouseData(this);
     }
 
     @Override
@@ -185,4 +163,15 @@ public abstract class AbstractGnomeHouseBlockEntity extends AbstractContainerBlo
         return true;
     }
 
+    public int getTickCounter() {
+        return tickCounter;
+    }
+
+    public int getWorkCounter() {
+        return workCounter;
+    }
+
+    public boolean hasFood() {
+        return hasFood;
+    }
 }
