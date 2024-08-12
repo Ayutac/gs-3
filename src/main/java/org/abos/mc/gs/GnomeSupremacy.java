@@ -15,6 +15,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.TagsUpdatedEvent;
 import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import org.abos.mc.gs.block.entity.AbstractGnomeHouseBlockEntity;
@@ -30,6 +31,7 @@ import org.abos.mc.gs.registry.GsItems;
 import org.abos.mc.gs.registry.GsLootTables;
 import org.abos.mc.gs.registry.GsMenuTypes;
 import org.abos.mc.gs.registry.GsPlacedFeatures;
+import org.abos.mc.gs.util.TagCache;
 import org.abos.mc.gs.util.Util;
 import org.slf4j.Logger;
 
@@ -49,7 +51,6 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -156,11 +157,14 @@ public class GnomeSupremacy {
 //            event.accept(EXAMPLE_BLOCK_ITEM);
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+//    @SubscribeEvent
+//    public void onServerStarting(ServerStartingEvent event) {
+//        // Nothing needed
+//    }
+
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-        // Nothing needed
+    public void onTagsUpdated(TagsUpdatedEvent event) {
+        TagCache.invalidate();
     }
 
     @SubscribeEvent
