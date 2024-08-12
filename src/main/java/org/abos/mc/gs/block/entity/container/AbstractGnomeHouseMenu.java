@@ -57,6 +57,10 @@ public abstract class AbstractGnomeHouseMenu extends AbstractContainerMenu {
         return data.get(2) != 0;
     }
 
+    public boolean hasTool() {
+        return !getSlot(GnomeHouseInventory.TOOL_SLOT).getItem().isEmpty();
+    }
+
     @Override
     public ItemStack quickMoveStack(Player player, int quickMovedSlotIndex) {
         ItemStack stackToMove = getSlot(quickMovedSlotIndex).getItem();

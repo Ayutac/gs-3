@@ -22,8 +22,7 @@ public abstract class AbstractGnomeHouseScreen<M extends AbstractGnomeHouseMenu>
         int j = (this.height - this.imageHeight) / 2;
         guiGraphics.blit(CONTAINER_LOCATION, i, j, 0, 0, this.imageWidth, this.imageHeight);
         final double progress = menu.getTickProgress();
-        final int frame = menu.hasFood() ? (int)Math.floor(14 * progress) : 0;
+        final int frame = menu.hasFood() && menu.hasTool() ? (int)Math.floor(14 * progress) : 0;
         guiGraphics.blit(ANIMATION_LOCATION, i + 55, j + 55, 0, 15 * frame, 66, 15, 66, 210);
-
     }
 }
