@@ -26,7 +26,7 @@ public class EnormousTrunkPlacer extends TrunkPlacer {
 
     @Override
     protected TrunkPlacerType<?> type() {
-        return GsTrunkPlacers.ENORMOUS_TRUNK_PLACER;
+        return GsTrunkPlacers.ENORMOUS_TRUNK_PLACER.get();
     }
 
     @Override
@@ -34,17 +34,25 @@ public class EnormousTrunkPlacer extends TrunkPlacer {
         BlockPos blockPos = pos.below();
         setDirtAt(level, blockSetter, rng, blockPos, config);
         setDirtAt(level, blockSetter, rng, blockPos.east(), config);
-        setDirtAt(level, blockSetter, rng, blockPos.south(), config);
         setDirtAt(level, blockSetter, rng, blockPos.south().east(), config);
+        setDirtAt(level, blockSetter, rng, blockPos.south(), config);
+        setDirtAt(level, blockSetter, rng, blockPos.south().west(), config);
+        setDirtAt(level, blockSetter, rng, blockPos.west(), config);
+        setDirtAt(level, blockSetter, rng, blockPos.north().west(), config);
+        setDirtAt(level, blockSetter, rng, blockPos.north(), config);
+        setDirtAt(level, blockSetter, rng, blockPos.north().east(), config);
         BlockPos.MutableBlockPos blockpos$mutableblockpos = new BlockPos.MutableBlockPos();
 
         for(int i = 0; i < freeTreeHeight; ++i) {
             this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 0, i, 0);
-            if (i < freeTreeHeight - 1) {
-                this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 1, i, 0);
-                this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 1, i, 1);
-                this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 0, i, 1);
-            }
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 1, i, 0);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 1, i, 1);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 0, i, 1);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, -1, i, 1);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, -1, i, 0);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, -1, i, -1);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 0, i, -1);
+            this.placeLogIfFreeWithOffset(level, blockSetter, rng, blockpos$mutableblockpos, config, pos, 1, i, -1);
         }
 
         return ImmutableList.of(new FoliagePlacer.FoliageAttachment(pos.above(freeTreeHeight), 0, true));
