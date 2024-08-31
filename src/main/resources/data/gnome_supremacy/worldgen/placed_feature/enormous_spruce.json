@@ -2,6 +2,10 @@
   "feature": "gnome_supremacy:enormous_spruce",
   "placement": [
     {
+      "type": "count",
+      "count": 3
+    },
+    {
       "type": "minecraft:in_square"
     },
     {
@@ -10,6 +14,18 @@
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "minecraft:spruce_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
     }
   ]
 }
