@@ -8,6 +8,8 @@ import org.abos.mc.gs.GnomeSupremacy;
 
 public interface GsPlacedFeatures {
 
+    ResourceKey<PlacedFeature> ENORMOUS_BIRCH = register("enormous_birch");
+    ResourceKey<PlacedFeature> ENORMOUS_OAK = register("enormous_oak");
     ResourceKey<PlacedFeature> ENORMOUS_SPRUCE = register("enormous_spruce");
     ResourceKey<PlacedFeature> HUGE_PINK_BONNET = register("huge_pink_bonnet");
     ResourceKey<PlacedFeature> HUGE_LAPIS_DECEIVER = register("huge_lapis_deceiver");
