@@ -9,7 +9,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:mega_pine_foliage_placer",
+      "type": "gnome_supremacy:enormous_spruce_foliage_placer",
       "crown_height": {
         "type": "minecraft:uniform",
         "max_inclusive": 17,

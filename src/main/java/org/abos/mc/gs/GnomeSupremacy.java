@@ -26,6 +26,7 @@ import org.abos.mc.gs.registry.GsBlockEntityTypes;
 import org.abos.mc.gs.registry.GsBlocks;
 import org.abos.mc.gs.registry.GsDimensions;
 import org.abos.mc.gs.registry.GsFeatures;
+import org.abos.mc.gs.registry.GsFoliagePlacers;
 import org.abos.mc.gs.registry.GsItems;
 import org.abos.mc.gs.registry.GsLootTables;
 import org.abos.mc.gs.registry.GsMenuTypes;
@@ -121,8 +122,9 @@ public class GnomeSupremacy {
         modEventBus.addListener(this::commonSetup);
 
         GsFeatures.REGISTER.register(modEventBus);
+        GsTrunkPlacers.REGISTER.register(modEventBus);
+        GsFoliagePlacers.REGISTER.register(modEventBus);
         GsPlacedFeatures.class.getName(); // for static initialization only
-        GsTrunkPlacers.REGISTER.register(modEventBus); // for static initialization only
         GsBiomes.class.getName(); // for static initialization only
         GsBlocks.REGISTER.register(modEventBus);
         GsBlockEntityTypes.REGISTER.register(modEventBus);
