@@ -29,7 +29,9 @@
   "features": [
     [],
     [],
-    [],
+    [
+      "minecraft:forest_rock"
+    ],
     [],
     [],
     [],
@@ -38,7 +40,11 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "gnome_supremacy:ore_coarse_dirt",
+      "gnome_supremacy:ore_rooted_dirt",
+      "gnome_supremacy:ore_infused_stone",
+      "gnome_supremacy:ore_mithralium_stone"
     ],
     [],
     [

@@ -14,6 +14,7 @@ public interface GsTags {
     TagKey<Item> GNOME_TIER1_FOOD = ItemTags.create(ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_tier1_food"));
     TagKey<Item> GNOME_TIER2_FOOD = ItemTags.create(ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_tier2_food"));
     TagKey<Item> GNOME_TIER3_FOOD = ItemTags.create(ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "gnome_tier3_food"));
+    TagKey<Block> BASE_STONE_GNOME_DIMENSION = BlockTags.create(ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "base_stone_gnome_dimension"));
     TagKey<Block> TREE_MUSHROOM_PLANTABLE_ON = BlockTags.create(ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, "tree_mushroom_plantable_on"));
 
 }

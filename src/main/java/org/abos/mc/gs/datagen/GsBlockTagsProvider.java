@@ -3,6 +3,7 @@ package org.abos.mc.gs.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.abos.mc.gs.GnomeSupremacy;
@@ -86,6 +87,10 @@ public final class GsBlockTagsProvider extends BlockTagsProvider {
                 GsBlocks.POTTED_LAPIS_DECEIVER.get(),
                 GsBlocks.POTTED_MOREL.get(),
                 GsBlocks.POTTED_VIERTOUW_MUSHROOM.get()
+        );
+        tag(GsTags.BASE_STONE_GNOME_DIMENSION).add(
+                Blocks.STONE,
+                Blocks.DIRT
         );
         tag(GsTags.TREE_MUSHROOM_PLANTABLE_ON).addTag(
                 BlockTags.LOGS

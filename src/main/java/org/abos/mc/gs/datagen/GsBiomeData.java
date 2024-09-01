@@ -49,6 +49,7 @@ public final class GsBiomeData {
         builder.specialEffects(effectBuilder.build());
         final BiomeGenerationSettings.Builder genBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         addCommonFeatures(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FOREST_FLOWERS);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GsPlacedFeatures.ENORMOUS_BIRCH);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
@@ -78,6 +79,7 @@ public final class GsBiomeData {
         builder.specialEffects(effectBuilder.build());
         final BiomeGenerationSettings.Builder genBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         addCommonFeatures(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FOREST_FLOWERS);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GsPlacedFeatures.ENORMOUS_DARK_OAK);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
@@ -107,6 +109,7 @@ public final class GsBiomeData {
         builder.specialEffects(effectBuilder.build());
         final BiomeGenerationSettings.Builder genBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         addCommonFeatures(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FOREST_FLOWERS);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GsPlacedFeatures.ENORMOUS_OAK);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
@@ -134,6 +137,7 @@ public final class GsBiomeData {
         builder.specialEffects(effectBuilder.build());
         final BiomeGenerationSettings.Builder genBuilder = new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
         addCommonFeatures(genBuilder);
+        genBuilder.addFeature(GenerationStep.Decoration.LOCAL_MODIFICATIONS, MiscOverworldPlacements.FOREST_ROCK);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_LARGE_FERN);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GsPlacedFeatures.ENORMOUS_SPRUCE);
         genBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_DEFAULT);
@@ -185,6 +189,10 @@ public final class GsBiomeData {
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_CLAY);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, MiscOverworldPlacements.DISK_GRAVEL);
         builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, CavePlacements.UNDERWATER_MAGMA);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, GsPlacedFeatures.ORE_COARSE_DIRT);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, GsPlacedFeatures.ORE_ROOTED_DIRT);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, GsPlacedFeatures.ORE_INFUSED_STONE);
+        builder.addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, GsPlacedFeatures.ORE_MITHRALIUM_STONE);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.GLOW_LICHEN);
         builder.addFeature(GenerationStep.Decoration.FLUID_SPRINGS, MiscOverworldPlacements.SPRING_WATER);
         builder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, MiscOverworldPlacements.FREEZE_TOP_LAYER);
