@@ -68,5 +68,7 @@ public interface GsLootTables {
     ResourceKey<LootTable> OVERWORLD_FARMER2 = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, OVERWORLD_FARMER2_LOC));
     String OVERWORLD_FARMER3_LOC = "gnome/minecraft/iron_hoe/overworld/tier3";
     ResourceKey<LootTable> OVERWORLD_FARMER3 = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, OVERWORLD_FARMER3_LOC));
+    String VILLAGE_CHEST_LOC = "chests/village";
+    ResourceKey<LootTable> VILLAGE_CHEST = ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(GnomeSupremacy.MODID, VILLAGE_CHEST_LOC));
 
 }

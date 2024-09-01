@@ -3,11 +3,16 @@ package org.abos.mc.gs.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.LootTableSubProvider;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.functions.SetStewEffectFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import org.abos.mc.gs.registry.GsItems;
 import org.abos.mc.gs.registry.GsLootTables;
 
 import java.util.function.BiConsumer;
@@ -448,5 +453,28 @@ public final class GsLootTableSubProvider implements LootTableSubProvider {
                 )
         );
         // TODO scientist
+        biConsumer.accept(
+                GsLootTables.VILLAGE_CHEST,
+                LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(3f, 8f))
+                        .add(LootItem.lootTableItem(Items.RED_MUSHROOM).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 7f))))
+                        .add(LootItem.lootTableItem(Items.BROWN_MUSHROOM).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 7f))))
+                        .add(LootItem.lootTableItem(GsItems.MOREL).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 7f))))
+                        .add(LootItem.lootTableItem(GsItems.PINK_BONNET).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 7f))))
+                        .add(LootItem.lootTableItem(GsItems.LAPIS_DECEIVER).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 7f))))
+                        .add(LootItem.lootTableItem(GsItems.VIERTOUW_MUSHROOM).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                        .add(LootItem.lootTableItem(Items.BREAD).setWeight(10).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                        .add(LootItem.lootTableItem(Items.EMERALD).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                        .add(LootItem.lootTableItem(Items.RAW_IRON).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                        .add(LootItem.lootTableItem(Items.RAW_COPPER).setWeight(2).apply(SetItemCountFunction.setCount(UniformGenerator.between(1f, 4f))))
+                        .add(LootItem.lootTableItem(Items.SUSPICIOUS_STEW).setWeight(10).apply(SetStewEffectFunction.stewEffect()
+                                .withEffect(MobEffects.NIGHT_VISION.getDelegate(), UniformGenerator.between(7f, 10f))
+                                .withEffect(MobEffects.JUMP.getDelegate(), UniformGenerator.between(14f, 20f))
+                                .withEffect(MobEffects.WEAKNESS.getDelegate(), UniformGenerator.between(12f, 16f))
+                                .withEffect(MobEffects.BLINDNESS.getDelegate(), UniformGenerator.between(10f, 14f))
+                                .withEffect(MobEffects.POISON.getDelegate(), UniformGenerator.between(20f, 40f))
+                                .withEffect(MobEffects.SATURATION.getDelegate(), UniformGenerator.between(14f, 20f))
+                        ))
+                )
+        );
     }
 }
